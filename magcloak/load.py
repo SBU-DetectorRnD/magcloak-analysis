@@ -7,6 +7,7 @@ import numpy as np
 class LeaflistError(Exception):
     '''Exception for errors involving the leaflist of a data file.'''
 
+# Root leaflist variable type to NumPy dtype conversion dictionary.
 leaf_type = {
     'C' : np.str_,
     'B' : np.int8,
@@ -42,7 +43,7 @@ def MegaVIEW(fname, drop=True, dorppath=None):
     
     Returns
     -------
-    out : narray
+    out : ndarray
         "Data read form the text file" by numpy.genfromtxt
         (np.genfromtxt).
     '''
