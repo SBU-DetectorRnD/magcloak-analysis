@@ -1,0 +1,54 @@
+##### 1layer sheath superpower#########
+run027_1layer   data/run027_sPS_1layer_sheath/  list_good.txt   DataFile_140827_150209_precool.txt DataFile_140827_152507_postcool.txt DataFile_140827_144341_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run027_1layer   data/run027_bPS_1layer_sheath/  list_good.txt   DataFile_140828_123603_precool.txt DataFile_140828_124650_postcool.txt DataFile_140827_174609_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#################################
+#run028_1layer   data/run028_sPS_1layer_sheath/  list_good.txt   DataFile_140828_191452_precool.txt DataFile_140828_194958_postcool.txt DataFile_140827_144341_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run028_1layer   data/run028_bPS_1layer_sheath/  list_good.txt  DataFile_140828_141755_precool.txt DataFile_140828_143033_postcool.txt DataFile_140827_174609_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##################################
+#run029_1layer   data/run029_sPS_1layer_sheath/  list_good.txt  DataFile_140828_205848_precool.txt DataFile_140828_213610_postcool.txt  DataFile_140828_234142_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run029_1layer   data/run029_bPS_1layer_sheath/  list_good.txt  DataFile_140828_162807_precool.txt DataFile_140828_164705_postcool.txt DataFile_140827_174609_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####### 1 layer sheath wide tape #######################
+#run069_wide_tape_1layer_sheath  data/run069_wide_tape_1layer_sheath_sps/ list_good.txt   DataFile_150531_165133_precool.txt  DataFile_150531_165133_postcool.txt DataFile_150531_144900_calibration_after_alignment.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run069_wide_tape_1layer_sheath  data/run069_wide_tape_1layer_sheath_bps/ list_good.txt   DataFile_150531_165133_precool.txt  DataFile_150531_165133_postcool.txt DataFile_150528_100928_calibration_w_old_ps.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run071_wide_tape_1layer_sheath  data/run071_wide_tape_1layer_sheath_bps/ list_good.txt   DataFile_150608_182909_precool.txt  DataFile_150608_182909_postcool.txt DataFile_150528_100928_calibration_w_old_ps.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+########################################
+######### 1layer helix#############
+#run049_1layer_helix_a   data/run049_helmholtz_1layer_helix_a/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run050_1layer_helix_b   data/run050_helmholtz_1layer_helix_b/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run075_1layer_helix  data/run075_1layer_helix/ list_good.txt   DataFile_150618_120746_precool.txt  DataFile_150618_120746_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run076_1layer_helix  data/run076_1layer_helix/ list_good.txt   DataFile_150618_120746_precool.txt  DataFile_150618_120746_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run077_1layer_helix  data/run077_1layer_helix/ list_good.txt   DataFile_150623_110136_precool.txt  DataFile_150623_110136_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+###########2 layer helix adjacent#######################
+#run046_2layer_helix_adjacent   data/run046_helmholtz_2layer_helix_b/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#################################
+#run047_2layer_helix_adjacent   data/run047_helmholtz_2layer_helix_b/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run078_2layer_helix_adjacent  data/run078_2layer_helix_adjacent/ list_good.txt    DataFile_150625_125352_precool.txt  DataFile_150625_125352_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#######2 layer helix separate ################
+#run048_2layer_helix_spaced   data/run048_helmholtz_2layer_helix_a/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run084_2layer_helix_spaced  data/run084_2layer_helix_spaced/ list_good.txt  DataFile_150705_134421_precool.txt  DataFile_150705_134421_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+########## 4 layer helix adjacent
+#run051_4layer_helix_adj   data/run051_helmholtz_4layer_helix_adj/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run083_4layer_helix_adjacent  data/run083_4layer_helix_adjacent/ list_good.txt  DataFile_150705_190952_precool.txt  DataFile_150705_190952_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+########## 4 layer helix separate ##########
+#run052_4layer_helix_spaced   data/run052_helmholtz_4layer_helix_spaced/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run080_4layer_helix_spaced  data/run080_4layer_helix_spaced/ list_good.txt    DataFile_150626_152438_precool.txt  DataFile_150626_152438_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+######### 5 layer helix copper #########33
+#run053_5layer_helix_adj   data/run053_helmholtz_5layer_helix_adj/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run082_5layer_helix_adjacent  data/run082_5layer_helix_adjacent/ list_good.txt    DataFile_150630_172215_precool.txt  DataFile_150630_172215_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#########35 layer helix no copper ##########
+#run054_5layer_no_cu   data/run054_helmholtz_5layer_helix_no_cu/  list_good.txt DataFile_150111_201505_precool.txt DataFile_150111_203332_postcool.txt DataFile_150111_201701_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run060_2_5_layer_helix_no_cu   data/run060_2_helmholtz_5layer_helix_no_cu_good/  list_good.txt DataFile_150325_152239_precool.txt DataFile_150325_154513_postcool.txt DataFile_150325_152320_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run085_5layer_helix_no_cu  data/run085_5layer_helix_no_cu/ list_good.txt  DataFile_150705_223716_precool.txt  DataFile_150705_223716_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#########1 layer wide tape###########3
+#run058_1layer_wide_sc   data/run058_wide_tape_1layer/  list_good.txt DataFile_150318_144752_precool.txt DataFile_150318_145135_postcool.txt DataFile_150313_112516_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run059_1layer_wide_sc   data/run059_wide_tape_1layer/  list_good.txt DataFile_150318_202418_precool.txt DataFile_150318_203416_postcool.txt DataFile_150313_112516_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run061_1layer_wide_sc   data/run061_wide_tape_1layer/  list_good.txt DataFile_150510_170146_precool.txt DataFile_150510_170146_postcool.txt DataFile_150511_094703_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+######## 2 layer wide tape ##########
+#run062_2layer_wide_sc   data/run062_wide_tape_2layer/  list_good.txt DataFile_150511_164118_precool.txt DataFile_150511_164118_postcool.txt DataFile_150511_094703_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run063_2layer_wide_sc   data/run063_wide_tape_2layer/  list_good.txt DataFile_150511_164118_precool.txt DataFile_150511_164118_postcool.txt DataFile_150511_094703_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+########## 3 layer wide tape #########3
+#run064_3layer_wide_sc   data/run064_wide_tape_3layer/  list_good.txt DataFile_150511_164118_precool.txt DataFile_150511_164118_postcool.txt DataFile_150511_094703_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run065_3layer_wide_sc   data/run065_wide_tape_3layer/  list_good.txt DataFile_150511_164118_precool.txt DataFile_150511_164118_postcool.txt DataFile_150511_094703_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+########### 4 layer wide tape ###########
+#run079_4layer_wide_tape  data/run079_4layer_wide_tape/ list_good.txt    DataFile_150626_113340_precool.txt  DataFile_150626_113340_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run081_4layer_wide_tape  data/run081_4layer_wide_tape/ list_good.txt    DataFile_150626_113340_precool.txt  DataFile_150626_113340_postcool.txt DataFile_150618_104728_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
