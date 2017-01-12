@@ -35,12 +35,12 @@ colors = {'c1': '#5DA5DA',
 fig = plt.figure(figsize=figsize(1))
 #summary files
 #ifile_1 = 'shielding_results_sep2016/BintVsBext_sep2016_helmholtz_sample1_1layer.txt'
-ifile_1 = 'shielding_results_sep2016/BintVsBext_sep2016_helmholtz_sample2_1layer.txt'
-ifile_2 = 'shielding_results_sep2016/BintVsBext_sep2016_helmholtz_sample2_2layer.txt'
-# ifile_1 = 'shielding_results_sep2016/BintVsBext_raphael_helmholtz_1layer.txt'
-# ifile_2 = 'shielding_results_sep2016/BintVsBext_raphael_helmholtz_2layer.txt'
-ifile_3 = 'shielding_results_sep2016/BintVsBext_raphael_helmholtz_3layer.txt'
-ifile_4 = 'shielding_results_sep2016/BintVsBext_raphael_helmholtz_4layer.txt'
+#ifile_1 = 'shielding_results_sep2016/BintVsBext_sep2016_helmholtz_sample2_1layer.txt'
+#ifile_2 = 'shielding_results_sep2016/BintVsBext_sep2016_helmholtz_sample2_2layer.txt'
+ifile_1 = 'shielding_results/1layer_wide_sc_fit_results.txt'
+ifile_2 = 'shielding_results/2layer_wide_sc_fit_results.txt'
+ifile_3 = 'shielding_results/3layer_wide_sc_fit_results.txt'
+ifile_4 = 'shielding_results/4layer_wide_sc_fit_results.txt'
 
 #numerically calculates a derivative of whichever degree
 def deriv(x,y, degree=1):
