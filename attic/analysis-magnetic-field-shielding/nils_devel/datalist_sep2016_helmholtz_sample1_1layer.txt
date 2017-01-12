@@ -1,0 +1,14 @@
+# 1 layer Helmholtz coil, superconductor sample 1
+DataFile_160908_175829.root
+DataFile_160908_180903.root
+DataFile_160908_182016.root
+DataFile_160908_183045.root
+DataFile_160908_184120.root
+DataFile_160908_185155.root
+DataFile_160908_190253.root
+DataFile_160908_191341.root
+DataFile_160908_192409.root
+DataFile_160908_193504.root
+DataFile_160908_194637.root
+DataFile_160908_195722.root
+DataFile_160908_200727.root

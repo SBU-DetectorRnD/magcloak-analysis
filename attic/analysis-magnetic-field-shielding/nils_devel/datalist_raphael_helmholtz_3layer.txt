@@ -1,0 +1,22 @@
+# 3 layer wide SC tape around core in Helmholtz coil 
+DataFile_150512_154719.root
+DataFile_150512_155826.root
+DataFile_150512_163506.root
+DataFile_150512_164538.root
+DataFile_150512_165604.root
+DataFile_150512_170653.root
+DataFile_150512_171812.root
+DataFile_150512_172917.root
+DataFile_150512_174040.root
+DataFile_150512_175128.root
+DataFile_150512_180220.root
+DataFile_150512_181346.root
+DataFile_150512_182421.root
+DataFile_150512_183518.root
+DataFile_150512_184619.root
+DataFile_150512_190758.root
+DataFile_150512_193932.root
+DataFile_150512_200015.root
+DataFile_150513_110134.root
+DataFile_150513_115925.root
+DataFile_150513_125946.root

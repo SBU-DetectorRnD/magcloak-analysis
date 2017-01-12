@@ -1,0 +1,245 @@
+#include <iostream>
+#include <vector>
+
+#include "TROOT.h"
+#include "TStyle.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TCanvas.h"
+#include "TLegend.h"
+#include "TH1F.h"
+#include "TGraphErrors.h"
+
+using namespace std;
+
+/**
+ * 1 - 20 layers critical field measurement
+ */
+TGraphErrors* makeGraph( TTree* tdata, TString drawString )                                                                                            
+{                                                                                                                                                      
+  vector<float> v_x_0, v_y_0, v_ex_0, v_ey_0;                                                                                                          
+  tdata->Draw(drawString,"");                                                                                                                          
+  for ( int i = 0; i < tdata->GetEntries(""); i++ )                                                                                                    
+    {                                                                                                                                                  
+      v_x_0.push_back(tdata->GetV2()[i]);                                                                                                              
+      v_y_0.push_back(tdata->GetV1()[i]);                                                                                                              
+      v_ex_0.push_back(tdata->GetV4()[i]);                                                                                                             
+      v_ey_0.push_back(tdata->GetV3()[i]);//0.03 / 100. * t0->GetV1()[i]);                                                                             
+    }                                                                                                                                                  
+  TGraphErrors* g0 = new TGraphErrors( tdata->GetEntries(""), &(v_x_0[0]), &(v_y_0[0]), &(v_ex_0[0]), &(v_ey_0[0]) );                                  
+                                                                                                                                                       
+  return g0;                                                                                                                                           
+};         
+
+
+int makePlots_results_v5()
+{
+
+  gStyle->SetOptStat(0);
+
+  // Results file format:
+  //   bext = M[:,0]
+  //   bext_err = M[:,1]
+  //   bint = M[:,2]
+  //   bint_err = M[:,3]
+  //   bshield = M[:,4]
+  //   bshield_err = M[:,5]
+  //   shielding_factor = M[:,6]
+  //   shielding_factor_err = M[:,7]
+  //   chi2red = M[:,8]
+  //   fit type = M[:,9]
+
+  /* Helper strings */                                                                                                                                   
+  TString readString("bext/F:bext_err:bin:bin_err:bshield:bshield_err:shielding_factor:shielding_factor_err:chi2red:fittype");
+  TString drawStringBshield("bshield:bext:bshield_err:0");    
+
+  vector< string > v_fnames;
+  vector< float >  v_nlayer;
+
+  vector< TGraphErrors* > v_g_Bshield_vs_Bext;
+
+  vector< float > v_B95;
+  vector< float > v_B95_sig;
+  vector< float > v_B99;
+  vector< float > v_B99_sig;
+  vector< float > v_nlayer_sig;
+
+  v_fnames.push_back( string("../analysis/python/run027_1layer/fit_results.txt") ); v_nlayer.push_back(  1 );
+  v_fnames.push_back( string("../analysis/python/run028_1layer/fit_results.txt") ); v_nlayer.push_back(  1 );
+  v_fnames.push_back( string("../analysis/python/run029_1layer/fit_results.txt") ); v_nlayer.push_back(  1 );
+  v_fnames.push_back( string("../analysis/python/run030_2layer/fit_results.txt") ); v_nlayer.push_back(  2 );
+  v_fnames.push_back( string("../analysis/python/run031_2layer/fit_results.txt") ); v_nlayer.push_back(  2 );
+  v_fnames.push_back( string("../analysis/python/run032_2layer/fit_results.txt") ); v_nlayer.push_back(  2 );
+  v_fnames.push_back( string("../analysis/python/run033_3layer/fit_results.txt") ); v_nlayer.push_back(  3 );
+  v_fnames.push_back( string("../analysis/python/run034_3layer/fit_results.txt") ); v_nlayer.push_back(  3 );
+  v_fnames.push_back( string("../analysis/python/run035_3layer/fit_results.txt") ); v_nlayer.push_back(  3 );
+  v_fnames.push_back( string("../analysis/python/run036_5layer/fit_results.txt") ); v_nlayer.push_back(  5 );
+  v_fnames.push_back( string("../analysis/python/run037_5layer/fit_results.txt") ); v_nlayer.push_back(  5 );
+  v_fnames.push_back( string("../analysis/python/run041_10layer/fit_results.txt") ); v_nlayer.push_back( 10 );
+  v_fnames.push_back( string("../analysis/python/run042_10layer/fit_results.txt") ); v_nlayer.push_back( 10 );
+  v_fnames.push_back( string("../analysis/python/run043_10layer/fit_results.txt") ); v_nlayer.push_back( 10 );
+  v_fnames.push_back( string("../analysis/python/run044_10layer/fit_results.txt") ); v_nlayer.push_back( 10 );
+  v_fnames.push_back( string("../analysis/python/run045_20layer/fit_results.txt") ); v_nlayer.push_back( 20 );
+
+  TH1F* htemp_xl = new TH1F("htemp_xl","",501,-0.5,500.5);
+
+  for ( unsigned i = 0; i < v_fnames.size(); i ++ )
+    {
+      TTree* t_temp = new TTree();
+      t_temp->ReadFile( v_fnames.at( i ).c_str() , readString );
+
+      cout << "i = " << i << " : " << v_nlayer.at( i ) << " : " << t_temp->GetEntries() << endl;
+
+      TGraphErrors* g_temp = makeGraph( t_temp , drawStringBshield );
+
+      v_g_Bshield_vs_Bext.push_back( g_temp );
+
+      /* find B95 */
+      htemp_xl->Reset("ICES");
+      t_temp->Draw("bext >> htemp_xl","shielding_factor>0.95");
+      float frac_95 = htemp_xl->GetBinCenter(htemp_xl->FindLastBinAbove());
+
+      cout << "95% Frac: " << frac_95 << endl;
+      v_B95.push_back( frac_95 );
+      v_B95_sig.push_back( 2 );
+      v_nlayer_sig.push_back( 0 );
+
+
+      /* find B99 */
+      htemp_xl->Reset("ICES");
+      t_temp->Draw("bext >> htemp_xl","shielding_factor>0.99");
+      float frac_99 = htemp_xl->GetBinCenter(htemp_xl->FindLastBinAbove());
+
+      cout << "99% Frac: " << frac_99 << endl;
+      v_B99.push_back( frac_99 );
+      v_B99_sig.push_back( 2 );
+
+    }
+
+
+  // -----
+
+  TH1F* hframe_1 = new TH1F("hframe_1","",501,-0.5,500.5);
+  hframe_1->GetXaxis()->SetTitle("B_{0} [mT]");
+  hframe_1->GetYaxis()->SetTitle("B_{shield} [mT]");
+  hframe_1->GetYaxis()->SetRangeUser(0,210);
+
+
+  TH1F* hframe_2 = new TH1F("hframe_2","",22,-0.5,21.5);
+  hframe_2->GetXaxis()->SetTitle("# SC layers");
+  hframe_2->GetYaxis()->SetTitle("B_{95} [mT]");
+  hframe_2->GetYaxis()->SetRangeUser(0,200);
+
+  TH1F* hframe_3 = new TH1F("hframe_3","",22,-0.5,21.5);
+  hframe_3->GetXaxis()->SetTitle("# SC layers");
+  hframe_3->GetYaxis()->SetTitle("B_{99} [mT]");
+  hframe_3->GetYaxis()->SetRangeUser(0,200);
+
+
+  // -----
+
+  for ( unsigned i = 0; i < v_g_Bshield_vs_Bext.size(); i++ )
+    {
+      (v_g_Bshield_vs_Bext.at(i))->Sort();
+    }
+
+  // -----
+
+  TCanvas *c1 = new TCanvas();
+  hframe_1->Draw("");
+
+  for ( unsigned i = 0; i < v_g_Bshield_vs_Bext.size(); i++ )
+    {
+      (v_g_Bshield_vs_Bext.at(i))->SetMarkerColor(i+1);
+      (v_g_Bshield_vs_Bext.at(i))->SetLineColor(i+1);
+      (v_g_Bshield_vs_Bext.at(i))->Draw("LPsame");
+    }
+
+  gPad->RedrawAxis();
+
+  //  c1->Print("plots_report_Dec2014/CritField_results_v5_bin_all.png");
+  //  c1->Print("plots_report_Dec2014/CritField_results_v5_bin_all.eps");
+
+  TCanvas *c2 = new TCanvas();
+  hframe_1->Draw("");
+
+  TLine *l_2 = new TLine(0,0,210,210);
+  l_2->SetLineColor(kGray+2);
+  l_2->SetLineStyle(2);
+
+  TLegend *leg_c2 = new TLegend(0.7,0.65,0.9,0.9);
+  leg_c2->SetNColumns(1);
+  leg_c2->AddEntry( v_g_Bshield_vs_Bext.at(0), " 1 layer" ,"lp");
+  leg_c2->AddEntry( v_g_Bshield_vs_Bext.at(3), " 2 layer" ,"lp");
+  leg_c2->AddEntry( v_g_Bshield_vs_Bext.at(6), " 3 layer" ,"lp");
+  leg_c2->AddEntry( v_g_Bshield_vs_Bext.at(9), " 5 layer" ,"lp");
+  leg_c2->AddEntry( v_g_Bshield_vs_Bext.at(12), "10 layer" ,"lp");
+  leg_c2->AddEntry( v_g_Bshield_vs_Bext.at(15), "20 layer" ,"lp");
+
+  leg_c2->Draw();
+
+  l_2->Draw();
+
+  (v_g_Bshield_vs_Bext.at(0))->SetMarkerColor(6);
+  (v_g_Bshield_vs_Bext.at(0))->SetLineColor(6);
+  (v_g_Bshield_vs_Bext.at(0))->Draw("LPsame");
+
+  (v_g_Bshield_vs_Bext.at(3))->SetMarkerColor(kGray+1);
+  (v_g_Bshield_vs_Bext.at(3))->SetLineColor(kGray+1);
+  (v_g_Bshield_vs_Bext.at(3))->Draw("LPsame");
+
+  (v_g_Bshield_vs_Bext.at(6))->SetMarkerColor(kRed);
+  (v_g_Bshield_vs_Bext.at(6))->SetLineColor(kRed);
+  (v_g_Bshield_vs_Bext.at(6))->Draw("LPsame");
+
+  (v_g_Bshield_vs_Bext.at(9))->SetMarkerColor(kBlue);
+  (v_g_Bshield_vs_Bext.at(9))->SetLineColor(kBlue);
+  (v_g_Bshield_vs_Bext.at(9))->Draw("LPsame");
+
+  (v_g_Bshield_vs_Bext.at(12))->SetMarkerColor(kGreen+1);
+  (v_g_Bshield_vs_Bext.at(12))->SetLineColor(kGreen+1);
+  (v_g_Bshield_vs_Bext.at(12))->Draw("LPsame");
+
+  (v_g_Bshield_vs_Bext.at(15))->SetMarkerColor(kMagenta+2);
+  (v_g_Bshield_vs_Bext.at(15))->SetLineColor(kMagenta+2);
+  (v_g_Bshield_vs_Bext.at(15))->Draw("LPsame");
+
+
+  gPad->RedrawAxis();
+
+  c2->Print("plots_report_Dec2014/CritField_results_v5_Bshield.png");
+  c2->Print("plots_report_Dec2014/CritField_results_v5_Bshield.eps");
+
+  TCanvas *c3 = new TCanvas();
+  hframe_2->Draw("");
+
+  TGraphErrors *g_shielding_factor_95 = new TGraphErrors( v_nlayer.size(), &(v_nlayer[0]), &(v_B95[0]), &(v_nlayer_sig[0]), &(v_B95_sig[0]) );
+  g_shielding_factor_95->SetMarkerSize(1.2);
+  g_shielding_factor_95->SetMarkerColor(kBlue);
+
+  g_shielding_factor_95->Draw("Psame");
+
+  gPad->RedrawAxis();
+
+  c3->Print("plots_report_Dec2014/CritField_results_v5_B95.png");
+  c3->Print("plots_report_Dec2014/CritField_results_v5_B95.eps");
+
+
+  TCanvas *c4 = new TCanvas();
+  hframe_2->Draw("");
+
+  TGraphErrors *g_shielding_factor_99 = new TGraphErrors( v_nlayer.size(), &(v_nlayer[0]), &(v_B99[0]), &(v_nlayer_sig[0]), &(v_B99_sig[0]) );
+  g_shielding_factor_99->SetMarkerSize(1.2);
+  g_shielding_factor_99->SetMarkerColor(kBlue);
+
+  g_shielding_factor_99->Draw("Psame");
+
+  gPad->RedrawAxis();
+
+  c4->Print("plots_report_Dec2014/CritField_results_v5_B99.png");
+  c4->Print("plots_report_Dec2014/CritField_results_v5_B99.eps");
+
+
+  return 0;
+
+}

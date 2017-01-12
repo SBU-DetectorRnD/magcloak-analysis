@@ -1,0 +1,50 @@
+# Helmholtz calibration
+DataFile_160908_174026.txt	helmholtz	DataFile_160908_174026.txt
+
+# 1 layer Helmholtz coil, superconductor sample 1
+DataFile_160908_175829.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_180903.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_182016.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_183045.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_184120.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_185155.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_190253.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_191341.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_192409.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_193504.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_194637.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_195722.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160908_200727.txt	helmholtz	DataFile_160908_174026.txt
+
+# 2 layer Helmholtz coil, superconductor sample 2
+Datafile_160915_173531.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160915_174843.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160915_180238.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160915_181358.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160915_182606.txt	helmholtz	DataFile_160908_174026.txt
+
+# dipole calibration
+DataFile_160915_144741.txt	dipole	DataFile_160915_144741.txt
+
+# 1 layer dipole, superconductor sample 1
+DataFile_160915_113128.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_114427.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_120025.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_121427.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_122955.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_124429.txt	dipole	DataFile_160915_144741.txt
+
+# 1 layer dipole, superconductor sample 2
+DataFile_160915_132943.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_134304.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_135540.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_140832.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_141955.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_143134.txt	dipole	DataFile_160915_144741.txt
+
+# 2 layer dipole, superconductor sample 2
+DataFile_160915_151651.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_152931.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_154119.txt	dipole	DataFile_160915_144741.txt
+DataFile_160915_155312.txt	dipole	DataFile_160915_144741.txt
+

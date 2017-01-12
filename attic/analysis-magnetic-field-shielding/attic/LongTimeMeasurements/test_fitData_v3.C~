@@ -1,0 +1,123 @@
+#include "TROOT.h"
+#include <vector>
+#include "TTree.h"
+#include "TGraphErrors.h"
+#include "TF1.h"
+
+void test_fitData_v3()
+{
+  
+  /* Read example measurement files into TTree objects */
+  TTree *t_ex1 = new TTree();
+  //  t_ex1->ReadFile("DataFile_140610_115015_1layer_1h.txt","t/F:I/F:B/F"); // small dipole, I ~ 2.61 A, 1 hour, 1 layer sheeth (vertical)
+  t_ex1->ReadFile("DataFile_140708_092917_1layer_4h.txt","t/F:I/F:B/F"); // small dipole, I ~ 1.5 A, 4 hours, 1 layer sheeth (horizontal)
+  
+  /* some global parameters */
+  float offset = -0.046; //mT
+  float err_offset = 0.0006; //mT
+  
+  float err_resolution = 0.0005; //mT
+  float err_meas = 0.00075; //mT
+  
+  vector< float > v_fitmax;
+  v_fitmax.push_back(100);
+  v_fitmax.push_back(200);
+  v_fitmax.push_back(500);
+  v_fitmax.push_back(1000);
+  v_fitmax.push_back(4000);
+  v_fitmax.push_back(10000);
+  
+  
+  TCanvas *ctest = new TCanvas();
+  t_ex1->Draw("I:t");
+  
+  TCanvas *ctest2 = new TCanvas();
+  
+  /* Create B vs time graphs */
+  t_ex1->Draw("B:t");
+  TGraphErrors *g_ex1 = new TGraphErrors( t_ex1->GetEntries(), t_ex1->GetV2(), t_ex1->GetV1(), 0, 0 );
+  
+  /* Subtract offset and set error */
+  float err = sqrt( err_offset * err_offset + err_resolution * err_resolution + err_meas * err_meas );
+  
+  for ( int p = 0; p < g_ex1->GetN(); p++ )
+    {
+      g_ex1->SetPoint( p, g_ex1->GetX()[p], g_ex1->GetY()[p] - offset );
+      g_ex1->SetPointError( p, 0, err );
+    }
+  
+  /* Define fit funtions */
+  TF1* f_test1 = new TF1("f_test1", "[0]" );
+  TF1* f_test2 = new TF1("f_test2", "[0] * log( x + 1 + [1] ) + [2]" );
+  TF1* f_test3 = new TF1("f_test3", "[0] / ( 1 + exp( -1 * [1] * x + [2] ) )" );
+  TF1* f_test4 = new TF1("f_test4", "[0] * atan( [1] * x + [2] ) + [3]" );
+  TF1* f_test5 = new TF1("f_test5", "[0] + [1] * exp( -1 * [2] * x )" );
+  
+  /* Set function parameters */
+  f_test1->SetRange(1,10000);
+  f_test2->SetRange(1,10000);
+  f_test3->SetRange(1,10000);
+  f_test4->SetRange(1,10000);
+  f_test5->SetRange(1,10000);
+  
+  f_test1->SetLineColor(kRed);
+  f_test2->SetLineColor(kBlue);
+  f_test3->SetLineColor(kGreen+1);
+  f_test4->SetLineColor(kYellow+1);
+  f_test5->SetLineColor(kYellow+2);
+  
+  /* Set some initial parameters */
+  f_test3->SetParameter(0,0.5);
+  f_test3->SetParameter(1,0.004);
+  f_test3->SetParameter(2,0.1);
+  
+  f_test4->SetParameter(0,0.5);
+  f_test4->SetParameter(1,0.004);
+  f_test4->SetParameter(2,0.1);
+  
+  f_test5->SetParameter(0,2);
+  f_test5->SetParameter(1,-0.5);
+  f_test5->SetParameter(2,0.5);
+  
+  /* Fit functions to graphs */
+  TF1* f_fit = f_test5;
+  double t0 = 31536000.0;
+  //double t0 = 3600.0;
+  
+  g_ex1->Fit(f_fit);
+  
+//  for ( int i = 0; i < v_fitmax.size(); i++ )
+//    {
+//
+//      //      r_ex1_test1 = g_ex1->Fit(f_fit, "SQ");
+//      g_ex1->Fit(f_fit, "", "", 0, v_fitmax.at(i) );
+//      cout << "Function f_test1:  " << f_fit->GetTitle() << endl;
+//      cout << "Chisquare:         " << f_fit->GetChisquare() / f_fit->GetNDF() << endl;
+//      cout << "p-Value:           " << f_fit->GetProb() << endl;
+//      cout << "Value at t = 1 yr: " << f_fit->Eval( t0 ) << endl; //seconds
+//      cout << "---------------------------------------------------------------" << endl;
+//
+//    }
+  
+  /* Make legend */
+//  TLegend *leg_ex1 = new TLegend(0.5,0.25,0.9,0.45);
+//  leg_ex1->SetNColumns(1);
+//  leg_ex1->AddEntry(f_test1,f_test1->GetTitle(),"l");
+//  leg_ex1->AddEntry(f_test2,f_test2->GetTitle(),"l");
+//  leg_ex1->AddEntry(f_test3,f_test3->GetTitle(),"l");
+//  leg_ex1->AddEntry(f_test4,f_test4->GetTitle(),"l");
+  
+  
+  
+  /* Draw graphs */
+  TCanvas *c_ex1 = new TCanvas();
+  g_ex1->Draw("AP");
+  
+  float p0, p1, p2;
+  p0 = f_fit->GetParameter(0);
+  p1 = f_fit->GetParameter(1);
+  p2 = f_fit->GetParameter(2);
+  cout << endl
+       << "fit(t=0) = p0 + p1 = " << p0 + p1 << endl
+       << "lim t->infinity fit(t) = p0 = " << p0 << endl;
+}

@@ -1,0 +1,23 @@
+data/DataFile_141118_122119.txt // room temperature, 2 mT
+
+data/DataFile_141118_135457.txt // vertical wrapping 'new = no overlap', 1 layer, 2 mT
+data/DataFile_141216_152517.txt // vertical wrapping 'new = no overlap', 2 layer, 2 mT
+
+data/DataFile_141118_173948.txt // helix wrapping, version 1 (cyl A), 1 layer, 2 mT
+data/DataFile_141120_175939.txt // helix wrapping, version 1 (cyl A), 1 layer, 2 mT
+
+data/DataFile_141120_154144.txt // helix wrapping, version 2 (cyl B = 'adjacent'), 1 layer, 2 mT
+data/DataFile_141120_195415.txt // helix wrapping, version 2 (cyl B = 'adjacent'), 1 layer, 2 mT
+
+data/DataFile_141216_162327.txt // helix wrapping, adjacent, 4 layer, 2 mT
+
+data/DataFile_141216_183116.txt // helix wrapping, adjacent, 4 layer, 7 mT
+
+
+
+data/DataFile_141217_135845.txt  // helix wrapping, version 2 (cyl B = 'adjacent'), 2 layers, 2 mT
+data/DataFile_141217_143408.txt  // helix wrapping, version 2 (cyl B = 'adjacent'), 2 layers, 4.5 mT
+
+data/DataFile_141217_172728.txt  // helix wrapping, Van de Graaff style, 5 layers, 2 mT
+data/DataFile_141217_175544.txt  // helix wrapping, Van de Graaff style, 5 layers, 9.5 mT
+

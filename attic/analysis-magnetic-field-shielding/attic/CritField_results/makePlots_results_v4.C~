@@ -1,0 +1,176 @@
+/**
+ *
+ */
+
+makePlots_results_v4()
+{
+
+  gStyle->SetOptStat(0);
+
+  // Results file format:
+  //   bext = M[:,0]
+  //   bext_err = M[:,1]
+  //   bint = M[:,2]
+  //   bint_err = M[:,3]
+  //   bshield = M[:,4]
+  //   bshield_err = M[:,5]
+  //   shielding_factor = M[:,6]
+  //   shielding_factor_err = M[:,7]
+  //   chi2red = M[:,8]
+  //   fit type = M[:,9]
+  
+  TTree *t_5l = new TTree();
+  t_5l->ReadFile("results_report_Dec2014/fit_results_helix_5layer.txt","bext/F:bext_err:bin:bin_err:bshield:bshield_err:shielding_factor:shielding_factor_err:chi2red:fittype");
+
+  TTree *t_5l_long = new TTree();
+  t_5l_long->ReadFile("results_report_Dec2014/fit_results_vdg_5layer.txt","bext/F:bext_err:bin:bin_err:bshield:bshield_err:shielding_factor:shielding_factor_err:chi2red:fittype");
+
+  TTree *t_1l_s = new TTree();
+  t_1l_s->ReadFile("../analysis/python/run027_1layer/fit_results.txt","bext/F:bext_err:bin:bin_err:bshield:bshield_err:shielding_factor:shielding_factor_err:chi2red:fittype");
+
+  TTree *t_5l_s = new TTree();
+  t_5l_s->ReadFile("../analysis/python/run036_5layer/fit_results.txt","bext/F:bext_err:bin:bin_err:bshield:bshield_err:shielding_factor:shielding_factor_err:chi2red:fittype");
+
+  // -----
+
+  t_5l->Draw("bin:bext:bin_err","","");
+  TGraphErrors* g_bin_5l = new TGraphErrors( t_5l->GetEntries(""), t_5l->GetV2(), t_5l->GetV1(), 0, t_5l->GetV3() );
+  g_bin_5l->SetLineColor(kBlue);
+  g_bin_5l->SetMarkerColor(kBlue);
+  g_bin_5l->SetMarkerStyle(20);
+  g_bin_5l->SetMarkerSize(1.1);
+
+  // -----
+
+  t_5l->Draw("bshield:bext:bshield_err","","");
+  TGraphErrors* g_bshield_5l = new TGraphErrors( t_5l->GetEntries(""), t_5l->GetV2(), t_5l->GetV1(), 0, t_5l->GetV3() );
+  g_bshield_5l->SetLineColor(kBlack);
+  g_bshield_5l->SetMarkerColor(kBlack);
+  g_bshield_5l->SetMarkerStyle(20);
+  g_bshield_5l->SetMarkerSize(1.1);
+  g_bshield_5l->Sort();
+
+  // -----
+
+  t_5l_long->Draw("bshield:bext:bshield_err","","");
+  TGraphErrors* g_bshield_5l_long = new TGraphErrors( t_5l_long->GetEntries(""), t_5l_long->GetV2(), t_5l_long->GetV1(), 0, t_5l_long->GetV3() );
+  g_bshield_5l_long->SetLineColor(kBlue);
+  g_bshield_5l_long->SetMarkerColor(kBlue);
+  g_bshield_5l_long->SetMarkerStyle(20);
+  g_bshield_5l_long->SetMarkerSize(1.1);
+  g_bshield_5l_long->Sort();
+
+  // -----
+
+  t_1l_s->Draw("bshield:bext:bshield_err","","");
+  TGraphErrors* g_bshield_1l_s = new TGraphErrors( t_1l_s->GetEntries(""), t_1l_s->GetV2(), t_1l_s->GetV1(), 0, t_1l_s->GetV3() );
+  g_bshield_1l_s->SetLineColor(kRed);
+  g_bshield_1l_s->SetMarkerColor(kRed);
+  g_bshield_1l_s->SetMarkerStyle(20);
+  g_bshield_1l_s->SetMarkerSize(1.1);
+  g_bshield_1l_s->Sort();
+
+  // -----
+
+  t_5l->Draw("shielding_factor:bext:shielding_factor_err","","");
+  TGraphErrors* g_shielding_factor_5l = new TGraphErrors( t_5l->GetEntries(""), t_5l->GetV2(), t_5l->GetV1(), 0, t_5l->GetV3() );
+  g_shielding_factor_5l->SetLineColor(kBlack);
+  g_shielding_factor_5l->SetMarkerColor(kBlack);
+  g_shielding_factor_5l->SetMarkerStyle(20);
+  g_shielding_factor_5l->SetMarkerSize(1.1);
+
+  // -----
+
+  TGraphErrors *g_shielding_factor_95 = new TGraphErrors(4);
+  g_shielding_factor_95->SetMarkerSize(1.2);
+  g_shielding_factor_95->SetMarkerColor(kBlue);
+  TH1F* htemp_xl = new TH1F("htemp_xl","",501,-0.5,500.5);
+
+  t_5l->Draw("bext >> htemp_xl","shielding_factor>0.95");
+  float frac_95 = htemp_xl->GetBinCenter(htemp_xl->FindLastBinAbove());
+  //htemp_xl->Reset("ICES");
+  cout << "95% Frac: " << frac_95 << endl;
+
+  // -----
+
+  TH1F* hframe_1 = new TH1F("hframe_1","",31,-0.5,30.5);
+  hframe_1->GetXaxis()->SetTitle("B_{0} [mT]");
+  hframe_1->GetYaxis()->SetTitle("B_{in} [mT]");
+  hframe_1->GetYaxis()->SetRangeUser(0,30);
+
+  TH1F* hframe_2 = new TH1F("hframe_2","",32,-0.5,31.5);
+  hframe_2->GetXaxis()->SetTitle("B_{0} [mT]");
+  hframe_2->GetYaxis()->SetTitle("B_{shield} [mT]");
+  hframe_2->GetYaxis()->SetRangeUser(0,30);
+  hframe_2->GetYaxis()->SetNdivisions(505);
+  hframe_2->SetLineColor(0);
+
+  TH1F* hframe_3 = new TH1F("hframe_3","",49,-0.5,48.5);
+  hframe_3->GetXaxis()->SetTitle("B_{0} [mT]");
+  hframe_3->GetYaxis()->SetTitle("B_{shield} [mT]");
+  hframe_3->GetYaxis()->SetRangeUser(0,31);
+  hframe_3->GetYaxis()->SetNdivisions(505);
+  hframe_3->SetLineColor(0);
+
+  // -----
+
+  TLegend *leg_c2 = new TLegend(0.2,0.75,0.6,0.85);
+  leg_c2->SetNColumns(1);
+  leg_c2->AddEntry( g_bshield_1l_s, " 1 layer sheet" ,"lp");
+  leg_c2->AddEntry( g_bshield_5l, " 5 layer cylinder" ,"lp");
+
+  // -----
+
+  TLegend *leg_c3 = new TLegend(0.4,0.2,0.9,0.35);
+  leg_c3->SetNColumns(1);
+  leg_c3->AddEntry( g_bshield_1l_s, " 1 layer sheet" ,"lp");
+  leg_c3->AddEntry( g_bshield_5l, " 5 layer cylinder" ,"lp");
+  leg_c3->AddEntry( g_bshield_5l_long, " 5 layer cylinder LONG" ,"lp");
+
+  // -----
+
+  TLine *l_2 = new TLine(0.5,0.5,30,30);
+  l_2->SetLineColor(4);
+  l_2->SetLineStyle(2);
+
+  // -----
+
+  TCanvas *c1 = new TCanvas();
+  hframe_1->Draw("");
+  g_bin_5l->Draw("Psame");
+
+  gPad->RedrawAxis();
+
+  //  c1->Print("plots_reportDec2014/CritField_results_v4_bin.png");
+  //  c1->Print("plots_reportDec2014/CritField_results_v4_bin.eps");
+
+  TCanvas *c2 = new TCanvas();
+  hframe_2->Draw("");
+  leg_c2->Draw();
+  g_bshield_1l_s->Draw("LPsame");
+  g_bshield_5l->Draw("LPsame");
+
+  l_2->Draw();
+
+  gPad->RedrawAxis();
+
+  c2->Print("plots_report_Dec2014/CritField_results_v4_bshield.png");
+  c2->Print("plots_report_Dec2014/CritField_results_v4_bshield.eps");
+
+
+  TCanvas *c3 = new TCanvas();
+  hframe_3->Draw("");
+  leg_c3->Draw();
+  g_bshield_1l_s->Draw("LPsame");
+  g_bshield_5l->Draw("LPsame");
+  g_bshield_5l_long->Draw("LPsame");
+
+  l_2->Draw();
+
+  gPad->RedrawAxis();
+
+  c3->Print("plots_report_Dec2014/CritField_results_v4_bshield_vdg.png");
+  c3->Print("plots_report_Dec2014/CritField_results_v4_bshield_vdg.eps");
+
+
+}

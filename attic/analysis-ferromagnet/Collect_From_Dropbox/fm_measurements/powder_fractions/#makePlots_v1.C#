@@ -1,0 +1,72 @@
+/**
+ *
+ *
+ */
+
+TGraphErrors* makeGraph( TTree* tdata, TString drawString )
+{
+  vector<float> v_x_0, v_y_0, v_ex_0, v_ey_0;
+  tdata->Draw(drawString,"");
+  for ( int i = 0; i < tdata->GetEntries(""); i++ )
+    {
+      v_x_0.push_back(tdata->GetV2()[i]);
+      v_y_0.push_back(tdata->GetV1()[i]);
+      v_ex_0.push_back(tdata->GetV4()[i]);
+      v_ey_0.push_back(tdata->GetV3()[i]);//0.03 / 100. * t0->GetV1()[i]);
+    }
+  TGraphErrors* g0 = new TGraphErrors( tdata->GetEntries(""), &(v_x_0[0]), &(v_y_0[0]), &(v_ex_0[0]), &(v_ey_0[0]) );
+
+  return g0;
+};
+
+/* List of all good B vs Z scans: */
+//TString fname1("mu_fractions.txt");
+TString fname1("ur_v_fv.txt");
+
+/* Helper strings */
+TString readString1("fSteel/f:mur:dmur");
+TString drawString1("mur:fSteel/100:dmur:0");
+
+
+makePlots_v1()
+{
+  gStyle->SetOptStat(0);
+
+  /* c1: Calibration */
+  TTree *t0_c1 = new TTree();
+
+  t0_c1->ReadFile( fname1, readString1 );
+
+  TGraphErrors* g0_c1 = makeGraph( t0_c1, drawString1 );
+
+  g0_c1->SetLineColor(kBlack);
+  g0_c1->SetMarkerColor(kBlue);
+  g0_c1->SetMarkerStyle(20);
+  g0_c1->SetMarkerSize(1.1);
+
+  // fit maxwell garnett formula to measurements
+  TF1* f_mg = new TF1("f_mg","[0]+2*[0]*([1]-[0])/([1]+[2]-x*([1]-[0]))");
+  f_mg->SetParameter(0,1);
+  f_mg->SetParameter(1,10);
+  //g0_c1->Fit("f_mg");
+
+  TF1* f_mg = new TF1("f_mg","[0]+2*[0]*([1]-[0])/([1]+[2]-x*([1]-[0]))");
+  f_mg->SetParameter(0,1);
+  f_mg->SetParameter(1,10);
+
+
+  TH1F* h_frame_c1 = new TH1F("h_frame_c1","",10,-0.1,1.1);
+  h_frame_c1->GetYaxis()->SetTitle("#mu_{r}");
+  h_frame_c1->GetXaxis()->SetTitle("f_{V} [\%]");
+  h_frame_c1->GetYaxis()->SetRangeUser(-0.5,12);
+  h_frame_c1->GetXaxis()->SetTitleOffset(1.5);
+  h_frame_c1->SetLineColor(0);
+
+  TCanvas *c1 = new TCanvas();
+  h_frame_c1->Draw("");
+  g0_c1->Draw("Psame");
+  gPad->RedrawAxis();
+  c1->Print("mur_vs_fSteel_v1.eps");
+  c1->Print("mur_vs_fSteel_v1.png");
+
+}

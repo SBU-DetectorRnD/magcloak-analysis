@@ -1,0 +1,5 @@
+#RMS Gaussmeter based on Amiel's measurements, see internal talk from 2014_04_11
+#max field, RMS Gaussmeter, resolution
+35	0.004	0.0005
+350	0.006	0.005
+3500	0.030	0.05

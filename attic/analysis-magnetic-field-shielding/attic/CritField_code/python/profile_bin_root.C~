@@ -1,0 +1,13 @@
+test_bin_root()
+{
+
+  vector< TString > v_runs;
+
+  v_runs.push_back("run027_1layer");
+
+  TTree *t1 = new TTree();
+  Tstring sname = v_runs.at(0);
+  sname.Append("/fit_results.txt")
+  t1->ReadFile(sname);
+
+}
