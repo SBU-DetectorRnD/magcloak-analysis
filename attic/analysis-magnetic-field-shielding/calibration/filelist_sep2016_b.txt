@@ -1,0 +1,41 @@
+# Helmholtz calibration
+DataFile_160920_175840.txt	helmholtz	DataFile_160920_175840.txt
+
+# 1 layer Helmholtz coil
+DataFile_160921_180431.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_181811.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_183020.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_184214.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_185420.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_190654.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_191855.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_193116.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_194306.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_195524.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_200738.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_201957.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_203202.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_204408.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_205550.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_210840.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_212025.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_213238.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_214424.txt	helmholtz	DataFile_160920_175840.txt
+
+# 2 layer Helmholtz coil
+DataFile_160921_230820.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_231216.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_232417.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_233602.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160921_234754.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_000004.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_001211.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_002354.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_003552.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_004755.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_005959.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_011219.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_012410.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_013615.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_014818.txt	helmholtz	DataFile_160920_175840.txt
+DataFile_160922_020021.txt	helmholtz	DataFile_160920_175840.txt

@@ -1,0 +1,2 @@
+#run067_1layer_wide_sc_sheath
+#b0	s_b0	bin(1/2year)	s_bin(1/2year)	shield	s_shield	sf	s_sf	t_dependent	overshoot

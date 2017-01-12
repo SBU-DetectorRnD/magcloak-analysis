@@ -1,0 +1,4 @@
+#max field, RMS Gaussmeter, resolution
+35	0.002	0.0005
+350	0.01	0.005
+3500	0.1	0.05

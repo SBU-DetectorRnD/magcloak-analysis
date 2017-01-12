@@ -1,0 +1,19 @@
+4   99  DataFile_150422_102753.txt
+
+10   8  DataFile_160808_132712.txt
+10  10  DataFile_160808_143227.txt
+10  11  DataFile_160808_153301.txt
+10  12  DataFile_160808_164538.txt
+10  14  DataFile_160808_174739.txt
+10  16  DataFile_160811_142936.txt
+10  18  DataFile_160811_153000.txt
+10  20  DataFile_160811_163122.txt
+
+10  10  DataFile_160812_135037.txt
+10  11  DataFile_160812_145503.txt
+10  12  DataFile_160812_155822.txt
+10  14  DataFile_160812_165904.txt
+
+45  20  DataFile_160816_163111.txt
+45  22  DataFile_160816_173151.txt
+45  23  DataFile_160816_183339.txt

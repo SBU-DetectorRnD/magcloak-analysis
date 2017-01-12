@@ -1,0 +1,26 @@
+# Finding the center of the beam spot using OpenCV library
+#
+# Author: Nils.Feege@stonybrook.edu
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+import argparse
+
+# construct the argument parse and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", help = "path to the image file")
+ap.add_argument("-r", "--radius", type = int,
+                help = "radius of Gaussian blur; must be odd")
+args = vars(ap.parse_args())
+ 
+#img = cv2.imread('IMG_2016_07_18T13_19_04_SN_0205.CR2', 0)
+imag = cv2.imread(args["image"])
+orig = image.copy()
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+#plt.imshow(img, cmap='gray', interpolation='bicubic')
+plt.imshow(img)
+plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
+plt.show()

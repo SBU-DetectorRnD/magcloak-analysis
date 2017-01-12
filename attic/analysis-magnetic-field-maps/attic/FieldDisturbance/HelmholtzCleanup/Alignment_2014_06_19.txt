@@ -1,0 +1,40 @@
+Alignment Helmholtz Coil new Setup
+
+Probe centered on Helmholtz coil:
+x = 103
+y = 87
+z = 145
+
+Probe centered on SC cylinder:
+x = 128
+y = 98
+z = 157.5 ~ 158
+
+SC range in z: 
+top: 202
+bottom: 112
+
+SC length: 90.27 mm
+
+Al core range in z: 
+top: ( 295 - 9.77 ) ~ 285
+bottom: (102 - 9.77) ~ 92
+
+Distance Hall probe - end of probe support:
+x = 5.35
+y = 5.48
+z = 9.77
+
+Inner diameter Al core [mm]:
+29.75
+
+Outer diameter Al core [mm]:
+31.8
+
+Length Al core [mm]
+193
+
+Outer diameter SC layer [mm]:
+34.9 33.9 34.8 35.0 34.3 34.8 34.9 34.9 33.8 34.0
+
+

@@ -1,0 +1,3 @@
+##### 1layer sheath superpower#########
+run027_1layer   data/run027_sPS_1layer_sheath/  list_good.txt   DataFile_140827_150209_precool.txt DataFile_140827_152507_postcool.txt DataFile_140827_144341_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run027_1layer   data/run027_bPS_1layer_sheath/  list_good.txt   DataFile_140828_123603_precool.txt DataFile_140828_124650_postcool.txt DataFile_140827_174609_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt

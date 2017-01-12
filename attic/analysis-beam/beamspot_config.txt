@@ -1,0 +1,4 @@
+#Beam Spot Analysis Configuration File
+#Holds Measurements and Conversion Factors needed for beam spot analysis
+conversion 1.0
+pipe_distance 1000.

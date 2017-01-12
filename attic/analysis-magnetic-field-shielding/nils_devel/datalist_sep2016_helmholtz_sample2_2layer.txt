@@ -1,0 +1,17 @@
+# 2 layer Helmholtz coil
+DataFile_160921_230820.root
+DataFile_160921_231216.root
+DataFile_160921_232417.root
+DataFile_160921_233602.root
+DataFile_160921_234754.root
+DataFile_160922_000004.root
+DataFile_160922_001211.root
+DataFile_160922_002354.root
+DataFile_160922_003552.root
+DataFile_160922_004755.root
+DataFile_160922_005959.root
+DataFile_160922_011219.root
+DataFile_160922_012410.root
+DataFile_160922_013615.root
+DataFile_160922_014818.root
+DataFile_160922_020021.root

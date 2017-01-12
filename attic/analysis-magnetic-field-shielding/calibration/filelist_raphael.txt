@@ -1,0 +1,169 @@
+### 1 layer wide tape -> Helmholtz coil
+## run058_1layer_wide_sc
+# calibration
+DataFile_150313_112516.txt	helmholtz	DataFile_150313_112516.txt
+# pre-cool
+DataFile_150318_144752.txt	helmholtz	DataFile_150313_112516.txt
+# post-cool
+DataFile_150318_145135.txt	helmholtz	DataFile_150313_112516.txt
+# measurements
+DataFile_150318_151718.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_153235.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_155850.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_162326.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_164840.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_171414.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_173735.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_175936.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_182146.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_184836.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_191056.txt	helmholtz	DataFile_150313_112516.txt
+## run059_wide_tape_1layer
+# calibration
+#DataFile_150313_112516.txt	helmholtz	DataFile_150313_112516.txt
+# pre-cool
+DataFile_150318_202418.txt	helmholtz	DataFile_150313_112516.txt
+# post-cool
+DataFile_150318_203416.txt	helmholtz	DataFile_150313_112516.txt
+# measurements
+DataFile_150318_203818.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_205035.txt	helmholtz	DataFile_150313_112516.txt
+DataFile_150318_210150.txt	helmholtz	DataFile_150313_112516.txt
+## run061_1layer_wide_sc
+# calibration
+DataFile_150511_094703.txt	helmholtz	DataFile_150511_094703.txt
+# pre-cool
+#DataFile_150510_170146.txt	helmholtz	DataFile_150511_094703.txt
+# post-cool
+DataFile_150510_170146.txt	helmholtz	DataFile_150511_094703.txt
+# measurements
+DataFile_150510_190703.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150510_192824.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150510_194908.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150510_201045.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_124957.txt	helmholtz	DataFile_150511_094703.txt
+
+### 2 layer wide tape -> Helmholtz coil
+## run062_2layer_wide_sc
+# calibration
+#DataFile_150511_094703.txt	helmholtz	DataFile_150511_094703.txt
+# pre-cool
+#DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# post-cool
+DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# measurements
+DataFile_150511_164326.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_170027.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_172837.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_173946.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_175059.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_180210.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_181310.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_182341.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_184431.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_190556.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_192539.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_194607.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_200551.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_202639.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_204716.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_210813.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_212933.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_215014.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150511_221049.txt	helmholtz	DataFile_150511_094703.txt
+## run063_2layer_wide_sc
+# calibration
+#DataFile_150511_094703.txt	helmholtz	DataFile_150511_094703.txt
+# pre-cool
+#DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# post-cool
+#DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# measurements
+DataFile_150512_112658.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_113803.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_114907.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_115941.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_120955.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_122119.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_123452.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_124549.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_130628.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_133722.txt	helmholtz	DataFile_150511_094703.txt
+
+### 3 layer wide tape -> Helmholtz coil
+## run064_3layer_wide_sc
+# calibration
+#DataFile_150511_094703.txt	helmholtz	DataFile_150511_094703.txt
+# pre-cool
+#DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# post-cool
+#DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# measurements
+DataFile_150512_154719.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_155826.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_163506.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_164538.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_165604.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_170653.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_171812.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_172917.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_174040.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_175128.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_180220.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_181346.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_182421.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_183518.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_184619.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_190758.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_193932.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150512_200015.txt	helmholtz	DataFile_150511_094703.txt
+## run065_3layer_wide_sc
+# calibration
+#DataFile_150511_094703.txt	helmholtz	DataFile_150511_094703.txt
+# pre-cool
+#DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# post-cool
+#DataFile_150511_164118.txt	helmholtz	DataFile_150511_094703.txt
+# measurements
+DataFile_150513_110134.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150513_115925.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150513_125946.txt	helmholtz	DataFile_150511_094703.txt
+
+### 4 layer wide tape -> Helmholtz coil
+## run079_4layer_wide_tape
+# calibration
+#DataFile_150618_104728.txt	helmholtz	DataFile_150511_094703.txt
+# pre-cool
+#DataFile_150626_113340.txt	helmholtz	DataFile_150511_094703.txt
+# post-cool
+DataFile_150626_113340.txt	helmholtz	DataFile_150511_094703.txt
+# measurements
+DataFile_150626_113600.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_115306.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_120343.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_121414.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_122500.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_123600.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_124659.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_125831.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_130916.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_132027.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_133111.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_134147.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_135246.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_140704.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_141824.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_142858.txt	helmholtz	DataFile_150511_094703.txt
+DataFile_150626_143948.txt	helmholtz	DataFile_150511_094703.txt
+## run081_4layer_wide_tape
+# calibration
+DataFile_150618_104728.txt	helmholtz	DataFile_150618_104728.txt
+# pre-cool
+#DataFile_150626_113340.txt	helmholtz	DataFile_150618_104728.txt
+# post-cool
+#DataFile_150626_113340.txt	helmholtz	DataFile_150618_104728.txt
+# measurements
+DataFile_150629_150409.txt	helmholtz	DataFile_150618_104728.txt
+DataFile_150629_152813.txt	helmholtz	DataFile_150618_104728.txt
+DataFile_150629_154452.txt	helmholtz	DataFile_150618_104728.txt
+DataFile_150629_160304.txt	helmholtz	DataFile_150618_104728.txt

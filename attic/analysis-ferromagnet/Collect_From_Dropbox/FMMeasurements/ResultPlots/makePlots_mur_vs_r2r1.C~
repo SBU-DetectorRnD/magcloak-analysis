@@ -1,0 +1,25 @@
+
+makePlots_mur_vs_r2r1()
+{
+
+  TF1* f_mur = new TF1("f_mur","(x*x+1)/(x*x-1)");
+  f_mur->SetRange(1.01,3.0);
+
+  /* Do graphing */
+  TH1F* hframe = new TH1F("hframe","",20,1.0,3.0);
+  hframe->GetYaxis()->SetRangeUser(1,1000);
+  hframe->GetXaxis()->SetTitle("R_{2} / R_{1}");
+  hframe->GetYaxis()->SetTitle("#mu_{2}");
+
+  TCanvas *c1 = new TCanvas();
+  hframe->Draw("rad");
+
+  f_mur->Draw("same");
+
+  gPad->RedrawAxis();
+
+  c1->SetLogy(1);
+  c1->Print("FMMeasurements_predict_mur_r2r1.eps");
+
+
+}

@@ -1,0 +1,132 @@
+#set-ID, path to data folder, name data list, name offset pre-cool, name offset post-cool, name current calibration, error-file gaussmeter, error file mulimeter, comment
+#
+##run001_1layer_sheath	data/run001_sPS_1layer_sheath/	  list_good.txt	DataFile_140516_185514_offset_room.txt	DataFile_140516_191356_offset_cryo.txt	DataFile_140516_184854_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##run001_1layer_sheath	data/run001_bPS_1layer_sheath/	  list_good.txt	DataFile_140523_101725_offset_room.txt	DataFile_140523_104501_offset_cryo.txt	DataFile_140523_100351_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#
+##run002_1layer_sheath	data/run002_sPS_1layer_sheath/	  list_good.txt	DataFile_140611_192612_offset_room.txt	DataFile_140611_193725_offset_cryo.txt	DataFile_140611_170331_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run003_1layer_sheath	 data/run003_sPS_1layer_sheath/	list_good.txt	  DataFile_140611_135128_offset_room.txt	DataFile_140611_141600_offset_cryo.txt	    DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run003_1layer_sheath	 data/run003_bPS_1layer_sheath/	list_good.txt	  DataFile_140611_120007_offset_room.txt	DataFile_140611_122014_offset_cryo.txt	    DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run004_2layer_sheath	data/run004_sPS_2layer_sheath/	 list_good.txt  DataFile_140618_100827_offset_room.txt	DataFile_140618_101614_offset_cryo.txt  ../run003_sPS_1layer_sheath/DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run004_2layer_sheath	data/run004_bPS_2layer_sheath/	  list_good.txt	DataFile_140618_111728_offset_room.txt	DataFile_140618_112621_offset_cryo.txt	../run003_bPS_1layer_sheath/DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run005_2layer_sheath	data/run005_sPS_2layer_sheath/	  list_good.txt	DataFile_140618_133823_offset_room.txt	DataFile_140618_134637_offset_cryo.txt	../run003_sPS_1layer_sheath/DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run005_2layer_sheath	data/run005_bPS_2layer_sheath/	  list_good.txt	DataFile_140618_144523_offset_room.txt	DataFile_140618_145328_offset_cryo.txt	../run003_bPS_1layer_sheath/DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run006_3layer_sheath	data/run006_sPS_3layer_sheath/	  list_good.txt	DataFile_140618_212453_offset_room.txt	DataFile_140618_213317_offset_cryo.txt	../run003_sPS_1layer_sheath/DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run006_3layer_sheath	data/run006_bPS_3layer_sheath/	  list_good.txt	DataFile_140618_232406_offset_room.txt	DataFile_140618_233324_offset_cryo.txt	../run003_bPS_1layer_sheath/DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run007_4layer_sheath	data/run007_sPS_4layer_sheath/	  list_good.txt	DataFile_140619_041915_offset_room.txt	DataFile_140619_043554_offset_cryo.txt	../run003_sPS_1layer_sheath/DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run007_4layer_sheath	data/run007_bPS_4layer_sheath/	  list_good.txt	DataFile_140619_051638_offset_room.txt	DataFile_140619_052838_offset_cryo.txt	../run003_bPS_1layer_sheath/DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run008_2layer_cylinder	data/run008_sPS_2layer_cylinder/	  list_good.txt	offset_room.txt	offset_cryo.txt	../run003_sPS_1layer_sheath/DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run008_2layer_cylinder	data/run008_bPS_2layer_cylinder/	  list_good.txt	DataFile_140624_185058_offset_room.txt	DataFile_140624_190115_offset_cryo.txt	../run003_bPS_1layer_sheath/DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run009_2layer_cylinder	data/run009_sPS_2layer_cylinder/	  list_good.txt	DataFile_140625_113037_offset_room.txt	DataFile_140625_114133_offset_cryo.txt	../run003_sPS_1layer_sheath/DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run009_2layer_cylinder	data/run009_bPS_2layer_cylinder/	  list_good.txt	DataFile_140625_125915_offset_room.txt	DataFile_140625_131318_offset_cryo.txt	../run003_bPS_1layer_sheath/DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+##run010_1layer_sheath	data/run010_sPS_1layer_sheath/	  list_good.txt	DataFile_140703_151713_offset_room.txt	DataFile_140703_152814_offset_cryo.txt	../run003_sPS_1layer_sheath/DataFile_140611_134813_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##run010_1layer_sheath	data/run010_bPS_1layer_sheath/	  list_good.txt	DataFile_140703_165852_offset_room.txt	DataFile_140703_171726_offset_cryo.txt	../run003_bPS_1layer_sheath/DataFile_140611_114000_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run011_1layer_sheath	data/run011_sPS_1layer_sheath/	  list_good.txt	DataFile_140708_164236_offset_room.txt	DataFile_140708_165202_offset_cryo.txt	DataFile_140708_153412_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run011_1layer_sheath	data/run011_bPS_1layer_sheath/	  list_good.txt	DataFile_140708_180549_offset_room.txt	DataFile_140708_181219_offset_cryo.txt	DataFile_140708_155332_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run012_1layer_sheath	data/run012_sPS_1layer_sheath/	  list_good.txt	DataFile_140710_163633_offset_room.txt	DataFile_140710_164625_offset_cryo.txt	DataFile_140710_152922_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run012_1layer_sheath	data/run012_bPS_1layer_sheath/	  list_good.txt	DataFile_140710_180724_offset_room.txt	DataFile_140710_181813_offset_cryo.txt	DataFile_140710_160258_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run013_1layer_sheath	data/run013_sPS_1layer_sheath/	  list_good.txt	DataFile_140711_100635_offset_room.txt	DataFile_140711_102048_offset_cryo.txt	DataFile_140711_093956_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run013_1layer_sheath	data/run013_bPS_1layer_sheath/	  list_good.txt	DataFile_140711_114947_offset_room.txt	DataFile_140711_115851_offset_cryo.txt	DataFile_140711_113212_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run014_1layer_sheath	data/run014_sPS_1layer_sheath/	  list_good.txt	DataFile_140714_120015_offset_room.txt	DataFile_140714_123826_offset_cryo.txt	DataFile_140714_114751_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run014_1layer_sheath	data/run014_bPS_1layer_sheath/	  list_good.txt	DataFile_140714_140851_offset_room.txt	DataFile_140714_144812_offset_cryo.txt	DataFile_140714_135232_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run015_1layer_sheath	data/run015_sPS_1layer_sheath/	  list_good.txt	DataFile_140715_125328_offset_room.txt	DataFile_140715_130841_offset_cryo.txt	DataFile_140715_124225_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run015_1layer_sheath	data/run015_bPS_1layer_sheath/	  list_good.txt	DataFile_140715_143856_offset_room.txt	DataFile_140715_144923_offset_cryo.txt	DataFile_140715_142213_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run016_1layer_sheath	data/run016_sPS_1layer_sheath/	  list_good.txt	DataFile_140716_112116_offset_room.txt	DataFile_140716_113700_offset_cryo.txt	DataFile_140716_111615_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run016_1layer_sheath	data/run016_bPS_1layer_sheath/	  list_good.txt	DataFile_140716_131411_offset_room.txt	DataFile_140716_142149_offset_cryo.txt	DataFile_140716_125812_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run017_2layer_sheath	data/run017_sPS_2layer_sheath/	list_good.txt	DataFile_140717_120523_offset_room.txt	DataFile_140717_124547_offset_cryo.txt  DataFile_140717_115458_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run017_2layer_sheath	data/run017_bPS_2layer_sheath/	list_good.txt	DataFile_140717_155425_offset_room.txt	DataFile_140717_160202_offset_cryo.txt	DataFile_140717_154346_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run018_1layer_sheath	data/run018_sPS_1layer_sheath/	list_good.txt	DataFile_140718_075724_offset_room.txt	DataFile_140718_080333_offset_cryo.txt  DataFile_140718_075312_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run018_1layer_sheath	data/run018_bPS_1layer_sheath/	list_good.txt	DataFile_140718_091346_offset_room.txt	DataFile_140718_092005_offset_cryo.txt 	DataFile_140718_090226_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run019_1layer_sheath	data/run019_sPS_1layer_sheath/	list_good.txt	DataFile_140718_122520_offset_room.txt	DataFile_140718_123032_offset_cryo.txt  DataFile_140718_122013_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run019_1layer_sheath	data/run019_bPS_1layer_sheath/	list_good.txt	DataFile_140721_112246_offset_room.txt	DataFile_140721_113040_offset_cryo.txt	DataFile_140721_110648_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run020_1layer_sheath	data/run020_bPS_1layer_sheath/	list_good.txt	DataFile_140724_130339_offset_room.txt	DataFile_140724_131015_offset_cryo.txt	DataFile_140724_125034_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+run021_1layer		data/run021_sPS_1layer/		list_good.txt	DataFile_140728_111038_offset_room.txt	DataFile_140728_111709_offset_cryo.txt 	DataFile_140728_110632_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run021_1layer		data/run021_bPS_1layer/		list_good.txt	DataFile_140728_124010_offset_room.txt	DataFile_140728_124605_offset_cryo.txt 	DataFile_140728_122459_calibration.txt uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##
+#run022_4layer   data/run022_sPS_4layers_sheath/  list_good.txt   DataFile_140807_101259_precool_offset.txt   DataFile_140807_102856_postcool_offset.txt  DataFile_140807_100358_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#run022_4layer   data/run022_bPS_4layers_sheath/  list_good.txt   DataFile_140807_115121_precool_offset.txt   DataFile_140807_121051_postcool_offset.txt  DataFile_140807_113610_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+###
+run023_1layer   data/run023_sPS_1layer_sheath/  list_good.txt   DataFile_140811_113002_precool.txt  DataFile_140811_115641_postcool.txt DataFile_140811_111949_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run023_1layer   data/run023_bPS_1layer_sheath/  list_good.txt   DataFile_140812_152028_precool.txt  DataFile_140812_154731_postcool.txt DataFile_140812_145750_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####
+run024_1layer   data/run024_sPS_1layer_sheath/  list_good.txt   DataFile_140811_155515_precool.txt DataFile_140811_161644_postcool.txt DataFile_140811_111949_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run024_1layer   data/run024_bPS_1layer_sheath/  list_good.txt   DataFile_140812_201714_precool.txt  DataFile_140812_205406_postcool.txt DataFile_140812_145750_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#####
+run025_1layer   data/run025_sPS_1layer_sheath/  list_good.txt   DataFile_140811_181538_precool.txt DataFile_140811_182944_postcool.txt DataFile_140811_111949_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run025_1layer   data/run025_bPS_1layer_sheath/  list_good.txt   DataFile_140813_123015_precool.txt  DataFile_140813_124040_postcool.txt DataFile_140812_145750_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##########################
+run026_1layer   data/run026_sPS_1layer_sheath/  list_good.txt   DataFile_140818_121502_precool.txt DataFile_140818_122541_postcool.txt DataFile_140818_120945_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run026_1layer   data/run026_bPS_1layer_sheath/  list_good.txt   DataFile_140818_145738_precool.txt DataFile_140818_151332_postcool.txt DataFile_140818_144605_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+#########################
+run027_1layer   data/run027_sPS_1layer_sheath/  list_good.txt   DataFile_140827_150209_precool.txt DataFile_140827_152507_postcool.txt DataFile_140827_144341_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run027_1layer   data/run027_bPS_1layer_sheath/  list_good.txt   DataFile_140828_123603_precool.txt DataFile_140828_124650_postcool.txt DataFile_140827_174609_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+###################################
+run028_1layer   data/run028_sPS_1layer_sheath/  list_good.txt   DataFile_140828_191452_precool.txt DataFile_140828_194958_postcool.txt DataFile_140827_144341_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run028_1layer   data/run028_bPS_1layer_sheath/  list_good.txt  DataFile_140828_141755_precool.txt DataFile_140828_143033_postcool.txt DataFile_140827_174609_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+###################################
+run029_1layer   data/run029_sPS_1layer_sheath/  list_good.txt  DataFile_140828_205848_precool.txt DataFile_140828_213610_postcool.txt  DataFile_140828_234142_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run029_1layer   data/run029_bPS_1layer_sheath/  list_good.txt  DataFile_140828_162807_precool.txt DataFile_140828_164705_postcool.txt DataFile_140827_174609_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+###################################
+run030_2layer   data/run030_sPS_2layer_sheath/  list_good.txt  DataFile_140829_104001_precool.txt DataFile_140829_105640_postcool.txt  DataFile_140829_103520_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run030_2layer   data/run030_bPS_2layer_sheath/  list_good.txt  DataFile_141003_142833_precool.txt DataFile_141003_143756_postcool.txt  DataFile_141003_141537_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run031_2layer   data/run031_bPS_2layer_sheath/  list_good.txt  DataFile_141003_154110_precool.txt DataFile_141003_154726_postcool.txt  DataFile_141003_152654_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run032_2layer   data/run032_bPS_2layer_sheath/  list_good.txt  DataFile_141004_142317_precool.txt DataFile_141004_143243_postcool.txt DataFile_141004_141127_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run033_3layer   data/run033_sPS_3layer_sheath/  list_good.txt  DataFile_141006_193353_precool.txt DataFile_141006_194721_postcool.txt DataFile_141006_192445_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run033_3layer   data/run033_bPS_3layer_sheath/  list_good.txt  DataFile_141006_154523_precool.txt DataFile_141006_162208_postcool.txt DataFile_141006_153459_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run034_3layer   data/run034_bPS_3layer_sheath/  list_good.txt  DataFile_141006_172248_precool.txt DataFile_141006_172743_postcool.txt DataFile_141006_153459_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run035_3layer   data/run035_bPS_3layer_sheath/  list_good.txt  DataFile_141006_181902_precool.txt DataFile_141006_182837_postcool.txt DataFile_141006_191408_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run036_5layer   data/run036_sPS_5layer_sheath/  list_good.txt  DataFile_141006_211911_precool.txt DataFile_141006_212921_postcool.txt DataFile_141006_211342_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+run036_5layer   data/run036_bPS_5layer_sheath/  list_good.txt  DataFile_141006_222936_precool.txt DataFile_141006_223740_postcool.txt DataFile_141006_221925_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run037_5layer   data/run037_bPS_5layer_sheath/  list_good.txt   DataFile_141007_092116_precool.txt DataFile_141007_092930_postcool.txt DataFile_141006_221925_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run038_5layer   data/run038_bPS_5layer_sheath/  list_good.txt   DataFile_141007_101822_precool.txt DataFile_141007_102514_postcool.txt DataFile_141006_221925_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+#################run039_10layer   data/run039_bPS_10layer_sheath/  list_good.txt DataFile_141007_135314_precool.txt DataFile_141007_140917_postcool.txt DataFile_141007_134308_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+###############run040_10layer   data/run040_bPS_10layer_sheath/  list_good.txt DataFile_141007_153848_precool.txt DataFile_141007_154445_postcool.txt DataFile_141007_134308_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+################run041_10layer   data/run041_bPS_10layer_sheath/  list_good.txt DataFile_141007_173305_precool.txt DataFile_141007_174019_postcool.txt DataFile_141007_134308_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run042_10layer   data/run042_sPS_10layer_sheath/  list_good.txt DataFile_141009_135700_precool.txt DataFile_141009_140605_postcool.txt DataFile_141009_135141_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+####################################
+run042_10layer   data/run042_bPS_10layer_sheath/  list_good.txt DataFile_141008_085712_precool.txt DataFile_141008_090651_postcool.txt DataFile_141007_134308_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+############################
+run043_10layer   data/run043_bPS_10layer_sheath/  list_good.txt DataFile_141009_112321_precool.txt DataFile_141009_113157_postcool.txt DataFile_141009_111454_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+############################
+run044_10layer   data/run044_bPS_10layer_sheath/  list_good.txt DataFile_141009_121813_precool.txt DataFile_141009_122511_postcool.txt DataFile_141009_111454_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+############################
+run045_20layer   data/run045_sPS_20layer_sheath/  list_good.txt DataFile_141010_103436_precool.txt DataFile_141010_104803_postcool.txt DataFile_141010_103245_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+############################
+run045_20layer   data/run045_bPS_20layer_sheath/  list_good.txt DataFile_141010_122639_precool.txt DataFile_141010_123639_postcool.txt DataFile_141010_121335_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##############################
+run046_2layer_helix_b   data/run046_helmholtz_2layer_helix_b/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##############################
+run047_2layer_helix_b   data/run047_helmholtz_2layer_helix_b/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##############################
+run048_2layer_helix_a   data/run048_helmholtz_2layer_helix_a/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
+##############################
+run048_1layer_helix_a   data/run049_helmholtz_2layer_helix_a/  list_good.txt DataFile_141121_122537_precool.txt DataFile_141121_122537_postcool.txt DataFile_141121_144419_calibration.txt  uncertainty_gaussmeter_20140711.txt uncertainty_multimeter_20140711.txt
