@@ -1,5 +1,0 @@
-#!/bin/zsh
-
-if $1 == ""
-    then echo "Missing argument"
-fi
