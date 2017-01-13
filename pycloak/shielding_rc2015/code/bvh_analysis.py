@@ -17,7 +17,7 @@ import fitting
 import summary
 import quality_check
 
-set_list = 'sets_list_paper.txt'
+set_list = '../sets_list_paper.txt'
 
 #add flag if you want to plot each fit individually 
 parser = argparse.ArgumentParser()
