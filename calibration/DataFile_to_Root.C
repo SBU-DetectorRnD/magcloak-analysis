@@ -4,13 +4,12 @@
 
 int DataFile_to_Root(
 		     std::string file_name = "DataFile_160910_180219.txt",
-		     std::string calibration_name = "DataFile_160726_133846.txt"
+		     std::string calibration_name = "DataFile_160726_133846.txt",
+		     std::string file_path = "data",
+		     std::string file_path_out = "data-calib"
 		     )
 {
         //File path and names
-        std::string file_path = "data_local/";
-				std::string file_path_out = "data_calib/";
-
 	std::string file = file_path + file_name;
 	std::string calibration = file_path + calibration_name;
 
