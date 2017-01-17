@@ -19,7 +19,7 @@ def calibrateMegaVIEW(pars):
     # hard-coded output folder name
     fname_out = "data-calib/DATA_MegaVIEW/"
     fname_out += pars[0]
-    fname_out.replace(".txt",".csv")
+    fname_out = fname_out.replace(".txt",".csv")
 
     data = ld.MegaVIEW(fname_in, drop=False)
 
@@ -29,7 +29,8 @@ def calibrateMegaVIEW(pars):
     dfcal = df[['time','x','y','z','B1','B1range','B2','B2range','B3','B3range']]
 
     # Set nominal MRI field given in input filelist (based on set magnet current, see eLog)
-    dfcal['Bmri'] = pars[1]
+    dfcal['Bnom'] = pars[1]
+    dfcal['Bnom_sdev'] = 0
 
     # Print one line as crosscheck
     print(dfcal.head(1))

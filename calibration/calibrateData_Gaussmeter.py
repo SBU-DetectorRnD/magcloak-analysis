@@ -20,7 +20,7 @@ def calibrateGaussmeter(pars):
     # hard-coded output folder name
     fname_out = "data-calib/DATA_Gaussmeter/"
     fname_out += pars[0]
-    fname_out.replace(".txt",".csv")
+    fname_out = fname_out.replace(".txt",".csv")
 
     # file with calibration measurement
     fname_cal = "data/DATA_Gaussmeter/"
@@ -33,13 +33,13 @@ def calibrateGaussmeter(pars):
     # Calculate nominal magnet field Bnom based on current and calibration measurement
     Bnom = af.calc_applied_field_lin( df['multi'].values, "", fname_cal)
     df['Bnom'] = Bnom.nominal_value
-    df['Bnom_sig'] = Bnom.std_dev
+    df['Bnom_sdev'] = Bnom.std_dev
 
     # Print one line as crosscheck
     print(df.head(1))
 
     # Write csv output
-    dfcal.to_csv(fname_out, index=False)
+    df.to_csv(fname_out, index=False)
 
 
 # Run bottom part only if macro is being called directly (i.e. not imported)
