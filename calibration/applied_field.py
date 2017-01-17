@@ -19,7 +19,6 @@ def calc_applied_field(i, multimeter_file="", calibration_file=""):
     calibration = np.genfromtxt(calibration_file)
 #    f = interp1d(calibration[:,1], calibration[:,2])
     calibration = calibration[calibration[:,1].argsort()]
-    print ( calibration)
     f = PchipInterpolator(calibration[:,1], calibration[:,2], 
             extrapolate = True)
     b0 = f(i_mean)
