@@ -156,7 +156,7 @@ def analyze(x, y, yerr, extrapolate_time, isGraph, b0, b_before_cool, title, des
             if (extrapolate_val_log.n > extrapolate_val_pow.n):
                 overshoot = 1
                 sigma_extrapolate = (extrapolate_val_log.n+ extrapolate_val_log.s)\
-                        - (extrapolate_val_pow.n + extrapolate_val_pow.s)
+                        - (extrapolate_val_pow.n - extrapolate_val_pow.s)
             else:
                 overshoot = 2
                 sigma_extrapolate = (extrapolate_val_pow.n+extrapolate_val_pow.s)\

@@ -5,9 +5,9 @@
 import os
 
 #masterpath = '/home/raphael/Dropbox/MagneticCloakingDevice/MagneticFieldCloakingDevice/BvsH/'
-masterpath = '/Users/nfeege/ProjectsScience/MagCloak/Code/MagCloak_Analysis/attic/analysis-magnetic-field-shielding/'
-analysisfolder = masterpath #+ 'analysis/'
-pythonfolder = analysisfolder + 'code-python/'
+masterpath = '../'
+analysisfolder = '../' #masterpath + 'analysis/'
+pythonfolder = analysisfolder + 'results/'
 
 def paths(sets, no_delete = False):
     paths = []

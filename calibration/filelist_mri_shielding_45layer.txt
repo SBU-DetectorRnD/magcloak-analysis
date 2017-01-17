@@ -1,0 +1,23 @@
+# file B_nominal
+DataFile_2016-12-07_23-20-47.txt	0  
+DataFile_2016-12-08_00-00-39.txt	100
+DataFile_2016-12-08_00-24-50.txt	200
+DataFile_2016-12-08_00-38-48.txt	300
+DataFile_2016-12-08_01-01-59.txt	360
+DataFile_2016-12-08_01-18-01.txt	380
+DataFile_2016-12-08_01-35-56.txt	400
+DataFile_2016-12-08_01-52-12.txt	420
+DataFile_2016-12-08_02-12-19.txt	440
+DataFile_2016-12-08_02-31-44.txt	460
+DataFile_2016-12-08_02-50-58.txt	480
+DataFile_2016-12-08_03-10-16.txt	500
+DataFile_2016-12-08_03-29-53.txt	520
+DataFile_2016-12-08_03-49-37.txt	540
+DataFile_2016-12-08_04-09-26.txt	560
+DataFile_2016-12-08_04-29-26.txt	580
+DataFile_2016-12-08_04-49-57.txt	600
+DataFile_2016-12-08_05-34-24.txt	700
+DataFile_2016-12-08_05-58-20.txt	800
+DataFile_2016-12-08_06-22-12.txt	900
+DataFile_2016-12-08_06-46-48.txt	1000
+DataFile_2016-12-08_07-11-10.txt	1100
