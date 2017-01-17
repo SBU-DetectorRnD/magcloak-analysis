@@ -23,7 +23,7 @@ leaf_type = {
     'O' : np.bool_,
 }
 
-def MegaVIEW(fname, drop=True, dorppath=None):
+def MegaVIEW(fname, drop=True, droppath=None):
     '''Reads in MegaVIEW data file.
     
     Parameters
