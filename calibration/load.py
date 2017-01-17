@@ -76,7 +76,6 @@ def MegaVIEW(fname, drop=True, droppath=None):
                 leaflist = line
                 break
     # Parse leaflist into dtype.
-    print(leaflist)
     leaflist = leaflist.strip().split(':')
     dtype = []
     t = 'F'
@@ -94,7 +93,6 @@ def MegaVIEW(fname, drop=True, droppath=None):
         else:
             dtype += (leaf, leaf_type[t]),
     # Read in and return data.
-    print (dtype)
     return np.genfromtxt(
         fname,
         dtype,
