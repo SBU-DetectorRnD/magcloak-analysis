@@ -1,0 +1,11 @@
+# Field map around 45 layer superconductor only
+DataFile_2016-12-09_15-06-03.txt        450
+DataFile_2016-12-09_15-09-34.txt        450
+DataFile_2016-12-09_15-12-56.txt        450
+DataFile_2016-12-09_15-15-40.txt        450
+DataFile_2016-12-09_15-18-53.txt        450
+DataFile_2016-12-09_15-22-02.txt        450
+DataFile_2016-12-09_15-25-24.txt        450
+DataFile_2016-12-09_15-27-45.txt        450
+DataFile_2016-12-09_15-30-11.txt        450
+DataFile_2016-12-09_15-32-58.txt        450
