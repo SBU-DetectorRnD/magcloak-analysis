@@ -1,0 +1,5 @@
+# First row: Factors to multiply values in raw data files with
+# Second row: Standard deviation on calibration factors
+time,x,y,z,B1,B1range,B2,B2range,B3,B3range,multi,temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8
+1,0.0103,0.0098,0.0199,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0.0006,0.0003,0.0001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
