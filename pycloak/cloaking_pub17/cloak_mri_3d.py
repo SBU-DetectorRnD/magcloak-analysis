@@ -1,20 +1,35 @@
 import os
 import sys
-#import glob
-#import fcm
-#import fcm.statistics as stats
+
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+
 from matplotlib import cm
+
 from mpl_toolkits.mplot3d import Axes3D
+
 from matplotlib.collections import PolyCollection
+import matplotlib.pyplot as plt
+from matplotlib import colors as mcolors
+
 from matplotlib.colors import LinearSegmentedColormap
+
+# Settings:
+# Choose input file list
+setlist = "filelist_mri_fieldmap_sc_45L_450mT.txt"
+#setlist = "filelist_mri_fieldmap_sc_45L_fm_618_450mT.txt"
+
+# Choose output file name for plot
+figname = "plots/cloak_mri_3d_sc_45L.png"
+#figname = "plots/cloak_mri_3d_sc_45L_fm_618.png"
 
 # set up main frame
 fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-#fig, ax = plt.subplots()
+ax = fig.gca(projection='3d')
+
+# function to choose color
+def cc(arg):
+    return mcolors.to_rgba(arg, alpha=0.6)
 
 # list of histogram vertizes to create polygons
 vertizes = []
@@ -23,8 +38,6 @@ vertizes = []
 zslices = []
 
 # loop over all files in input list
-setlist = "filelist_mri_fieldmap_sc_45L_450mT.txt"
-
 f = open(setlist, "r")
 parlines = f.read().splitlines()
 
@@ -40,25 +53,20 @@ for i, parline in enumerate(parlines):
 
         else:
             print (pars)
-            # example plot
+
             fname = pars[0]
             data = pd.read_csv(fname);
-            #print (data['z'].head())
-
-            # 2D filled plot
-            #Bnominal = np.zeros( len(data['x']))
-            #Bnominal+=450
-            #ax.plot( data['x'], abs(data['B3']), color='b', marker='o')
-            #ax.fill_between( data['x'], abs(data['B3']), Bnominal)
 
             # 3D filled plot
             a = np.array(data['x'].values)
             b = np.array(abs(data['B3']).values)
 
+            # Find nominal B field
+            Bnominal = data['B2'].mean()
+            print (Bnominal)
+
             # Add point with nominal B field before first and after last vertex so that
             # filled polygon area shows difference to nominal field
-            Bnominal = 450
-
             a = np.insert( a, 0, a[0] )
             a = np.insert( a, len(a), a[-1]+5 )
 
@@ -70,19 +78,40 @@ for i, parline in enumerate(parlines):
 
             # append z position of this measurement slice
             zslices.append( data['z'].values[0] )
+            print(data['z'].values[0])
 
 
 # set color range
 colors = LinearSegmentedColormap('colormap', cm.jet._segmentdata.copy(), len(zslices))
 
 # Prepare 3D polygons
-vertizes = np.array( vertizes )
-n, p, d = vertizes.shape
-maxz = np.max(vertizes[:, 0])
-
-poly = PolyCollection(vertizes, facecolors = [colors(i) for i in range(n)])
-poly.set_alpha(0.7)
+poly = PolyCollection(vertizes, edgecolors='black', linewidths='1', facecolors = [colors(len(zslices)-1-i) for i in range(len(zslices))])
+poly.set_alpha(0.5)
 ax.add_collection3d(poly, zs=zslices, zdir='y')
+
+# Add cylinder to indicate cloak position
+# Cylinder
+x=np.linspace(-1, 1, 100)
+z=np.linspace(420, 460, 100)
+Xc, Zc=np.meshgrid(x, z)
+Yc = np.sqrt(1-Xc**2)
+
+# scale dimensions
+Xc*=2000
+Yc*=500
+Ycm = -1*Yc
+Yc += 6540
+Ycm += 6540
+
+# Draw parameters
+rstride = 20
+cstride = 10
+ax.plot_surface(Xc, Yc, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
+ax.plot_surface(Xc, Ycm, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
+
+
+# set view angle
+ax.view_init(20, -45)
 
 # set axis parameters
 ax.set_xlabel('x-position')
@@ -92,5 +121,5 @@ ax.set_ylim3d(min(zslices),max(zslices))
 ax.set_zlabel('B (mT)')
 ax.set_zlim3d(420,455)
 
-plt.savefig('plots/cloak_mri_3d.png')
+plt.savefig(figname)
 plt.show()
