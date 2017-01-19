@@ -1,0 +1,30 @@
+# Field map around 45 layer superconductor
+# plus Ferromagnet FM 0.618
+DataFile_2016-12-09_12-12-19.txt	450
+DataFile_2016-12-09_12-17-13.txt	450
+DataFile_2016-12-09_12-21-05.txt	450
+DataFile_2016-12-09_12-25-34.txt	450
+DataFile_2016-12-09_12-29-15.txt	450
+DataFile_2016-12-09_12-32-46.txt	450
+DataFile_2016-12-09_12-36-23.txt	450
+DataFile_2016-12-09_12-42-47.txt	450
+DataFile_2016-12-09_12-59-29.txt	450
+DataFile_2016-12-09_13-03-37.txt	450
+DataFile_2016-12-09_13-06-16.txt	450
+DataFile_2016-12-09_13-12-26.txt	450
+DataFile_2016-12-09_13-15-35.txt	450
+DataFile_2016-12-09_13-18-13.txt	450
+
+
+
+# Field map around 45 layer superconductor only
+DataFile_2016-12-09_15-06-03.txt        450
+DataFile_2016-12-09_15-09-34.txt        450
+DataFile_2016-12-09_15-12-56.txt        450
+DataFile_2016-12-09_15-15-40.txt        450
+DataFile_2016-12-09_15-18-53.txt        450
+DataFile_2016-12-09_15-22-02.txt        450
+DataFile_2016-12-09_15-25-24.txt        450
+DataFile_2016-12-09_15-27-45.txt        450
+DataFile_2016-12-09_15-30-11.txt        450
+DataFile_2016-12-09_15-32-58.txt        450
