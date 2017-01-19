@@ -1,0 +1,19 @@
+# 'front' of cloak
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-12-19.csv	450
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-17-13.csv	450
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-21-05.csv	450
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-25-34.csv	450
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-29-15.csv	450
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-32-46.csv	450
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-36-23.csv	450
+
+# 'across' cloak
+data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-42-47.csv	450
+
+# 'behind' cloak
+#data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-59-29.csv	450
+#data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-03-37.csv	450
+#data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-06-16.csv	450
+#data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-12-26.csv	450
+#data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-15-35.csv	450
+#data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-18-13.csv	450
