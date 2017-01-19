@@ -80,44 +80,46 @@ for i, parline in enumerate(parlines):
             zslices.append( data['z'].values[0] )
             print(data['z'].values[0])
 
+# Add cylinder to indicate cloak position
+# basic cylinder
+x=np.linspace(-1, 1, 100)
+z=np.linspace(420, 455, 100)
+Xc, Zc=np.meshgrid(x, z)
+Yc = np.sqrt(1-Xc**2)
+
+# scale cylinder dimensions
+cloakdiameter = 40.64 # 40.64 mm = 1.6 inch
+cloakcenterz = 0
+Xc*=cloakdiameter/2.
+Yc*=cloakdiameter/2.
+Ycm = -1*Yc
+Yc += 127
+Ycm += 127
+
+# draw cylinder
+rstride = 20
+cstride = 10
+#ax.plot_surface(Xc, Yc, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
+#ax.plot_surface(Xc, Ycm, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
+ax.plot_wireframe(Xc, Yc, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
+ax.plot_wireframe(Xc, Ycm, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
 
 # set color range
 colors = LinearSegmentedColormap('colormap', cm.jet._segmentdata.copy(), len(zslices))
 
 # Prepare 3D polygons
 poly = PolyCollection(vertizes, edgecolors='black', linewidths='1', facecolors = [colors(len(zslices)-1-i) for i in range(len(zslices))])
-poly.set_alpha(0.5)
+poly.set_alpha(0.7)
 ax.add_collection3d(poly, zs=zslices, zdir='y')
-
-# Add cylinder to indicate cloak position
-# Cylinder
-x=np.linspace(-1, 1, 100)
-z=np.linspace(420, 460, 100)
-Xc, Zc=np.meshgrid(x, z)
-Yc = np.sqrt(1-Xc**2)
-
-# scale dimensions
-Xc*=2000
-Yc*=500
-Ycm = -1*Yc
-Yc += 6540
-Ycm += 6540
-
-# Draw parameters
-rstride = 20
-cstride = 10
-ax.plot_surface(Xc, Yc, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
-ax.plot_surface(Xc, Ycm, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
-
 
 # set view angle
 ax.view_init(20, -45)
 
 # set axis parameters
 ax.set_xlabel('x-position')
-ax.set_xlim3d(-12000, 12000)
+ax.set_xlim3d(-120, 120)
 ax.set_ylabel('z-position')
-ax.set_ylim3d(min(zslices),max(zslices))
+ax.set_ylim3d(-50,190)
 ax.set_zlabel('B (mT)')
 ax.set_zlim3d(420,455)
 
