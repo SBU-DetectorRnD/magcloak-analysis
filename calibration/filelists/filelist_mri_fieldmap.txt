@@ -1,11 +1,25 @@
-DataFile_2016-12-09_13-32-08.txt	500
-DataFile_2016-12-09_15-42-29.txt        500
+# B vs X at different fields, 45 layer SC + ferromagnet fM = 0.699 (?)
+#DataFile_2016-12-09_01-48-52.txt        100 # bad measurement
+DataFile_2016-12-09_02-03-00.txt        100
+DataFile_2016-12-09_02-07-20.txt        100
+DataFile_2016-12-09_02-17-55.txt        150
+DataFile_2016-12-09_02-35-01.txt        200
+DataFile_2016-12-09_02-54-35.txt        250
+DataFile_2016-12-09_03-08-20.txt        300
+DataFile_2016-12-09_03-29-01.txt        400
+DataFile_2016-12-09_06-06-01.txt        500
 
-DataFile_2016-12-09_12-12-19.txt        450
-DataFile_2016-12-09_15-06-03.txt        450
+# B vs X at different fields, 45 layer SC + ferromagnet fM = 0.618
+DataFile_2016-12-09_08-15-24.txt        100
+DataFile_2016-12-09_08-30-00.txt        150
+DataFile_2016-12-09_08-48-06.txt        200
+DataFile_2016-12-09_09-05-54.txt        250
+DataFile_2016-12-09_09-23-06.txt        300
+DataFile_2016-12-09_09-52-35.txt        350
+DataFile_2016-12-09_11-47-17.txt        380
+DataFile_2016-12-09_12-01-02.txt        400
 
-# Field map around 45 layer superconductor
-# plus Ferromagnet FM 0.618
+# Field map around 45 layer SC + ferromagnet fM = 0.618
 DataFile_2016-12-09_12-12-19.txt	450
 DataFile_2016-12-09_12-17-13.txt	450
 DataFile_2016-12-09_12-21-05.txt	450
@@ -21,6 +35,9 @@ DataFile_2016-12-09_13-12-26.txt	450
 DataFile_2016-12-09_13-15-35.txt	450
 DataFile_2016-12-09_13-18-13.txt	450
 
+# B vs X at differnet fields, 45 layer SC + ferromagnet fM = 0.618
+DataFile_2016-12-09_13-32-08.txt	500
+
 # Field map around 45 layer superconductor only
 DataFile_2016-12-09_15-06-03.txt        450
 DataFile_2016-12-09_15-09-34.txt        450
@@ -32,3 +49,6 @@ DataFile_2016-12-09_15-25-24.txt        450
 DataFile_2016-12-09_15-27-45.txt        450
 DataFile_2016-12-09_15-30-11.txt        450
 DataFile_2016-12-09_15-32-58.txt        450
+
+# B vs X at different fields, 45 layer SC only
+DataFile_2016-12-09_15-42-29.txt        500
