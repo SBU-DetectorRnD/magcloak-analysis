@@ -35,8 +35,9 @@ DataFile_2016-12-09_13-12-26.txt	450
 DataFile_2016-12-09_13-15-35.txt	450
 DataFile_2016-12-09_13-18-13.txt	450
 
-# B vs X at differnet fields, 45 layer SC + ferromagnet fM = 0.618
 DataFile_2016-12-09_13-32-08.txt	500
+DataFile_2016-12-09_13-39-31.txt	500
+DataFile_2016-12-09_13-43-18.txt	500
 
 # Field map around 45 layer superconductor only
 DataFile_2016-12-09_15-06-03.txt        450
@@ -50,8 +51,10 @@ DataFile_2016-12-09_15-27-45.txt        450
 DataFile_2016-12-09_15-30-11.txt        450
 DataFile_2016-12-09_15-32-58.txt        450
 
-# B vs X at different fields, 45 layer SC only
-DataFile_2016-12-09_15-42-29.txt        500
+DataFile_2016-12-09_15-42-29.txt	500
+DataFile_2016-12-09_15-45-26.txt	500
+DataFile_2016-12-09_15-48-06.txt	500
+DataFile_2016-12-09_15-51-24.txt	500
 
 # 'empty' MRI magnet, i.e. no prototype present
 DataFile_2016-12-09_18-23-53.txt        1400

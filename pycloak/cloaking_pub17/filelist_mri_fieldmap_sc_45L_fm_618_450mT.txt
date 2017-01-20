@@ -8,7 +8,7 @@ data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-32-46.csv	450
 data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-36-23.csv	450
 
 # 'across' cloak
-data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-42-47.csv	450
+#data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-42-47.csv	450
 
 # 'behind' cloak
 #data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-59-29.csv	450

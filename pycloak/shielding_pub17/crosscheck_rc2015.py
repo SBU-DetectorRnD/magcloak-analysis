@@ -19,14 +19,22 @@ rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 #rc('font',**{'family':'serif','serif':['Palatino']})
 rc('text', usetex=True)
 
-data = pd.read_csv("foo.txt")
+data_rc2015 = pd.read_csv("results/copy_rc2015_wide_tape_1layer_sheath_fit_results.csv")
+data = pd.read_csv("results/dipole_shielding_sheath_1layer.csv")
 
-print(data)
+# sort values
+data_rc2015 = data_rc2015.sort_values('Bo',ascending=True)
+data = data.sort_values('Bout',ascending=True)
+
+
+print( data_rc2015.head(10))
 
 fig, axs = plt.subplots(1,1,figsize=(6,5))
 #, linestyle='-'
-axs.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], color='b', marker='o')
-axs.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color='b', marker='o', mfc='white')
+
+axs.errorbar( data_rc2015['Bo'], data_rc2015['Bi'], yerr=data_rc2015['sig_bi'].values, color='r', marker='.', linestyle='')
+axs.errorbar( data['Bout'], data['Bins'], yerr=data['Bins_sdev'].values, color='b', marker='.', linestyle='')
+
 axs.set_xlabel("$B_{mri} (mT)$")
 axs.set_ylabel("$B_{in} (mT)$")
 

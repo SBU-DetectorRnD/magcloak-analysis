@@ -167,3 +167,72 @@ DataFile_150629_150409.txt	helmholtz	DataFile_150618_104728.txt
 DataFile_150629_152813.txt	helmholtz	DataFile_150618_104728.txt
 DataFile_150629_154452.txt	helmholtz	DataFile_150618_104728.txt
 DataFile_150629_160304.txt	helmholtz	DataFile_150618_104728.txt
+
+
+####### 1 layer sheath wide tape #######################
+#run069_wide_tape_1layer_sheath -> data/run069_wide_tape_1layer_sheath_sps/
+# calibration after alignment
+DataFile_150531_144900.txt	dipole		DataFile_150531_144900.txt
+# pre-cool
+DataFile_150531_165133.txt	dipole		DataFile_150531_144900.txt
+# post-cool
+DataFile_150531_165133.txt	dipole		DataFile_150531_144900.txt
+# measurements
+DataFile_150531_165410.txt	dipole		DataFile_150531_144900.txt
+DataFile_150531_170505.txt	dipole		DataFile_150531_144900.txt
+DataFile_150531_171548.txt	dipole		DataFile_150531_144900.txt
+DataFile_150531_172634.txt	dipole		DataFile_150531_144900.txt
+DataFile_150531_173728.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_084632.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_085754.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_091607.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_093559.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_095522.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_101447.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_103354.txt	dipole		DataFile_150531_144900.txt
+DataFile_150601_105504.txt	dipole		DataFile_150531_144900.txt
+
+
+#run069_wide_tape_1layer_sheath ->  data/run069_wide_tape_1layer_sheath_bps/
+# calibration_w_old_ps
+DataFile_150528_100928.txt	dipole		DataFile_150528_100928.txt
+# pre-cool
+DataFile_150531_165133.txt	dipole		DataFile_150528_100928.txt
+# post-cool
+DataFile_150531_165133.txt	dipole		DataFile_150528_100928.txt
+# measurements
+DataFile_150602_193641.txt	dipole		DataFile_150528_100928.txt
+DataFile_150602_195648.txt	dipole		DataFile_150528_100928.txt
+DataFile_150602_201629.txt	dipole		DataFile_150528_100928.txt
+DataFile_150602_203710.txt	dipole		DataFile_150528_100928.txt
+DataFile_150602_205723.txt	dipole		DataFile_150528_100928.txt
+DataFile_150602_211759.txt	dipole		DataFile_150528_100928.txt
+DataFile_150603_185532.txt	dipole		DataFile_150528_100928.txt
+DataFile_150603_191841.txt	dipole		DataFile_150528_100928.txt
+DataFile_150603_193827.txt	dipole		DataFile_150528_100928.txt
+DataFile_150603_195726.txt	dipole		DataFile_150528_100928.txt
+DataFile_150603_201657.txt	dipole		DataFile_150528_100928.txt
+
+
+#run071_wide_tape_1layer_sheath -> data/run071_wide_tape_1layer_sheath_bps
+# calibration_w_old_ps
+# same as previous
+# pre-cool
+DataFile_150608_182909.txt	dipole		DataFile_150528_100928.txt
+# post-cool
+DataFile_150608_182909.txt	dipole		DataFile_150528_100928.txt
+# measurements
+DataFile_150608_173712.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_175631.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_183111.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_184919.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_190702.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_192416.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_194216.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_195935.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_201409.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_203157.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_205031.txt	dipole		DataFile_150528_100928.txt
+DataFile_150608_210819.txt	dipole		DataFile_150528_100928.txt
+
+
