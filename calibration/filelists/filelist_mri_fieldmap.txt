@@ -52,3 +52,7 @@ DataFile_2016-12-09_15-32-58.txt        450
 
 # B vs X at different fields, 45 layer SC only
 DataFile_2016-12-09_15-42-29.txt        500
+
+# 'empty' MRI magnet, i.e. no prototype present
+DataFile_2016-12-09_18-23-53.txt        1400
+
