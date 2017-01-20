@@ -1,0 +1,31 @@
+# Helmholtz field maps
+
+DataFile_161020_203300.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161020_204436.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_154450.txt 	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_155547.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_160626.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_163230.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_162030.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_164406.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_180155.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_174739.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_181244.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_193724.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_192152.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_161009_194749.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_164923.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_170654.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_174727.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_180719.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_182651.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_210130.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_211911.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_213243.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_214425.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_215718.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_221623.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_223055.txt	helmholtz	DataFile_160908_174026.txt
+DataFile_160922_224036.txt	helmholtz	DataFile_160908_174026.txt
+
+
