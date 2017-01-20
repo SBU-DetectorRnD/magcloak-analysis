@@ -16,16 +16,24 @@ from matplotlib.colors import LinearSegmentedColormap
 
 # Settings:
 # Choose input file list
-setlist = "filelist_mri_fieldmap_sc_45L_450mT.txt"
-#setlist = "filelist_mri_fieldmap_sc_45L_fm_618_450mT.txt"
+#setlist = "filelist_mri_fieldmap_sc_45L_450mT.txt"
+setlist = "filelist_mri_fieldmap_sc_45L_fm_618_450mT.txt"
 
 # Choose output file name for plot
-figname = "plots/cloak_mri_3d_sc_45L.png"
-#figname = "plots/cloak_mri_3d_sc_45L_fm_618.png"
+#figname = "plots/cloak_mri_3d_sc_45L.png"
+figname = "plots/cloak_mri_3d_sc_45L_fm_618.png"
 
 # set up main frame
-fig = plt.figure()
-ax = fig.gca(projection='3d')
+fig = plt.figure( figsize=(6,5) )
+ax = fig.add_subplot(111, projection='3d')
+ax.tick_params(labelsize=12)
+#ax.set_title("MRI field map")
+ax.set_xlabel("x-position (mm)",fontsize=12, labelpad=10)
+ax.set_ylabel("z-position (mm)",fontsize=12, labelpad=10)
+ax.set_zlabel("$B_{T}$ (T)",fontsize=12, labelpad=10)
+plt.locator_params(axis='y',nbins=6)
+plt.locator_params(axis='x',nbins=6)
+plt.locator_params(axis='z',nbins=4)
 
 # function to choose color
 def cc(arg):
@@ -101,8 +109,8 @@ rstride = 20
 cstride = 10
 #ax.plot_surface(Xc, Yc, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
 #ax.plot_surface(Xc, Ycm, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
-ax.plot_wireframe(Xc, Yc, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
-ax.plot_wireframe(Xc, Ycm, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
+#ax.plot_wireframe(Xc, Yc, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
+#ax.plot_wireframe(Xc, Ycm, Zc, alpha=0.5, rstride=rstride, cstride=cstride, color='grey')
 
 # set color range
 colors = LinearSegmentedColormap('colormap', cm.jet._segmentdata.copy(), len(zslices))
@@ -116,12 +124,9 @@ ax.add_collection3d(poly, zs=zslices, zdir='y')
 ax.view_init(20, -45)
 
 # set axis parameters
-ax.set_xlabel('x-position')
 ax.set_xlim3d(-120, 120)
-ax.set_ylabel('z-position')
-ax.set_ylim3d(-50,190)
-ax.set_zlabel('B (mT)')
-ax.set_zlim3d(420,455)
+ax.set_ylim3d(20,100)
+ax.set_zlim3d(400,455)
 
 plt.savefig(figname)
 plt.show()

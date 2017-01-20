@@ -14,8 +14,17 @@ def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
         print ("ERROR: Mismatch length datafiles and datanames. Exit.")
         sys.exit(1)
 
-    # create figure
-    fig, ax = plt.subplots()
+
+    # set figure parameters
+    fig, ax = plt.subplots( figsize=(6,5) )
+    ax.tick_params(labelsize=12)
+    ax.set_title(figtitle)
+    plt.xlabel("x-position (mm)",fontsize=12)
+    plt.ylabel("$B_{T}$ (mT)",fontsize=12)
+
+    # mark cloak dimensions
+    plt.axvline(-20.32, color='grey', linestyle='--')
+    plt.axvline(20.31, color='grey', linestyle='--')
 
     # first: plot lines for nominal fields
     for i, (dfile, dname) in enumerate( zip( datafiles, datanames ) ):
@@ -36,15 +45,12 @@ def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
 
 
     # plot cosmetics: set axis parameters
-    ax.set_title(figtitle)
-    ax.set_xlabel('x-position (mm)')
     #ax.set_xlim(-12000, 12000)
-    ax.set_ylabel('B (mT)')
     #ax.set_ylim(0,500)
 
     # add legend
     if ( legend ):
-        ax.legend(loc = 'lower right')
+        ax.legend(loc = 'lower right', prop={'size':12})
 
     plt.savefig(figname)
     plt.show()
@@ -54,21 +60,39 @@ def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
 
 if __name__ == '__main__':
 
-    # Compare SC+FM and SC only at 450 mT
+    # Compare SC+FM and SC only at 450 mT 'in front of cloak'
     comparescans( "plots/cloak_mri_450mT_1d.png" ,
                   "Cloaking at 0.45 T (field measured in front of prototype)",
-                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-12-19.csv",
-                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-06-03.csv" ],
-                  ["cloak",
-                   "sc shield"])
+                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-06-03.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-12-19.csv" ],
+                  ["sc",
+                   "sc + fm"])
 
-    # Compare SC+FM and SC only at 500 mT
+    # Compare SC+FM and SC only at 500 mT 'in front of cloak'
     comparescans( "plots/cloak_mri_500mT_1d.png" ,
                   "Cloaking at 0.50 T (field measured in front of prototype)",
-                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-32-08.csv",
-                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-42-29.csv" ],
-                  ["cloak",
-                   "sc shield"])
+                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-42-29.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-32-08.csv" ],
+                  ["sc",
+                   "sc + fm"])
+
+    # Compare SC+FM and SC only at 450 mT 'across cloak'
+    comparescans( "plots/cloak_mri_450mT_1d_across.png" ,
+                  "Cloaking at 0.45 T (field measured across prototype)",
+                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-09-34.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-42-47.csv" ],
+                  ["sc",
+                   "sc + fm"],
+                  legend = False)
+
+    # Compare SC+FM and SC only at 500 mT 'across cloak'
+    comparescans( "plots/cloak_mri_500mT_1d_across.png" ,
+                  "Cloaking at 0.50 T (field measured across prototype)",
+                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-45-26.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-43-18.csv" ],
+                  ["sc",
+                   "sc + fm"],
+                  legend = False)
 
     # Compare SC+FM and SC at different fields, fM = 0.699
     comparescans( "plots/cloak_mri_varB_fm699_1d.png" ,
