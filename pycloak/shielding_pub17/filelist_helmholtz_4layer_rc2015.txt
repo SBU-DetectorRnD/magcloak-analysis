@@ -1,0 +1,22 @@
+### 4 layer wide tape -> Helmholtz coil
+data-calib/DATA_Gaussmeter/DataFile_150626_113600.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_115306.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_120343.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_121414.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_122500.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_123600.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_124659.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_125831.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_130916.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_132027.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_133111.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_134147.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_135246.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_140704.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_141824.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_142858.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150626_143948.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150629_150409.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150629_152813.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150629_154452.csv		0	B1
+data-calib/DATA_Gaussmeter/DataFile_150629_160304.csv		0	B1
