@@ -1,4 +1,4 @@
-# Written by R. Cerphantes
+# Written by R. Cervantes
 
 import numpy as np
 import matplotlib.pyplot as plt

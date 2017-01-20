@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 
 
-def comparescans( figname, figtitle, datafiles, datanames ):
+def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
 
     if ( len( datafiles ) != len( datanames ) ):
         print ("ERROR: Mismatch length datafiles and datanames. Exit.")
@@ -43,7 +43,8 @@ def comparescans( figname, figtitle, datafiles, datanames ):
     #ax.set_ylim(0,500)
 
     # add legend
-    ax.legend(loc = 'lower right')
+    if ( legend ):
+        ax.legend(loc = 'lower right')
 
     plt.savefig(figname)
     plt.show()
@@ -68,4 +69,48 @@ if __name__ == '__main__':
                    "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-42-29.csv" ],
                   ["cloak",
                    "sc shield"])
+
+    # Compare SC+FM and SC at different fields, fM = 0.699
+    comparescans( "plots/cloak_mri_varB_fm699_1d.png" ,
+                  "Cloaking at different fields, fM = 0.699?",
+                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_02-03-00.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_02-17-55.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_02-35-01.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_02-54-35.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_03-08-20.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_03-29-01.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_06-06-01.csv"],
+                  ["B = 0.10 T",
+                   "B = 0.15 T",
+                   "B = 0.20 T",
+                   "B = 0.25 T",
+                   "B = 0.30 T",
+                   "B = 0.40 T",
+                   "B = 0.50 T"],
+                  legend = False)
+
+    # Compare SC+FM and SC at different fields, fM = 0.618
+    comparescans( "plots/cloak_mri_varB_fm618_1d.png" ,
+                  "Cloaking at different fields, fM = 0.618",
+                  ["data-calib/DATA_MegaVIEW/DataFile_2016-12-09_08-15-24.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_08-30-00.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_08-48-06.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_09-05-54.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_09-23-06.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_09-52-35.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_11-47-17.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-01-02.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_12-12-19.csv",
+                   "data-calib/DATA_MegaVIEW/DataFile_2016-12-09_13-32-08.csv"],
+                  ["B = 0.10 T",
+                   "B = 0.15 T",
+                   "B = 0.20 T",
+                   "B = 0.25 T",
+                   "B = 0.30 T",
+                   "B = 0.35 T",
+                   "B = 0.38 T",
+                   "B = 0.40 T",
+                   "B = 0.45 T",
+                   "B = 0.50 T"],
+                  legend = False)
 
