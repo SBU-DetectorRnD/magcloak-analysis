@@ -76,8 +76,9 @@ for i, parline in enumerate(parlines):
             if (len(X) == 0):
                 X = np.array(data['x'].values)                
             else:
-                if ( (X != x).any() ):
-                    print ("Mismatch in x!")
+                if ( len(X) != len(x) ):
+                    print ("Mismatch in x! Skipping file: ", fname)
+                    continue
 
             # assume all y values in one file are the same
             Y.append( y[0] )
@@ -100,11 +101,11 @@ print ("Xm shape: " , Xm.shape)
 print ("Ym shape: " , Ym.shape)
 print ("Z  shape: " , Z.shape)
 
-ax.plot_surface(Xm, Ym, Z, rstride=1, cstride=1, alpha=1, cmap=cm.jet)
+ax.plot_surface(Xm, Ym, Z, rstride=1, cstride=1, alpha=0.7, cmap=cm.jet)
 #ax.plot_wireframe(Xm, Ym, Z, rstride=1, cstride=1, alpha=1)
 
 # set view angle
-ax.view_init(20, -45)
+ax.view_init(40, -45)
 
 plt.savefig(figname)
 plt.show()
