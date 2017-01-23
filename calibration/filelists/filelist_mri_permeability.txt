@@ -1,0 +1,24 @@
+# file B_nominal
+DataFile_2016-12-08_20-31-45.txt	NaN
+DataFile_2016-12-08_20-58-06.txt	NaN
+DataFile_2016-12-08_21-18-15.txt	NaN
+DataFile_2016-12-08_21-37-52.txt	NaN
+DataFile_2016-12-08_20-35-17.txt	NaN
+DataFile_2016-12-08_21-00-57.txt	NaN
+DataFile_2016-12-08_21-20-51.txt	NaN
+DataFile_2016-12-08_21-40-20.txt	NaN
+DataFile_2016-12-08_20-37-24.txt	NaN
+DataFile_2016-12-08_21-03-21.txt	NaN
+DataFile_2016-12-08_21-22-51.txt	NaN
+DataFile_2016-12-08_21-42-13.txt	NaN
+DataFile_2016-12-08_20-29-24.txt	NaN
+DataFile_2016-12-08_20-54-13.txt	NaN
+DataFile_2016-12-08_21-15-59.txt	NaN
+DataFile_2016-12-08_21-36-02.txt	NaN
+DataFile_2016-12-08_19-56-40.txt	NaN
+DataFile_2016-12-08_20-14-15.txt	NaN
+DataFile_2016-12-08_20-41-31.txt	NaN
+DataFile_2016-12-08_21-06-35.txt	NaN
+DataFile_2016-12-08_21-25-26.txt	NaN
+DataFile_2016-12-08_21-45-58.txt	NaN
+DataFile_2016-12-08_21-45-58.txt	NaN
