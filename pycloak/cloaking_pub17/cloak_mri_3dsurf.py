@@ -16,12 +16,12 @@ from matplotlib.colors import LinearSegmentedColormap
 
 # Settings:
 # Choose input file list
-setlist = "filelist_mri_fieldmap_sc_45L_450mT.txt"
-#setlist = "filelist_mri_fieldmap_sc_45L_fm_618_450mT.txt"
+#setlist = "filelist_mri_fieldmap_sc_45L_450mT.txt"
+setlist = "filelist_mri_fieldmap_sc_45L_fm_618_450mT.txt"
 
 # Choose output file name for plot
-figname = "plots/cloak_mri_3d_sc_45L_surf.png"
-#figname = "plots/cloak_mri_3d_sc_45L_fm_618_surf.png"
+#figname = "plots/cloak_mri_3d_sc_45L_surf.png"
+figname = "plots/cloak_mri_3d_sc_45L_fm_618_surf.png"
 
 # set up main frame
 fig = plt.figure()
@@ -37,7 +37,7 @@ plt.locator_params(axis='z',nbins=4)
 
 ax.set_xlim3d(-120, 120)
 ax.set_ylim3d(20,100)
-ax.set_zlim3d(400,455)
+ax.set_zlim3d(375,455)
 
 
 # loop over all files in input list
@@ -101,11 +101,14 @@ print ("Xm shape: " , Xm.shape)
 print ("Ym shape: " , Ym.shape)
 print ("Z  shape: " , Z.shape)
 
-ax.plot_surface(Xm, Ym, Z, rstride=1, cstride=1, alpha=0.7, cmap=cm.jet)
-#ax.plot_wireframe(Xm, Ym, Z, rstride=1, cstride=1, alpha=1)
+print("Z range min, max: " , Z.min(), Z.max() )
+
+ax.plot_surface(Xm, Ym, Z, rstride=1, cstride=1, alpha=1.0, cmap=cm.jet, vmin=375, vmax=455)
+ax.plot_wireframe(Xm, Ym, Z, rstride=1, cstride=1, alpha=0.5,color='black')
 
 # set view angle
-ax.view_init(40, -45)
+#ax.view_init(40, -45)
+ax.view_init(40, 70)
 
 plt.savefig(figname)
 plt.show()
