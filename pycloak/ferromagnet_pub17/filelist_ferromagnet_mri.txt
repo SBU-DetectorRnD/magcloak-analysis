@@ -1,0 +1,57 @@
+#Ferromagnet Permeability Measurements
+#fmID, Fm, filename, B_int, B_ext, inner-diameter-file, outer-diameter-file
+
+#ANL MRI Measurements
+#Fm = 0.554 Ferromagnet
+#fm554 During Magnet Ramp (0-100mT)
+fm554  0.554  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_19-56-40.csv	B2	B3	fm554_di.txt	fm554_do.txt
+#fm554 at 200mT
+fm554  0.554  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-31-45.csv	B2	B3	fm554_di.txt	fm554_do.txt
+#fm554 at 300mT
+fm554  0.554  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-58-06.csv	B2	B3	fm554_di.txt	fm554_do.txt
+#fm554 at 400mT
+fm554  0.554  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-18-15.csv	B2	B3	fm554_di.txt	fm554_do.txt
+#fm554 at 500mT
+fm554  0.554  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-37-52.csv	B2	B3	fm554_di.txt	fm554_do.txt
+
+#Fm = 0.618 Ferromagnet
+#fm618 During Magnet Ramp (500mT - 0)
+fm618  0.618  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-45-58.csv	B2	B3	fm618_di.txt	fm618_do.txt
+#fm618 at 200mT
+fm618  0.618  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-35-17.csv	B2	B3	fm618_di.txt	fm618_do.txt
+#fm618 at 300mT
+fm618  0.618  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-00-57.csv	B2	B3	fm618_di.txt	fm618_do.txt
+#fm618 at 400mT
+fm618  0.618  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-20-51.csv	B2	B3	fm618_di.txt	fm618_do.txt
+#fm618 at 500mT
+fm618  0.618  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-40-20.csv	B2	B3	fm618_di.txt	fm618_do.txt
+
+#Fm = 0.673 Ferromagnet
+#fm673 at 200mT
+fm673  0.673  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-37-24.csv	B2	B3	fm673_di.txt	fm673_do.txt
+#fm673 at 300mT
+fm673  0.673  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-03-21.csv	B2	B3	fm673_di.txt	fm673_do.txt
+#fm673 at 400mT
+fm673  0.673  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-22-51.csv	B2	B3	fm673_di.txt	fm673_do.txt
+#fm673 at 500mT
+fm673  0.673  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-42-13.csv	B2	B3	fm673_di.txt	fm673_do.txt
+
+#Fm = 0.699 Ferromagnet
+#fm699 During Magnet Ramp (0-200mT)
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-14-15.csv	B2	B3	fm699_di.txt	fm699_do.txt
+#fm699 at 200mT
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-29-24.csv	B2	B3	fm699_di.txt	fm699_do.txt
+#fm699 During Magnet Ramp (200-300mT)
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-41-31.csv	B2	B3	fm699_di.txt	fm699_do.txt
+#fm699 at 300mT
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_20-54-13.csv	B2	B3	fm699_di.txt	fm699_do.txt
+#fm699 During Magnet Ramp (300-400mT)
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-06-35.csv	B2	B3	fm699_di.txt	fm699_do.txt
+#fm699 at 400mT
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-15-59.csv	B2	B3	fm699_di.txt	fm699_do.txt
+#fm699 During Magnet Ramp (400-500mT)
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-25-26.csv	B2	B3	fm699_di.txt	fm699_do.txt
+#fm699 at 500mT
+fm699  0.699  data-calib/DATA_MegaVIEW/DataFile_2016-12-08_21-36-02.csv	B2	B3	fm699_di.txt	fm699_do.txt
+
+#SBU Measurements
