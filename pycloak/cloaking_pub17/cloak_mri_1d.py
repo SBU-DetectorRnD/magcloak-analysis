@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 from matplotlib import cm
 
+from scipy.integrate import trapz, simps
 
 def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
 
@@ -26,12 +27,18 @@ def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
     plt.axvline(-20.32, color='grey', linestyle='--')
     plt.axvline(20.31, color='grey', linestyle='--')
 
+
+    # store nominal field for each file
+    Bnoms = []
+
     # first: plot lines for nominal fields
     for i, (dfile, dname) in enumerate( zip( datafiles, datanames ) ):
         print( dfile, dname )
         data = pd.read_csv(dfile, comment='#')
         
         ax.axhline( abs(data['B2']).mean() , color='grey' , linestyle='--')
+
+        Bnoms.append(abs(data['B2']).mean())
         
     # second: plot field map data
     for i, (dfile, dname) in enumerate( zip( datafiles, datanames ) ):
@@ -42,6 +49,12 @@ def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
         # fill areas between curves and reference value
         #Bnominal = abs(data['B2']).mean()
         #ax.fill_between( data['x'], abs(data['B3']), Bnominal)
+
+        # print integral = area under curve
+        data['Bdiff'] = abs(data['B3']) - Bnoms[i]
+        print( "Integral for: " , dname )
+        print('{:18.16f}'.format( abs(data['Bdiff']).sum() ) )
+        print('{:18.16f}'.format(trapz(abs(data['Bdiff']), data['x'])))
 
 
     # plot cosmetics: set axis parameters
