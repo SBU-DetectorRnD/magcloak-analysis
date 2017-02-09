@@ -25,54 +25,66 @@ def calc_mu_cloak( radius_fm_inner, radius_fm_outer):
     print("Ratio inner/outer radius: ", c, " --> Perfect cloak permeability (theory): ", u_cloak)
 
 
-#define a function that will take the ferromagnet scan file and give you the
-#permeability results.
-def calc_mu(Bin, Bout, radius_inner, radius_outer, offsets=0):
+# take field measurements with ferromagnet and ferromagnet radii and return the permeability results, point-to-point
+# uncertainties, and systematic (here: geometric) uncertainties.
+def calc_mu(Bin, Bout, radius_inner, radius_outer):
 
-    # apply offsets if needed
-    Bin += offsets
-
-    #ratio of inner and outer radius
+    # ratio of inner and outer radius
     radius_ratio = radius_inner / radius_outer
-    c = radius_ratio
 
-    B = Bin/Bout #ratio of internal to external field
-    B = B.values
+    # ratio of internal to external field
+    B_ratio = Bin / Bout
+    # convert from Series object to Numpy Array object
+    B_ratio = B_ratio.values
 
     # If value under square root becomes neagtive, force it to be 1
-    #B[B**2*c**2 - B*c**2 - B + 1 < 0] = 1
-    #print(B**2*c**2 - B*c**2 - B + 1)
+    #B_ratio[ (B_ratio**2) * (radius_ratio**2) - B_ratio * (radius_ratio**2) - B_ratio + 1 < 0 ] = 1
+    #print( (B_ratio**2) * (radius_ratio**2) - B_ratio * (radius_ratio**2) - B_ratio + 1)
 
-    #calculate permeability
-    mu = ( B*c**2
-           + B
+    # Calculate permeability. Here, use both uncertainties from field measurements and uncertainties from geometry, i.e. radius measurements.
+    mu = ( B_ratio * (radius_ratio**2)
+           + B_ratio
            - 2
-           - 2*unumpy.sqrt( B**2*c**2 - B*c**2 - B + 1 )
-           ) / ( B*c**2 - B ) 
+           -2 * unumpy.sqrt( (B_ratio**2) * (radius_ratio**2) - B_ratio * (radius_ratio**2) - B_ratio + 1 )
+           ) / ( B_ratio * (radius_ratio**2) - B_ratio )
 
-    #calculate uerr with just point to point uncertainties. I define this as just
-    #uncertainty from the field measurements
-    mu_pp = (B*c.n**2 + B -2 -2*unumpy.sqrt(B**2*c.n**2 - B*c.n**2 - B +
-                                           1))/(B*c.n**2-B)
+    # store nominal values of mu in separate array
+    mu_val = unumpy.nominal_values(mu)
 
+    # store combined uncertainties of mu in separate array
+    mu_err = unumpy.std_devs(mu)
+
+    # Calculate uncertainties of mu values from just field measurement uncertainties (= point-to-point fluctuations). Ignore geometry (=radius) uncertainties.
+    mu_pp = ( B_ratio * (radius_ratio.n**2)
+              + B_ratio
+              - 2
+              -2 * unumpy.sqrt( (B_ratio**2) * (radius_ratio.n**2) - B_ratio * (radius_ratio.n**2) - B_ratio + 1 )
+              ) / ( B_ratio * (radius_ratio.n**2) - B_ratio )
+
+    # store point-to-point uncertainties of mu in separate array
     mu_err_pp = unumpy.std_devs(mu_pp)
 
-    #calculate uerr from just geometry uncertainties
-    u_geom = ( unumpy.nominal_values(B)*c**2
-               + unumpy.nominal_values(B)
-               - 2
-               - 2*unumpy.sqrt(unumpy.nominal_values(B)**2*c**2
-                               - unumpy.nominal_values(B)*c**2
-                               - unumpy.nominal_values(B)
-                               + 1) ) / ( unumpy.nominal_values( B )*c**2 - unumpy.nominal_values( B ) )
+    # Calculate uncertainties of mu values from just geometry uncertainties (= systematic uncertainty, i.e. all points move together). Ignore field uncertainties.
+    B_ratio_n = unumpy.nominal_values( B_ratio )
+    mu_geom = ( B_ratio_n * (radius_ratio**2)
+                + B_ratio_n
+                - 2
+                -2 * unumpy.sqrt( (B_ratio_n**2) * (radius_ratio**2) - B_ratio_n * (radius_ratio**2) - B_ratio_n + 1 )
+                ) / ( B_ratio_n * (radius_ratio**2) - B_ratio_n )
 
-    mu_err_geom = unumpy.std_devs(u_geom)
+    # store geometric uncertainties of mu in separate array
+    mu_err_geom = unumpy.std_devs(mu_geom)
 
-    return( unumpy.nominal_values(mu), mu_err_pp, mu_err_geom )
+    return( mu_val, mu_err, mu_err_pp, mu_err_geom )
 
 
-# process a single measurement file
-def evaluate_permeability( fname_data, Bin, Bout, fname_di, fname_do ):
+# process a single measurement file to calculate magnetic permeability
+# * fname_data = name of measurement file
+# * Bin = name of column in fname_data file storing magnetic field inside ferromagnet cylinder
+# * Bout = name of column in fname_data file storing magnetic field without ferromagnet cylinder
+# * fname_di = name of file listing inner diameter measurements for this ferromagnet
+# * fname_do = name of file listing outer diameter measurements for this ferromagnet
+def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B2", fname_di="fm618_di.txt", fname_do="fm618_do.txt" ):
 
     print ("Evaluating permeability for: ", fname_data, Bin, Bout, fname_di, fname_do )
 
@@ -101,9 +113,10 @@ def evaluate_permeability( fname_data, Bin, Bout, fname_di, fname_do ):
     calc_mu_cloak(diam_in, diam_out)
 
     # calculate permeability and store values and uncertainties in arrays
-    (mu_c, mu_err_pp, mu_err_geom) = calc_mu(Bin=result['Bin_c'], Bout=result['Bout_c'], radius_inner=diam_in, radius_outer=diam_out)
+    (mu_c, mu_err, mu_err_pp, mu_err_geom) = calc_mu(Bin=result['Bin_c'], Bout=result['Bout_c'], radius_inner=diam_in, radius_outer=diam_out)
 
     result["mu"] = mu_c
+    result["mu_err"] = mu_err
     result["mu_err_pp"] = mu_err_pp
     result["mu_err_geom"] = mu_err_geom
 
@@ -126,7 +139,7 @@ def evaluate_permeability_for_set(setlist="foo.txt", results_file="foo2.txt"):
         os.remove(results_file)
 
     # create results dataframe
-    dresults = pd.DataFrame(columns = ["File","ID","frac","Bout","Bout_sdev","mu","mu_err_pp","mu_err_geom"])
+    dresults = pd.DataFrame(columns = ["File","ID","frac","Bout","Bout_sdev","mu","mu_err","mu_err_pp","mu_err_geom"])
 
     # open input file and get lines
     f = open(setlist, "r")
@@ -142,14 +155,15 @@ def evaluate_permeability_for_set(setlist="foo.txt", results_file="foo2.txt"):
             # only process lines with correct number of parameters
             if len(pars) == 7:
 
-                # calculate permeability for entries in single measurement file
+                # calculate permeability for entries in single measurement file, return dataframe with results
                 sresult = evaluate_permeability( fname_data=pars[2], Bin=pars[3], Bout=pars[4], fname_di=pars[5], fname_do=pars[6] )
 
+                # set additional columns in results dataframe based on input parmeters
                 sresult["ID"] = pars[0]
                 sresult["frac"] = pars[1]
                 sresult["File"] = pars[2].split('/')[-1]
 
-                # append results for this measurement file to the output dataframe
+                # append results dataframe for this measurement file to the results summary dataframe
                 dresults = dresults.append( sresult )
 
             else:
@@ -158,12 +172,13 @@ def evaluate_permeability_for_set(setlist="foo.txt", results_file="foo2.txt"):
         else:
             print ("Skipping line: ", parline)
 
-    # write results to CSV file
+    # write resuts summary dataframe to CSV file
     dresults.to_csv(results_file, index=False, na_rep='NaN')
 
     return
 
 
+# if you call this macro form the command line, this __main__ function will be executed:
 if __name__ == '__main__':
 
     evaluate_permeability_for_set( setlist = "filelist_ferromagnet_sbu.txt", results_file = "results/ferromagnet_sbu.csv")
