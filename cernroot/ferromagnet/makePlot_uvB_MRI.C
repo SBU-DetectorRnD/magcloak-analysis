@@ -213,10 +213,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.544 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-31-45.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-31-45.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm554_di.txt";
-      const TString do_file = "Data/FMDiameters/fm554_do.txt";
+      const TString di_file = "diameter-files/fm554_di.txt";
+      const TString do_file = "diameter-files/fm554_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -235,10 +235,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.544 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-58-06.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-58-06.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm554_di.txt";
-      const TString do_file = "Data/FMDiameters/fm554_do.txt";
+      const TString di_file = "diameter-files/fm554_di.txt";
+      const TString do_file = "diameter-files/fm554_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -255,10 +255,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.544 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-18-15.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-18-15.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm554_di.txt";
-      const TString do_file = "Data/FMDiameters/fm554_do.txt";
+      const TString di_file = "diameter-files/fm554_di.txt";
+      const TString do_file = "diameter-files/fm554_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -275,10 +275,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.544 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-37-52.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-37-52.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm554_di.txt";
-      const TString do_file = "Data/FMDiameters/fm554_do.txt";
+      const TString di_file = "diameter-files/fm554_di.txt";
+      const TString do_file = "diameter-files/fm554_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -295,10 +295,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-35-17.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-35-17.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm618_di.txt";
-      const TString do_file = "Data/FMDiameters/fm618_do.txt";
+      const TString di_file = "diameter-files/fm618_di.txt";
+      const TString do_file = "diameter-files/fm618_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -316,10 +316,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-00-57.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-00-57.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm618_di.txt";
-      const TString do_file = "Data/FMDiameters/fm618_do.txt";
+      const TString di_file = "diameter-files/fm618_di.txt";
+      const TString do_file = "diameter-files/fm618_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -335,10 +335,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-20-51.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-20-51.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm618_di.txt";
-      const TString do_file = "Data/FMDiameters/fm618_do.txt";
+      const TString di_file = "diameter-files/fm618_di.txt";
+      const TString do_file = "diameter-files/fm618_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -354,10 +354,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-40-20.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-40-20.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm618_di.txt";
-      const TString do_file = "Data/FMDiameters/fm618_do.txt";
+      const TString di_file = "diameter-files/fm618_di.txt";
+      const TString do_file = "diameter-files/fm618_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -374,10 +374,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.673 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-37-24.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-37-24.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm673_di.txt";
-      const TString do_file = "Data/FMDiameters/fm673_do.txt";
+      const TString di_file = "diameter-files/fm673_di.txt";
+      const TString do_file = "diameter-files/fm673_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -395,10 +395,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-03-21.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-03-21.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm673_di.txt";
-      const TString do_file = "Data/FMDiameters/fm673_do.txt";
+      const TString di_file = "diameter-files/fm673_di.txt";
+      const TString do_file = "diameter-files/fm673_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -414,10 +414,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-22-51.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-22-51.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm673_di.txt";
-      const TString do_file = "Data/FMDiameters/fm673_do.txt";
+      const TString di_file = "diameter-files/fm673_di.txt";
+      const TString do_file = "diameter-files/fm673_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -433,10 +433,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-42-13.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-42-13.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm673_di.txt";
-      const TString do_file = "Data/FMDiameters/fm673_do.txt";
+      const TString di_file = "diameter-files/fm673_di.txt";
+      const TString do_file = "diameter-files/fm673_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -454,10 +454,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-29-24.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-29-24.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -475,10 +475,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-54-13.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-54-13.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -494,10 +494,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-15-59.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-15-59.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -513,10 +513,10 @@ int makePlot_uvB_MRI()
       /*
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-36-02.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-36-02.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -533,10 +533,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.554 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_19-56-40.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_19-56-40.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm554_di.txt";
-      const TString do_file = "Data/FMDiameters/fm554_do.txt";
+      const TString di_file = "diameter-files/fm554_di.txt";
+      const TString do_file = "diameter-files/fm554_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -554,10 +554,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-14-15.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-14-15.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -574,10 +574,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_20-41-31.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_20-41-31.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -594,10 +594,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-06-35.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-06-35.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -614,10 +614,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.699 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-25-26.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-25-26.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -634,10 +634,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.618 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-45-58.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-45-58.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm699_di.txt";
-      const TString do_file = "Data/FMDiameters/fm699_do.txt";
+      const TString di_file = "diameter-files/fm699_di.txt";
+      const TString do_file = "diameter-files/fm699_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -654,10 +654,10 @@ int makePlot_uvB_MRI()
        * Permeability Plot for Fm = 0.673 Ferromagnet
        */
 
-      const TString fmscan_fm554 = "Data/PermeabilityScans/DataFile_2016-12-08_21-45-58.txt";
+      const TString fmscan_fm554 = "data/DATA_MegaVIEW/DataFile_2016-12-08_21-45-58.txt";
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm673_di.txt";
-      const TString do_file = "Data/FMDiameters/fm673_do.txt";
+      const TString di_file = "diameter-files/fm673_di.txt";
+      const TString do_file = "diameter-files/fm673_do.txt";
       double R_fm554 = ratio(di_file, do_file);
       double R_sig_fm554 = r_sig(di_file, do_file);
       /*Plot u vs B for FM*/
@@ -671,8 +671,8 @@ int makePlot_uvB_MRI()
   if(ideal_cloak)
     {
       /*Calculate Radius Ratio and Uncertainty*/
-      const TString di_file = "Data/FMDiameters/fm554_di.txt";
-      const TString do_file = "Data/FMDiameters/fm554_do.txt";
+      const TString di_file = "diameter-files/fm554_di.txt";
+      const TString do_file = "diameter-files/fm554_do.txt";
       double R_fv30 = ratio(di_file, do_file);
       // cout << R_fv30 << endl;
       double R_sig_fv30 = r_sig(di_file, do_file);
