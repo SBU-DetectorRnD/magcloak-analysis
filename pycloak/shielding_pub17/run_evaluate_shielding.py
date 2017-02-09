@@ -15,3 +15,7 @@ es.evaluate_shielding_for_set( setlist = "filelist_helmholtz_2layer_rc2015.txt",
 es.evaluate_shielding_for_set( setlist = "filelist_helmholtz_3layer_rc2015.txt", results_file = "results/helmholtz_3layer_rc2015.csv")
 es.evaluate_shielding_for_set( setlist = "filelist_helmholtz_4layer_rc2015.txt", results_file = "results/helmholtz_4layer_rc2015.csv")
 
+
+# 2 layers Van de Graaff prototype
+es.evaluate_shielding_for_set( setlist = "filelist_shielding_vdg2layer.txt", results_file = "results/shielding_vdg2layer.csv")
+
