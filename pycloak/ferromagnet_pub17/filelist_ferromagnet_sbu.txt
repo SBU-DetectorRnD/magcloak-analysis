@@ -1,0 +1,6 @@
+#Ferromagnet Permeability Measurements
+#fmID, Fm, filename, B_int, B_ext, inner-diameter-file, outer-diameter-file
+
+# SBU Fm = 0.548
+fm548 0.548	data-calib/DATA_Gaussmeter/DataFile_161110_165703.csv	B1	Bnom	fm554_di.txt    fm554_do.txt
+
