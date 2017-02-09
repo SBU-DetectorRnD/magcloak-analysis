@@ -37,9 +37,9 @@ def calc_mu(Bin, Bout, radius_inner, radius_outer):
     # convert from Series object to Numpy Array object
     B_ratio = B_ratio.values
 
-    # If value under square root becomes neagtive, force it to be 1
-    #B_ratio[ (B_ratio**2) * (radius_ratio**2) - B_ratio * (radius_ratio**2) - B_ratio + 1 < 0 ] = 1
-    #print( (B_ratio**2) * (radius_ratio**2) - B_ratio * (radius_ratio**2) - B_ratio + 1)
+    # If value under square root becomes neagtive, set B_ratio to NaN
+    # (this seems to happen with Argonne MRI measurements at low fields)
+    B_ratio[ (B_ratio**2) * (radius_ratio**2) - B_ratio * (radius_ratio**2) - B_ratio + 1 < 0 ] = np.nan
 
     # Calculate permeability. Here, use both uncertainties from field measurements and uncertainties from geometry, i.e. radius measurements.
     mu = ( B_ratio * (radius_ratio**2)
@@ -112,6 +112,8 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
     # check ideal permeability
     calc_mu_cloak(diam_in, diam_out)
 
+    print(result.head(10))
+
     # calculate permeability and store values and uncertainties in arrays
     (mu_c, mu_err, mu_err_pp, mu_err_geom) = calc_mu(Bin=result['Bin_c'], Bout=result['Bout_c'], radius_inner=diam_in, radius_outer=diam_out)
 
@@ -182,4 +184,4 @@ def evaluate_permeability_for_set(setlist="foo.txt", results_file="foo2.txt"):
 if __name__ == '__main__':
 
     evaluate_permeability_for_set( setlist = "filelist_ferromagnet_sbu.txt", results_file = "results/ferromagnet_sbu.csv")
-#    evaluate_permeability_for_set( setlist = "filelist_ferromagnet_mri.txt", results_file = "results/ferromagnet_mri.csv")
+    evaluate_permeability_for_set( setlist = "filelist_ferromagnet_mri.txt", results_file = "results/ferromagnet_mri.csv")
