@@ -4,6 +4,8 @@ import argparse
 import numpy as np
 import pandas as pd
 
+from uncertainties import ufloat, unumpy
+
 import load as ld
 import applied_field as af
 
@@ -31,12 +33,12 @@ def calibrateGaussmeter(pars):
     df = pd.DataFrame(data)
 
     # Calculate nominal magnet field Bnom based on current and calibration measurement
-    Bnom = af.calc_applied_field_lin( df['multi'].values, "", fname_cal)
-    df['Bnom'] = Bnom.nominal_value
-    df['Bnom_sdev'] = Bnom.std_dev
+    Bnom = af.calc_applied_field_lin( df['multi'].values, fname_cal)
+    df['Bnom'] = unumpy.nominal_values(Bnom)
+    df['Bnom_sdev'] = unumpy.std_devs(Bnom)
 
-    # Print one line as crosscheck
-    print(df.head(1))
+    # Print three line as crosscheck
+    print(df.head(3))
 
     # Write csv output
     df.to_csv(fname_out, index=False)

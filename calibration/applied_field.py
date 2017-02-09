@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 import numpy as np
+import pandas as pd
+import load as ld
 from scipy.interpolate import interp1d
 from scipy.interpolate import PchipInterpolator
-from uncertainties import ufloat
+from uncertainties import ufloat, unumpy
 from add_uncertainties import quad_add
 import sys
 
@@ -26,11 +28,17 @@ def calc_applied_field(i, multimeter_file="", calibration_file=""):
     print("Applied Field:\t" + str(b0) + "+/-" + str(sig_b0))
     return ufloat(b0, sig_b0)
 
-def calc_applied_field_lin(i, multimeter_file="", calibration_file=""):
-    [i_mean, sig_i] = i_stats(i, multimeter_file)
-    calibration = np.genfromtxt(calibration_file)
-    p, cov = np.polyfit(calibration[:,1], calibration[:,2], 1,  cov=True)
-    print(p)
-    b0 = np.polyval(p,i_mean)
-    sig_b0 = abs((np.polyval(p,i_mean+sig_i) - np.polyval(p,i_mean-sig_i))/2)
-    return ufloat(b0, sig_b0)
+def calc_applied_field_lin(i, calibration_file=""):
+    data_calibration = ld.Gaussmeter(calibration_file, drop=False)
+    df_calibration = pd.DataFrame(data_calibration)
+
+    # linear fit to calibration measurement
+    p, cov = np.polyfit(df_calibration['multi'], df_calibration['B1'], 1,  cov=True)
+
+    # set uncertainty of current reading from multimeter to hard-coded 0
+    sig_i = 0
+
+    b0 = np.polyval(p,i)
+    sig_b0 = abs((np.polyval(p,i+sig_i) - np.polyval(p,i-sig_i))/2)
+
+    return unumpy.uarray(b0, sig_b0)
