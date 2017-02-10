@@ -3,7 +3,7 @@
 int get_calibration_factor()
 {
 
-	std::string file_path = "/home/josh/Dropbox/Stony\ Brook\ Research\ Team\ Folder/LabVIEW/DATA_Gaussmeter/DataFile_160726_133846.txt";
+	std::string file_path = "/mnt/c/Users/celeste/Dropbox/Stony Brook Research Team Folder/LabVIEW/DATA_Gaussmeter/DataFile_170210_161426.txt";
 
 	double calibration_factor = get_calibration(file_path);
 	if (calibration_factor == 0) 
