@@ -14,7 +14,7 @@ fig, axs = plt.subplots(1,1,figsize=(6,5))
 axs.tick_params(labelsize=12)
 axs.set_title("2-layer Van de Graaff shielding")
 plt.xlabel("time (s)",fontsize=12)
-plt.ylabel("$B_{in}$ (T)",fontsize=12)
+plt.ylabel("$B_{in}$ (mT)",fontsize=12)
 
 # read data
 df1 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170131_135134.csv") #10 mT
