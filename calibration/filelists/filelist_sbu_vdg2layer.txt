@@ -1,30 +1,34 @@
 # 2 layer Van de Graaff shield
 
 # B vs Z scan at 30 mT - room temperature
-DataFile_170208_203721.txt	steeringdipole	DataFile_160718_092841.txt
+DataFile_170208_203721.txt	steeringdipole	DataFile_160411_120720.txt
 
 # B vs Z scan at 30 mT - cryo temperature
-DataFile_170208_213322.txt	steeringdipole	DataFile_160718_092841.txt
+DataFile_170208_213322.txt	steeringdipole	DataFile_160411_120720.txt
 
 # B vs I scans in center of magnet/shield - room temperature
-DataFile_170131_123832.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_124202.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_124434.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_124710.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_124954.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_125215.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_125452.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_125753.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_130037.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_130330.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_130611.txt	steeringdipole	DataFile_160718_092841.txt
+DataFile_170131_123832.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_124202.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_124434.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_124710.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_124954.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_125215.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_125452.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_125753.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_130037.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_130330.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_130611.txt	steeringdipole	DataFile_160411_120720.txt
 
 # B vs I scans in center of magnet/shield - cryo temperature
-DataFile_170131_134323.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_135134.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_135653.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_140138.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_141818.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_143117.txt	steeringdipole	DataFile_160718_092841.txt
-DataFile_170131_144357.txt	steeringdipole	DataFile_160718_092841.txt
+DataFile_170131_134323.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_135134.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_135653.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_140138.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_141818.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_143117.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170131_144357.txt	steeringdipole	DataFile_160411_120720.txt
+
+DataFile_170208_215133.txt	steeringdipole  DataFile_160411_120720.txt
+DataFile_170208_215939.txt	steeringdipole  DataFile_160411_120720.txt
+DataFile_170208_221505.txt	steeringdipole  DataFile_160411_120720.txt
 
