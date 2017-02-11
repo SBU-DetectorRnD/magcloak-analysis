@@ -14,7 +14,7 @@ fig, axs = plt.subplots(1,1,figsize=(6,5))
 axs.tick_params(labelsize=12)
 axs.set_title("45-layer MRI shielding")
 plt.xlabel("time (s)",fontsize=12)
-plt.ylabel("$B_{in}$ (T)",fontsize=12)
+plt.ylabel("$B_{in}$ (mT)",fontsize=12)
 
 # read data
 df3 = pd.read_csv("data-calib/DATA_MegaVIEW/DataFile_2016-12-08_02-12-19.csv") #440 mT

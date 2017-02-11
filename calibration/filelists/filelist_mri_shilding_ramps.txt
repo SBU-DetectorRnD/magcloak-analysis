@@ -1,0 +1,23 @@
+#File Name				Ramp Field (at start)
+DataFile_2016-12-07_23-43-34.txt	0
+DataFile_2016-12-08_00-19-16.txt	100
+DataFile_2016-12-08_00-28-19.txt	200
+DataFile_2016-12-08_00-51-10.txt	300
+DataFile_2016-12-08_01-10-28.txt	360
+DataFile_2016-12-08_01-23-17.txt	380
+DataFile_2016-12-08_01-44-18.txt	400
+DataFile_2016-12-08_02-05-18.txt	420
+DataFile_2016-12-08_02-24-38.txt	440
+DataFile_2016-12-08_02-44-02.txt	460
+DataFile_2016-12-08_03-03-13.txt	480
+DataFile_2016-12-08_03-22-56.txt	500
+DataFile_2016-12-08_03-42-12.txt	520
+DataFile_2016-12-08_04-02-11.txt	540
+DataFile_2016-12-08_04-22-19.txt	560
+DataFile_2016-12-08_04-42-59.txt	580
+DataFile_2016-12-08_05-03-32.txt	600
+DataFile_2016-12-08_05-24-36.txt	650
+DataFile_2016-12-08_05-46-57.txt	700
+DataFile_2016-12-08_06-10-42.txt	800
+DataFile_2016-12-08_06-34-32.txt	900
+DataFile_2016-12-08_06-59-11.txt	1000

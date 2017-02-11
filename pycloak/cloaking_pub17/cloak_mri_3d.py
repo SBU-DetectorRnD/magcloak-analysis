@@ -121,12 +121,13 @@ poly.set_alpha(0.7)
 ax.add_collection3d(poly, zs=zslices, zdir='y')
 
 # set view angle
-ax.view_init(20, -45)
+#ax.view_init(20, -45)
+ax.view_init(20, 45)
 
 # set axis parameters
 ax.set_xlim3d(-120, 120)
 ax.set_ylim3d(20,100)
-ax.set_zlim3d(400,455)
+ax.set_zlim3d(375,455)
 
 plt.savefig(figname)
 plt.show()

@@ -1,0 +1,24 @@
+# Fm = 0.548
+DataFile_161110_165703.txt	helmholtz	DataFile_161110_162143.txt
+
+
+# Fm = 0.590
+DataFile_170210_164740.txt	helmholtz	DataFile_170210_161426.txt
+DataFile_170210_170305.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_172126.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_172253.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_172550.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_172930.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_174937.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_175724.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_181140.txt      helmholtz       DataFile_170210_161426.txt
+
+# Fm = 0.554
+DataFile_170210_183822.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_184432.txt      helmholtz       DataFile_170210_161426.txt
+
+
+# Fm = 0.574
+DataFile_170210_190426.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_191030.txt      helmholtz       DataFile_170210_161426.txt
+
