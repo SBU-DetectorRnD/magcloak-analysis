@@ -37,8 +37,8 @@ lab2 = str("B = ") + str(int(round(Bnom2))) + str(" mT")
 lab3 = str("B = ") + str(int(round(Bnom3))) + str(" mT")
 
 # plot data
-#axs.errorbar( df1['time'], abs(df1['B1']), yerr=0, marker='.', label=lab1 )
-axs.errorbar( df2['time'], abs(df2['B1']), yerr=0, marker='.', label=lab2 )
+axs.errorbar( df1['time'], abs(df1['B1']), yerr=0, marker='.', label=lab1 )
+#axs.errorbar( df2['time'], abs(df2['B1']), yerr=0, marker='.', label=lab2 )
 axs.errorbar( df3['time'], abs(df3['B1']), yerr=0, marker='.', label=lab3 )
 
 # add legend
