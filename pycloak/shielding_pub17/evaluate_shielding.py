@@ -10,12 +10,15 @@ import pandas as pd
 #import fitting.py
 
 def x_dependent(x,y):
-    cut = x.size/3
+    cut = x.size/4
+    n_sigma_threshold = 2
     mean_first = np.mean(y[0:cut])
     std_first = np.std(y[0:cut])
     mean_last = np.mean(y[-1-cut:-1])
     std_last = np.std(y[-1-cut:-1])
-    return( abs(mean_first-mean_last) > (std_first + std_last))
+    diff_mean = mean_last - mean_first
+    diff_std = np.sqrt( std_first**2 + std_last**2 )
+    return( (diff_mean > n_sigma_threshold * diff_std) & (mean_last > 0.01) )
 
 
 
