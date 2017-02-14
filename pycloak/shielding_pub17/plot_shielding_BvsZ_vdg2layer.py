@@ -44,15 +44,17 @@ data_shield['pos'] = data_shield['pos'] - zcenter
 # ...
 
 # plot curves
-ax.plot( data_noshield['pos'], data_noshield['B1'], marker='o', color='r', label="no shield")
-ax.plot( data_shield['pos'], data_shield['B1'], marker='o', color='b', label="with shield")
+plt1=ax.plot( data_shield['pos'], data_shield['B1'], marker='.', label='shield')
+plt2=ax.plot( data_noshield['pos'], data_noshield['B1'], marker='.', label='no shield')
 
 # plot cosmetics: set axis parameters
 # ax.set_xlim(-12000, 12000)
 # ax.set_ylim(0,500)
 
 # add legend
-ax.legend(loc = 'upper right', prop={'size':12})
+#ax.legend(loc = 'upper right', prop={'size':12})
+ax.text(-195, 2.3, 'superconductor',fontsize=12,color=plt1[0].get_color())
+ax.text(30, 29, 'no superconductor',fontsize=12,color=plt2[0].get_color())
 
 # save & display
 plt.savefig("plots/shield_BvsZ_vdg2layer.png")
