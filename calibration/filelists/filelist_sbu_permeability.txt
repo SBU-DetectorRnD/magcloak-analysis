@@ -13,8 +13,8 @@ DataFile_170210_175724.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_181140.txt      helmholtz       DataFile_170210_161426.txt
 
 # Ferromagnet: 0.0 (base0
-DataFile_170210_221924.txt
-DataFile_170210_222443.txt
+DataFile_170210_221924.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170210_222443.txt      helmholtz       DataFile_170210_161426.txt
 
 # Fm = 0.554
 DataFile_170210_183822.txt      helmholtz       DataFile_170210_161426.txt
