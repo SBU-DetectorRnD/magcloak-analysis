@@ -15,7 +15,7 @@ def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
         sys.exit(1)
 
     # create figure
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots( figsize=(6,5) )
 
 #    # first: plot lines for nominal fields
 #    for i, (dfile, dname) in enumerate( zip( datafiles, datanames ) ):
