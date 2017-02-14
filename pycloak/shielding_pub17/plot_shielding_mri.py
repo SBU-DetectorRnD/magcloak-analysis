@@ -20,6 +20,19 @@ data = pd.read_csv("results/mri_shielding_45layer.csv")
 # sort values
 data = data.sort_values('Bout',ascending=True)
 
+# once time dependence is established, set all time dependences at higher fields to TRUE
+B_first_time_dependence = (data.loc[data['tdep'],'Bout'].values)[0]
+print('First time dependence at B (mT) = ', B_first_time_dependence)
+data.loc[ data['Bout'] >= B_first_time_dependence, 'tdep'] = True
+
+# duplicate point at transition from no time dependence to time dependence for cleaner plotting
+data_dupl = (data[data['Bout'] == B_first_time_dependence]).copy(deep=True)
+data_dupl.loc[:,'tdep'] = False
+data = data.append( data_dupl )
+
+# sort values again
+data = data.sort_values('Bout',ascending=True)
+
 # scale field readings from mT to T
 data['Bins'] /= 1000
 data['Bout'] /= 1000
@@ -45,10 +58,11 @@ ax1.axvline(1.0, color='grey', linestyle='--')
 ax1.plot(ref_x,ref_y, color='g', linestyle='--')
 
 # data
-ax1.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], color='b', marker='o')
-ax1.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color='b', marker='o', mfc='white')
+plt1 = ax1.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], marker='o')
+ax1.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color=plt1[0].get_color(), marker='o', mfc='white')
 
-plt.ylabel("$B_{in}$ (T)",fontsize=12)
+ax1.set_yticks(np.arange(0,1.2,0.2))
+ax1.set_ylabel("$B_{in}$ (T)",fontsize=12)
 
 
 # plot data: Combined- Bottom
@@ -62,19 +76,18 @@ ax2.axvline(1.0, color='grey', linestyle='--')
 ax2.plot(ref_x,ref_y, color='g', linestyle='--')
 
 # actual data
-ax2.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], color='b', marker='o')
-ax2.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color='b', marker='o', mfc='white')
+plt2 = ax2.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'],  marker='o')
+ax2.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color=plt2[0].get_color(), marker='o', mfc='white')
 
 ax2.set_yscale("log", nonposy='clip')
-
-plt.xlabel("$B_{out}$ (T)",fontsize=12)
-plt.ylabel("$B_{in}$ (T)",fontsize=12)
+ax2.set_yticks((1e-6,1e-3,1))
+ax2.set_xlabel("$B_{out}$ (T)",fontsize=12)
+ax2.set_ylabel("$B_{in}$ (T)",fontsize=12)
 
 # reduce whitespace
 plt.tight_layout()
-plt.show()
 plt.savefig("plots/shielding_mri_45layer_linlog.png")
-
+plt.show()
 
 ##############################################
 
