@@ -33,8 +33,8 @@ a_mu = []
 a_mu_sdev = []
 a_fm = []
 
-#for id_i in ["fm000a", "fm000b", "fm554a", "fm554b", "fm581a", "fm581b", "fm590a", "fm590b", "fm618a", "fm618b", "fm673a", "fm673b", "fm699a", "fm699b", "fm745a", "fm745b"]:
-for id_i in ["fm000a", "fm000b", "fm554a", "fm554b", "fm581a", "fm581b", "fm590a", "fm590b", "fm618a", "fm618b", "fm673a", "fm673b", "fm699b", "fm745a", "fm745b" ]:
+
+for id_i in ["fm000a", "fm000b", "fm581a", "fm581b", "fm590a", "fm590b", "fm618a", "fm618b", "fm673a", "fm673b", "fm699b", "fm745a", "fm745b" ]:
 
 
     #    f = interp1d(calibration[:,1], calibration[:,2])
@@ -47,6 +47,8 @@ for id_i in ["fm000a", "fm000b", "fm554a", "fm554b", "fm581a", "fm581b", "fm590a
 # do plot
 print(a_fm)
 axs.errorbar( a_fm, a_mu, a_mu_sdev, marker='o')
+axs.set_xlim((0,0.8))
+axs.set_ylim((0,5))
 
 # save & show plot
 plt.savefig("plots/permeability_vs_fm_sbu.png")
