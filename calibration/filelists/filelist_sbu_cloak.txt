@@ -1,3 +1,16 @@
+# Helmholtz field maps - angle scan
+DataFile_170203_183657.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_191657.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_193835.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_195609.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_201216.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_202838.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_204341.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_205722.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_211046.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_212332.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170203_213739.txt      helmholtz       DataFile_170210_161426.txt
+
 # Helmholtz field maps
 DataFile_170207_144702.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170207_145731.txt      helmholtz       DataFile_170210_161426.txt
