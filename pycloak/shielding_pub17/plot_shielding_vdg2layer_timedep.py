@@ -41,6 +41,8 @@ axs.errorbar( df1['time'], abs(df1['B1']), yerr=0, marker='.', label=lab1 )
 #axs.errorbar( df2['time'], abs(df2['B1']), yerr=0, marker='.', label=lab2 )
 axs.errorbar( df3['time'], abs(df3['B1']), yerr=0, marker='.', label=lab3 )
 
+#axs.set_yscale("log", nonposy='clip')
+
 # add legend
 axs.legend(loc = 'center right', prop={'size':12})
 axs.set_xlim(0,600)

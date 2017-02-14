@@ -14,12 +14,14 @@ from scipy.integrate import trapz, simps
 fig, ax = plt.subplots( figsize=(6,5) )
 ax.tick_params(labelsize=12)
 ax.set_title("B vs Z Van de Graaff prototype")
+ax.set_yscale("log", nonposy='clip')
 plt.xlabel("position (mm)",fontsize=12)
-plt.ylabel("$B_{T}$ (mT)",fontsize=12)
+plt.ylabel("$B_{T}$ (mT) + 0.1 mT",fontsize=12)
 
 # mark cloak dimensions
 plt.axvline(-500, color='grey', linestyle='--')
 plt.axvline(500, color='grey', linestyle='--')
+plt.axhline(0.1, color='grey', linestyle='-',alpha=0.5)
 
 data_noshield = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170208_203721.csv", comment='#')
 data_shield = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170208_213322.csv", comment='#')
@@ -44,8 +46,8 @@ data_shield['pos'] = data_shield['pos'] - zcenter
 # ...
 
 # plot curves
-plt1=ax.plot( data_shield['pos'], data_shield['B1'], marker='.', label='shield')
-plt2=ax.plot( data_noshield['pos'], data_noshield['B1'], marker='.', label='no shield')
+plt1=ax.plot( data_shield['pos'], data_shield['B1']+0.1, marker='.', label='shield')
+plt2=ax.plot( data_noshield['pos'], data_noshield['B1']+0.1, marker='.', label='no shield')
 
 # plot cosmetics: set axis parameters
 # ax.set_xlim(-12000, 12000)
