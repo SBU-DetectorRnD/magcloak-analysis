@@ -1,0 +1,12 @@
+# Helmholtz field maps - angle scan with 45 layer SC and fM=0.554
+-11.139	    data-calib/DATA_Gaussmeter/DataFile_170203_213739.csv
+-5.57	    data-calib/DATA_Gaussmeter/DataFile_170203_212332.csv
+-2.785	    data-calib/DATA_Gaussmeter/DataFile_170203_211046.csv
+00.00	    data-calib/DATA_Gaussmeter/DataFile_170203_183657.csv
+00.00	    data-calib/DATA_Gaussmeter/DataFile_170203_204341.csv
+ 2.785	    data-calib/DATA_Gaussmeter/DataFile_170203_205722.csv
+ 5.57	    data-calib/DATA_Gaussmeter/DataFile_170203_191657.csv
+11.139	    data-calib/DATA_Gaussmeter/DataFile_170203_193835.csv
+#16.709	    data-calib/DATA_Gaussmeter/DataFile_170203_195609.csv
+22.28	    data-calib/DATA_Gaussmeter/DataFile_170203_201216.csv
+33.418	    data-calib/DATA_Gaussmeter/DataFile_170203_202838.csv
