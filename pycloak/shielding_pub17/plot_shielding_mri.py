@@ -9,6 +9,9 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
+# set plotting style
+plt.style.use("../style_pub17/cloak17_paper.mplstyle")
+#../style_pub17/cloak17_slides.mplstyle
 
 # set figure parameters
 figsize_x = 6
@@ -47,7 +50,6 @@ ref_y = ref_x * 0.01
 fig_a = plt.figure( figsize = (figsize_x, figsize_y) )
 
 ax1 = plt.subplot(2, 1, 1)
-ax1.tick_params(labelsize=12)
 ax1.get_xaxis().set_visible(False)
 
 # mark 0.5 and 1 T
@@ -62,7 +64,7 @@ plt1 = ax1.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==Fa
 ax1.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color=plt1[0].get_color(), marker='o', mfc='white')
 
 ax1.set_yticks(np.arange(0,1.2,0.2))
-ax1.set_ylabel("$B_{in}$ (T)",fontsize=12)
+ax1.set_ylabel("$B_{in}$ (T)")
 
 
 # plot data: Combined- Bottom
@@ -81,23 +83,23 @@ ax2.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr
 
 ax2.set_yscale("log", nonposy='clip')
 ax2.set_yticks((1e-6,1e-3,1))
-ax2.set_xlabel("$B_{out}$ (T)",fontsize=12)
-ax2.set_ylabel("$B_{in}$ (T)",fontsize=12)
+ax2.set_xlabel("$B_{out}$ (T)")
+ax2.set_ylabel("$B_{in}$ (T)")
 
 # reduce whitespace
 plt.tight_layout()
 plt.savefig("plots/shielding_mri_45layer_linlog.png")
+plt.savefig("plots/shielding_mri_45layer_linlog.eps")
 plt.show()
 
 ##############################################
 
 # set figure parameters                                                                                                               
 fig, axs = plt.subplots(1,1,figsize=(6,5))
-axs.tick_params(labelsize=12)
 
 axs.set_title("45-layer MRI shielding")
-plt.xlabel("$B_{out}$ (T)",fontsize=12)
-plt.ylabel("$B_{in}$ (T)",fontsize=12)
+plt.xlabel("$B_{out}$ (T)")
+plt.ylabel("$B_{in}$ (T)")
 
 # mark 0.5 and 1 T
 plt.axvline(0.5, color='grey', linestyle='--')
@@ -109,7 +111,7 @@ axs.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr
 
 # save & show plot
 plt.savefig("plots/shielding_mri_45layer_lin.png")
-
+plt.savefig("plots/shielding_mri_45layer_lin.eps")
 
 
 #######
@@ -131,5 +133,6 @@ axs.set_yscale("log", nonposy='clip')
 
 # save & show plot
 plt.savefig("plots/shielding_mri_45layer_log.png")
+plt.savefig("plots/shielding_mri_45layer_log.eps")
 
 
