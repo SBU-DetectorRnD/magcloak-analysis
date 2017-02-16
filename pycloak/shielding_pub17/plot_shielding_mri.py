@@ -69,7 +69,8 @@ plt1 = ax1.errorbar( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']
 ax1.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color=plt1[0].get_color(), marker='o', mfc='white', label="Time dependent")
 
 #ax1.set_yticks(np.arange(0,1.2,0.2))
-ax1.set_yticks([0.0,0.5,1.0])
+ax1.set_yticks([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0])
+ax1.set_yticklabels([0.0,'','','','',0.5,'','','','',1.0])
 ax1.set_ylabel("$B_{in}$ (T)",labelpad=15)
 
 plt.legend(loc="upper left")
@@ -91,6 +92,8 @@ ax2.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr
 
 ax2.set_yscale("log", nonposy='clip')
 ax2.set_yticks((1e-6,1e-3,1))
+ax2.set_xticks([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.1])
+ax2.set_xticklabels([0.0,'','','','',0.5,'','','','',1.0,''])
 ax2.set_xlabel("$B_{out}$ (T)")
 ax2.set_ylabel("$B_{in}$ (T)")
 
