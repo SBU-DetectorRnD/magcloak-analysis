@@ -4,3 +4,4 @@ lines.linewidth : 2
 lines.markersize : 5
 xtick.labelsize : 12
 ytick.labelsize : 12
+font.size : 12

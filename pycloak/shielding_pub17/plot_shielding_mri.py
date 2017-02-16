@@ -9,9 +9,14 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
+import mycolors
+
 # set plotting style
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 #../style_pub17/cloak17_slides.mplstyle
+
+# pick colors
+mcol = mycolors.pub17
 
 # set figure parameters
 figsize_x = 6
@@ -53,32 +58,35 @@ ax1 = plt.subplot(2, 1, 1)
 ax1.get_xaxis().set_visible(False)
 
 # mark 0.5 and 1 T
-ax1.axvline(0.5, color='grey', linestyle='--')
-ax1.axvline(1.0, color='grey', linestyle='--')
+ax1.axvline(0.5, color=mcol[2], linestyle='-', alpha=0.3)
+ax1.axvline(1.0, color=mcol[2], linestyle='-', alpha=0.3)
 
 # reference line
-ax1.plot(ref_x,ref_y, color='g', linestyle='--')
+ax1.plot(ref_x,ref_y, color=mcol[1], linestyle='-')
 
 # data
-plt1 = ax1.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], marker='o')
-ax1.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color=plt1[0].get_color(), marker='o', mfc='white')
+plt1 = ax1.errorbar( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], yerr=data.loc[data['tdep']==False,'Bins_sdev'].values, color=mcol[0], marker='o', label="Not time dependent")
+ax1.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color=plt1[0].get_color(), marker='o', mfc='white', label="Time dependent")
 
-ax1.set_yticks(np.arange(0,1.2,0.2))
-ax1.set_ylabel("$B_{in}$ (T)")
+#ax1.set_yticks(np.arange(0,1.2,0.2))
+ax1.set_yticks([0.0,0.5,1.0])
+ax1.set_ylabel("$B_{in}$ (T)",labelpad=15)
 
+plt.legend(loc="upper left")
 
 # plot data: Combined- Bottom
 ax2 = plt.subplot(2, 1, 2)
 
 # mark 0.5 and 1 T
-ax2.axvline(0.5, color='grey', linestyle='--')
-ax2.axvline(1.0, color='grey', linestyle='--')
+ax2.axvline(0.5, color=mcol[2], linestyle='-', alpha=0.3)
+ax2.axvline(1.0, color=mcol[2], linestyle='-', alpha=0.3)
 
 # ref line
-ax2.plot(ref_x,ref_y, color='g', linestyle='--')
+ax2.plot(ref_x,ref_y, color=mcol[1], linestyle='-')
+ax2.text(0.65,0.001,"$B_{in} = B_{out} \cdot 0.01$",color=mcol[1])
 
 # actual data
-plt2 = ax2.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'],  marker='o')
+plt2 = ax2.errorbar( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], data.loc[data['tdep']==False,'Bins'], color=mcol[0],  marker='o')
 ax2.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color=plt2[0].get_color(), marker='o', mfc='white')
 
 ax2.set_yscale("log", nonposy='clip')
@@ -88,8 +96,8 @@ ax2.set_ylabel("$B_{in}$ (T)")
 
 # reduce whitespace
 plt.tight_layout()
-plt.savefig("plots/shielding_mri_45layer_linlog.png")
-plt.savefig("plots/shielding_mri_45layer_linlog.eps")
+plt.savefig("plots/png/shielding_mri_45layer_linlog.png")
+plt.savefig("plots/eps/shielding_mri_45layer_linlog.eps")
 plt.show()
 
 ##############################################
@@ -102,16 +110,16 @@ plt.xlabel("$B_{out}$ (T)")
 plt.ylabel("$B_{in}$ (T)")
 
 # mark 0.5 and 1 T
-plt.axvline(0.5, color='grey', linestyle='--')
-plt.axvline(1.0, color='grey', linestyle='--')
+plt.axvline(0.5, color=mcol[2], linestyle='-')
+plt.axvline(1.0, color=mcol[2], linestyle='-')
 
 # plot data
 axs.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], color='b', marker='o')
 axs.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr=data.loc[data['tdep'],'Bins_sdev'].values, color='b', marker='o', mfc='white')
 
 # save & show plot
-plt.savefig("plots/shielding_mri_45layer_lin.png")
-plt.savefig("plots/shielding_mri_45layer_lin.eps")
+plt.savefig("plots/png/shielding_mri_45layer_lin.png")
+plt.savefig("plots/eps/shielding_mri_45layer_lin.eps")
 
 
 #######
@@ -123,7 +131,7 @@ axs.set_yscale("log", nonposy='clip')
 # include 1% shielding reference line
 ref_x = np.arange(0.1,1.1,0.01)
 ref_y = ref_x * 0.01
-axs.plot(ref_x,ref_y, color='g', linestyle='--')
+axs.plot(ref_x,ref_y, color=mcol[1], linestyle='-')
 
 # plot data
 axs.plot( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], color='b', marker='o')
@@ -132,7 +140,5 @@ axs.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr
 axs.set_yscale("log", nonposy='clip')
 
 # save & show plot
-plt.savefig("plots/shielding_mri_45layer_log.png")
-plt.savefig("plots/shielding_mri_45layer_log.eps")
-
-
+plt.savefig("plots/png/shielding_mri_45layer_log.png")
+plt.savefig("plots/eps/shielding_mri_45layer_log.eps")
