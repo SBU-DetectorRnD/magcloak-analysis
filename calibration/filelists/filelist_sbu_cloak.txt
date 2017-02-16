@@ -1,3 +1,18 @@
+# Helmholtz scans- old
+DataFile_161009_155547.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_160626.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_163230.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_162030.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_164406.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_180155.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_174739.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_181244.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_193724.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_192152.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_161009_194749.txt      helmholtz       DataFile_170210_161426.txt
+
+DataFile_170126_193411.txt	helmholtz       DataFile_170210_161426.txt
+
 # Helmholtz field maps - angle scan
 DataFile_170203_183657.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170203_191657.txt      helmholtz       DataFile_170210_161426.txt
@@ -36,3 +51,32 @@ DataFile_170213_204446.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170213_205047.txt      helmholtz       DataFile_170210_161426.txt 
 DataFile_170213_205815.txt      helmholtz       DataFile_170210_161426.txt 
 DataFile_170213_210344.txt      helmholtz       DataFile_170210_161426.txt 
+
+# Helmholtz field maps B vs Z
+DataFile_170214_185331.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170214_190443.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170214_191525.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170214_201515.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170214_202512.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170214_203513.txt      helmholtz       DataFile_170210_161426.txt
+
+# More BvX
+DataFile_170214_205838.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170214_210939.txt      helmholtz       DataFile_170210_161426.txt
+
+# SC only measurements - 4 layer - in Helmholtz
+DataFile_170215_162938.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_163835.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_165018.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_165849.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_171236.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_173242.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_175356.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_181018.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_182257.txt      helmholtz       DataFile_170210_161426.txt
+
+# SC only measurements - 45 layer - in Helmholtz
+DataFile_170215_184713.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_190444.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170215_191524.txt      helmholtz       DataFile_170210_161426.txt
+
