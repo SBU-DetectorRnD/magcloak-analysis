@@ -47,3 +47,6 @@ DataFile_170210_220621.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_223922.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_224330.txt      helmholtz       DataFile_170210_161426.txt
 
+# Ferromagnet: 0.104:
+DataFile_170214_164514.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170214_165059.txt      helmholtz       DataFile_170210_161426.txt
