@@ -5,3 +5,6 @@ lines.markersize : 5
 xtick.labelsize : 12
 ytick.labelsize : 12
 font.size : 12
+font.family: serif
+mathtext.sf: serif
+mathtext.fontset: dejavuserif
