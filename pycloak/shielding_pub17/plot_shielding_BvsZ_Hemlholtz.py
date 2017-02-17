@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 from matplotlib import cm
 
-# set plotting style                                                                                                                    
+# set plotting style
 import mycolors
 mcol = mycolors.pub17
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
