@@ -12,6 +12,13 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
 from scipy.interpolate import PchipInterpolator
 
+from scipy import optimize
+
+# set plotting style
+import mycolors
+mcol = mycolors.pub17
+plt.style.use("../style_pub17/cloak17_paper.mplstyle")
+
 # read file with results from permeability calculation
 data = pd.read_csv("results/ferromagnet_sbu.csv")
 
@@ -23,18 +30,17 @@ Bref = 40 # mT
 
 # set figure parameters
 fig, axs = plt.subplots(1,1,figsize=(6,5))
-axs.tick_params(labelsize=12)
 
-axs.set_title("Ferromagnet Permeability (at 40 mT)")
-plt.xlabel("fM",fontsize=12)
-plt.ylabel("$\mu_{r}$",fontsize=12)
+#axs.set_title("Ferromagnet Permeability (at 40 mT)")
+plt.xlabel("$f_M$")
+plt.ylabel("$\mu_{r}$")
 
 a_mu = []
 a_mu_sdev = []
 a_fm = []
 
 
-for id_i in ["fm000a", "fm000b", "fm581a", "fm581b", "fm590a", "fm590b", "fm618a", "fm618b", "fm673a", "fm673b", "fm699b", "fm745a", "fm745b" ]:
+for id_i in ["fm581a", "fm581b", "fm590a", "fm590b", "fm618a", "fm618b", "fm673a", "fm673b", "fm699b", "fm745a", "fm745b" ]:
 
 
     #    f = interp1d(calibration[:,1], calibration[:,2])
@@ -46,11 +52,17 @@ for id_i in ["fm000a", "fm000b", "fm581a", "fm581b", "fm590a", "fm590b", "fm618a
 
 # do plot
 print(a_fm)
-axs.errorbar( a_fm, a_mu, a_mu_sdev, marker='o')
+axs.errorbar( a_fm, a_mu, a_mu_sdev, linestyle='', marker='o', color=mcol[0])
 axs.set_xlim((0,0.8))
 axs.set_ylim((0,5))
 
+
+# Fit function to data
+# ... TODO
+
+
 # save & show plot
-plt.savefig("plots/permeability_vs_fm_sbu.png")
+plt.savefig("plots/eps/permeability_vs_fm_sbu.eps")
+plt.savefig("plots/png/permeability_vs_fm_sbu.png")
 plt.show()
 ###
