@@ -12,7 +12,7 @@ DataFile_160916_212729.txt	helmholtz	DataFile_160916_211714.txt
 DataFile_160928_200210.txt	helmholtz	DataFile_160928_193601.txt
 
 
-# SBU Cryo measurements
+# SBU Cryo and Room Temperature measurements
 # Fm = 0.548
 DataFile_161110_165703.txt	helmholtz	DataFile_161110_162143.txt
 
