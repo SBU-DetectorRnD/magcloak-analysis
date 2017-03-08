@@ -2,7 +2,7 @@
 DataFile_161110_165703.txt	helmholtz	DataFile_161110_162143.txt
 
 # Fm = 0.590
-DataFile_170210_164740.txt	    helmholtz	      DataFile_170210_161426.txt
+DataFile_170210_164740.txt	helmholtz	      DataFile_170210_161426.txt
 DataFile_170210_170305.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_172126.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_172253.txt      helmholtz       DataFile_170210_161426.txt
