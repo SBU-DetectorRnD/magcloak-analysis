@@ -1,3 +1,18 @@
+#SBU Room Temp Ferromagnet Permeability Measurements
+DataFile_161102_183041.txt	helmholtz	DataFile_161102_181415.txt
+DataFile_161007_205423.txt	helmholtz	DataFile_161007_194516.txt
+DataFile_161006_151934.txt	helmholtz	DataFile_161006_144403.txt
+DataFile_161007_201544.txt	helmholtz	DataFile_161007_194516.txt
+DataFile_161102_183814.txt	helmholtz	DataFile_161102_181415.txt
+DataFile_161102_182323.txt	helmholtz	DataFile_161102_181415.txt
+DataFile_160727_163533.txt	helmholtz	DataFile_160727_162618.txt
+DataFile_160805_143508.txt	helmholtz	DataFile_160805_142716.txt
+DataFile_161006_150305.txt	helmholtz	DataFile_161006_144403.txt
+DataFile_160916_212729.txt	helmholtz	DataFile_160916_211714.txt
+DataFile_160928_200210.txt	helmholtz	DataFile_160928_193601.txt
+
+
+# SBU Cryo measurements
 # Fm = 0.548
 DataFile_161110_165703.txt	helmholtz	DataFile_161110_162143.txt
 
