@@ -36,8 +36,8 @@ plt.ylabel("$\mu_{r}$")
 #for id_i in ["fm590a", "fm590b", "fm554a", "fm554b", "fm574a", "fm574b", "fm574c", "fm574d", "fm581a", "fm581b", "fm618a", "fm618b", "fm673a", "fm673b"]:
 #for id_i in ["fm574o", "fm574a", "fm574b", "fm574c", "fm574d", "fm574e"]:
 #for id_i in ["fm590a", "fm554a", "fm602"]:
-for id_i in ["fm745a", "fm745b"]:
-    axs.errorbar( data_sbu.loc[data_sbu['ID']==id_i,'Bout'], data_sbu.loc[data_sbu['ID']==id_i,'mu'], yerr=data_sbu.loc[data_sbu['ID']==id_i,'mu_err_pp'], marker='o', label=id_i)
+for id_i in ["fm554a", "fm554b"]:
+    axs.errorbar( data_sbu.loc[data_sbu['ID']==id_i,'Bout'], data_sbu.loc[data_sbu['ID']==id_i,'mu'], yerr=data_sbu.loc[data_sbu['ID']==id_i,'mu_err_pp'], marker='.', label=id_i)
 
 # add legend
 axs.legend(loc = 'upper right')
