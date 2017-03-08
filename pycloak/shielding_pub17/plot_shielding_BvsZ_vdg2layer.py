@@ -9,17 +9,22 @@ from matplotlib import cm
 
 from scipy.integrate import trapz, simps
 
+# set plotting style
+import mycolors
+mcol = mycolors.pub17
+plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 
 # set figure parameters
 fig, ax = plt.subplots( figsize=(6,5) )
-ax.tick_params(labelsize=12)
-ax.set_title("B vs Z Van de Graaff prototype")
-plt.xlabel("position (mm)",fontsize=12)
-plt.ylabel("$B_{T}$ (mT)",fontsize=12)
+#ax.set_title("B vs Z Van de Graaff prototype")
+ax.set_yscale("log", nonposy='clip')
+plt.xlabel("position (cm)")
+plt.ylabel("$B_{T}$ (mT) + 0.1 mT")
 
 # mark cloak dimensions
-plt.axvline(-500, color='grey', linestyle='--')
-plt.axvline(500, color='grey', linestyle='--')
+plt.axvline(-50.0, color=mcol[2], linestyle='-',alpha=0.5)
+plt.axvline(50.0, color=mcol[2], linestyle='-',alpha=0.5)
+plt.axhline(0.1, color=mcol[2], linestyle='-',alpha=0.5)
 
 data_noshield = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170208_203721.csv", comment='#')
 data_shield = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170208_213322.csv", comment='#')
@@ -44,16 +49,18 @@ data_shield['pos'] = data_shield['pos'] - zcenter
 # ...
 
 # plot curves
-ax.plot( data_noshield['pos'], data_noshield['B1'], marker='o', color='r', label="no shield")
-ax.plot( data_shield['pos'], data_shield['B1'], marker='o', color='b', label="with shield")
+plt2=ax.plot( data_noshield['pos']/10, data_noshield['B1']+0.1, marker='o', color=mcol[1], label='no shield')
+plt1=ax.plot( data_shield['pos']/10, data_shield['B1']+0.1, marker='o', color=mcol[0], label='shield')
 
 # plot cosmetics: set axis parameters
 # ax.set_xlim(-12000, 12000)
 # ax.set_ylim(0,500)
 
 # add legend
-ax.legend(loc = 'upper right', prop={'size':12})
+ax.text(10, 0.03, 'with SC shield',color=plt1[0].get_color())
+ax.text(10, 25, 'no SC shield',color=plt2[0].get_color())
 
 # save & display
-plt.savefig("plots/shield_BvsZ_vdg2layer.png")
+plt.savefig("plots/eps/shield_BvsZ_vdg2layer.eps")
+plt.savefig("plots/png/shield_BvsZ_vdg2layer.png")
 plt.show()

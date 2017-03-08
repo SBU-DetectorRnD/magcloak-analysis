@@ -19,6 +19,14 @@ fm548 0.548	data-calib/DATA_Gaussmeter/DataFile_161110_165703.csv	B1	Bnom	fm554_
 fm590a	0.590	data-calib/DATA_Gaussmeter/DataFile_170210_174937.csv	B1	Bnom	fm554_di.txt    fm554_do.txt
 fm590b	0.590	data-calib/DATA_Gaussmeter/DataFile_170210_181140.csv	B1 	Bnom	fm554_di.txt    fm554_do.txt
 
+# Ferromagnet: 0.000
+fm000a	0.000	data-calib/DATA_Gaussmeter/DataFile_170210_221924.csv	B1	Bnom	fm554_di.txt    fm554_do.txt
+fm000b	0.000	data-calib/DATA_Gaussmeter/DataFile_170210_222443.csv	B1 	Bnom	fm554_di.txt    fm554_do.txt
+
+# SBU FM = 0.104:
+fm104a	0.104	data-calib/DATA_Gaussmeter/DataFile_170214_164514.csv	B1 	Bnom	fm554_di.txt    fm554_do.txt
+fm104b	0.104	data-calib/DATA_Gaussmeter/DataFile_170214_165059.csv	B1 	Bnom	fm554_di.txt    fm554_do.txt
+
 # Ferromagnet: 0.554
 fm554a  0.554   data-calib/DATA_Gaussmeter/DataFile_170210_183822.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
 fm554b  0.554   data-calib/DATA_Gaussmeter/DataFile_170210_184432.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
@@ -32,8 +40,8 @@ fm574d  0.574   data-calib/DATA_Gaussmeter/DataFile_170210_211602.csv   B1      
 fm574e  0.574   data-calib/DATA_Gaussmeter/DataFile_170210_214850.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
 
 # Ferromagnet: 0.581
-fm581a  0.574   data-calib/DATA_Gaussmeter/DataFile_170210_195722.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
-fm581b  0.574   data-calib/DATA_Gaussmeter/DataFile_170210_200308.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
+fm581a  0.581   data-calib/DATA_Gaussmeter/DataFile_170210_195722.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
+fm581b  0.581   data-calib/DATA_Gaussmeter/DataFile_170210_200308.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
 
 # Ferromagnet: 0.618
 fm618a  0.618   data-calib/DATA_Gaussmeter/DataFile_170210_203456.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
@@ -42,3 +50,11 @@ fm618b  0.618   data-calib/DATA_Gaussmeter/DataFile_170210_204036.csv   B1      
 # Ferromagnet: 0.673
 fm673a  0.673   data-calib/DATA_Gaussmeter/DataFile_170210_205748.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
 fm673b  0.673   data-calib/DATA_Gaussmeter/DataFile_170210_210225.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
+
+# Ferromagnet: 0.699
+fm699a  0.699   data-calib/DATA_Gaussmeter/DataFile_170210_220129.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
+fm699b  0.699   data-calib/DATA_Gaussmeter/DataFile_170210_220621.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
+
+# Ferromagnet: 0.745
+fm745a  0.745   data-calib/DATA_Gaussmeter/DataFile_170210_223922.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
+fm745b  0.745   data-calib/DATA_Gaussmeter/DataFile_170210_224330.csv   B1      Bnom    fm554_di.txt    fm554_do.txt
