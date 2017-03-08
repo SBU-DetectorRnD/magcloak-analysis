@@ -183,5 +183,6 @@ def evaluate_permeability_for_set(setlist="foo.txt", results_file="foo2.txt"):
 # if you call this macro form the command line, this __main__ function will be executed:
 if __name__ == '__main__':
 
+    evaluate_permeability_for_set( setlist = "filelist_ferromagnet_sbu_troom.txt", results_file = "results/ferromagnet_sbu_troom.csv")
     evaluate_permeability_for_set( setlist = "filelist_ferromagnet_sbu.txt", results_file = "results/ferromagnet_sbu.csv")
 #    evaluate_permeability_for_set( setlist = "filelist_ferromagnet_mri.txt", results_file = "results/ferromagnet_mri.csv")

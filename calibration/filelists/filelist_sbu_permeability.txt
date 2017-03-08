@@ -1,8 +1,23 @@
+#SBU Room Temp Ferromagnet Permeability Measurements
+DataFile_161102_183041.txt	helmholtz	DataFile_161102_181415.txt
+DataFile_161007_205423.txt	helmholtz	DataFile_161007_194516.txt
+DataFile_161006_151934.txt	helmholtz	DataFile_161006_144403.txt
+DataFile_161007_201544.txt	helmholtz	DataFile_161007_194516.txt
+DataFile_161102_183814.txt	helmholtz	DataFile_161102_181415.txt
+DataFile_161102_182323.txt	helmholtz	DataFile_161102_181415.txt
+DataFile_160727_163533.txt	helmholtz	DataFile_160727_162618.txt
+DataFile_160805_143508.txt	helmholtz	DataFile_160805_142716.txt
+DataFile_161006_150305.txt	helmholtz	DataFile_161006_144403.txt
+DataFile_160916_212729.txt	helmholtz	DataFile_160916_211714.txt
+DataFile_160928_200210.txt	helmholtz	DataFile_160928_193601.txt
+
+
+# SBU Cryo measurements
 # Fm = 0.548
 DataFile_161110_165703.txt	helmholtz	DataFile_161110_162143.txt
 
 # Fm = 0.590
-DataFile_170210_164740.txt	helmholtz	DataFile_170210_161426.txt
+DataFile_170210_164740.txt	helmholtz	      DataFile_170210_161426.txt
 DataFile_170210_170305.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_172126.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_172253.txt      helmholtz       DataFile_170210_161426.txt
@@ -11,6 +26,10 @@ DataFile_170210_172930.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_174937.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_175724.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_181140.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170303_135527.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170303_145218.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170224_141354.txt      helmholtz       DataFile_170224_133120.txt
+DataFile_170224_143402.txt      helmholtz       DataFile_170224_133120.txt
 
 # Ferromagnet: 0.0 (base0
 DataFile_170210_221924.txt      helmholtz       DataFile_170210_161426.txt
@@ -19,6 +38,8 @@ DataFile_170210_222443.txt      helmholtz       DataFile_170210_161426.txt
 # Fm = 0.554
 DataFile_170210_183822.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_184432.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170303_132828.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170224_152749.txt      helmholtz       DataFile_170224_133120.txt
 
 # Fm = 0.574
 DataFile_170210_190426.txt      helmholtz       DataFile_170210_161426.txt
@@ -26,6 +47,8 @@ DataFile_170210_191030.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_201847.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_211602.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_214850.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170303_134355.txt      helmhotlz       DataFile_170303_132135.txt
+DataFile_170222_163542.txt      helmholtz       DataFile_170222_182044.txt
 
 # FerroManget: 0.581
 DataFile_170210_195722.txt      helmholtz       DataFile_170210_161426.txt
@@ -34,6 +57,14 @@ DataFile_170210_200308.txt      helmholtz       DataFile_170210_161426.txt
 # Ferromagnet: 0.618
 DataFile_170210_203456.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_204036.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170303_141001.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170303_141544.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170224_155104.txt      helmholtz       DataFile_170224_133120.txt
+
+# Ferromagnet: 0.651
+DataFile_170303_142604.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170303_150240.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170224_145236.txt      helmholtz       DataFile_170224_133120.txt
 
 # Ferromagnet: 0.673
 DataFile_170210_205748.txt      helmholtz       DataFile_170210_161426.txt
@@ -42,6 +73,9 @@ DataFile_170210_210225.txt      helmholtz       DataFile_170210_161426.txt
 # Ferromagnet: 0.699
 DataFile_170210_220129.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_220621.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170303_143914.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170303_152553.txt      helmholtz       DataFile_170303_132135.txt
+DataFile_170222_173644.txt      helmholtz       DataFile_170222_182044.txt
 
 # Ferromagnet: 0.745
 DataFile_170210_223922.txt      helmholtz       DataFile_170210_161426.txt
@@ -50,3 +84,16 @@ DataFile_170210_224330.txt      helmholtz       DataFile_170210_161426.txt
 # Ferromagnet: 0.104:
 DataFile_170214_164514.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170214_165059.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170224_134823.txt      helmholtz       DataFile_170224_133120.txt
+
+# Ferromagnet: 199
+DataFile_170224_140046.txt      helmholtz       DataFile_170224_133120.txt
+
+# Ferromagnet: 0.303
+DataFile_170228_171013.txt      helmholtz       DataFile_170228_170204.txt
+
+# Ferromagnet: 0.409     
+DataFile_170228_173752.txt      helmholtz       DataFile_170228_170204.txt
+
+# Ferromagnet: 0.625
+DataFile_170222_180859.txt      helmholtz       DataFile_170222_182044.txt
