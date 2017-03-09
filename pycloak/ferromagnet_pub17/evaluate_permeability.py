@@ -8,7 +8,7 @@ import pandas as pd
 import sys
 import os
 
-def mean_radius(radfile):
+def mean_from_file(radfile):
     # turn files of tube dimensions into array
     r = np.genfromtxt(radfile)
     a = ufloat(np.mean(r), np.std(r)) #radius value,err
@@ -84,9 +84,9 @@ def calc_mu(Bin, Bout, radius_inner, radius_outer):
 # * Bout = name of column in fname_data file storing magnetic field without ferromagnet cylinder
 # * fname_di = name of file listing inner diameter measurements for this ferromagnet
 # * fname_do = name of file listing outer diameter measurements for this ferromagnet
-def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B2", fname_di="fm618_di.txt", fname_do="fm618_do.txt" ):
+def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B2", fname_do="fm618_do_cryo.txt", fname_th="fm618_th_cryo.txt" ):
 
-    print ("Evaluating permeability for: ", fname_data, Bin, Bout, fname_di, fname_do )
+    print ("Evaluating permeability for: ", fname_data, Bin, Bout, fname_do, fname_th )
 
     # prepare result dataframe
     result = pd.DataFrame(columns = ["Bout","Bout_sdev","mu","mu_err_pp","mu_err_geom"])
@@ -106,8 +106,9 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
     result['Bin_c'] = unumpy.uarray( abs( data[Bin].values ), data[Bin + '_sdev'].values)
 
     # get inner and outer diameter
-    diam_in = mean_radius('diameter_files/'+fname_di)
-    diam_out = mean_radius('diameter_files/'+fname_do)
+    diam_out = mean_from_file('diameter_files/'+fname_do)
+    thickness = mean_from_file('diameter_files/'+fname_th)
+    diam_in = diam_out - thickness
 
     # check ideal permeability
     calc_mu_cloak(diam_in, diam_out)
@@ -158,7 +159,7 @@ def evaluate_permeability_for_set(setlist="foo.txt", results_file="foo2.txt"):
             if len(pars) == 7:
 
                 # calculate permeability for entries in single measurement file, return dataframe with results
-                sresult = evaluate_permeability( fname_data=pars[2], Bin=pars[3], Bout=pars[4], fname_di=pars[5], fname_do=pars[6] )
+                sresult = evaluate_permeability( fname_data=pars[2], Bin=pars[3], Bout=pars[4], fname_do=pars[5], fname_th=pars[6] )
 
                 # set additional columns in results dataframe based on input parmeters
                 sresult["ID"] = pars[0]
@@ -185,4 +186,4 @@ if __name__ == '__main__':
 
     evaluate_permeability_for_set( setlist = "filelist_ferromagnet_sbu_troom.txt", results_file = "results/ferromagnet_sbu_troom.csv")
     evaluate_permeability_for_set( setlist = "filelist_ferromagnet_sbu.txt", results_file = "results/ferromagnet_sbu.csv")
-#    evaluate_permeability_for_set( setlist = "filelist_ferromagnet_mri.txt", results_file = "results/ferromagnet_mri.csv")
+    evaluate_permeability_for_set( setlist = "filelist_ferromagnet_mri.txt", results_file = "results/ferromagnet_mri.csv")
