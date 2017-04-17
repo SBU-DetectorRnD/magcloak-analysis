@@ -215,7 +215,6 @@ int uvsB(){
   h_uvB->SetTitle("Permeability of Ferromagnet 745");
   h_uvB->GetXaxis()->SetTitle("B_{0} (mT)");
   h_uvB->GetXaxis()->SetTitleOffset(1.5);
-  h_uvB->GetYaxis()->SetTitle("#mu_{cryo}");
   h_uvB->GetYaxis()->SetTitleOffset(1.0);
   TLegend *leg_uvB = new TLegend(0.55,0.65,0.65,0.87);
   leg_uvB->SetNColumns(1);
@@ -224,10 +223,11 @@ int uvsB(){
   
   /////////////Plot Permeabilities///////////
   vector<double> u_val,u_err;
-  double Fm1[10]= {0.104,0.199,0.303,0.409,0.554,0.590,0.618,0.651,0.699,0.745};
-  double Fm2[17]= {0.104,0.199,0.303,0.409,0.503,0.548,0.554,0.574,0.590,0.602,0.612,0.618,0.625,0.651,0.673,0.699,0.745};
   /*
   ////cryo temp best fitting plots////////
+  h_uvB->GetYaxis()->SetTitle("#mu_{cryo}");
+  const unsigned npoints=10;
+  double Fm1[npoints]= {0.104,0.199,0.303,0.409,0.554,0.590,0.618,0.651,0.699,0.745};
   makePlot_uvB(calibration2,fm104_cryo,name_104_cryo,th_cryo_104,do_cryo_104,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration2,fm199_cryo,name_199_cryo,th_cryo_199,do_cryo_199,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration3,fm303_cryo,name_303_cryo,th_cryo_303,do_cryo_303,*leg_uvB,u_val,u_err);
@@ -243,6 +243,9 @@ int uvsB(){
   */
   
    ////////Room Temp best fitting plots//////
+  h_uvB->GetYaxis()->SetTitle("#mu_{room}");
+  const unsigned npoints=17;
+  double Fm1[npoints]= {0.104,0.199,0.303,0.409,0.503,0.548,0.554,0.574,0.590,0.602,0.612,0.618,0.625,0.651,0.673,0.699,0.745};
   makePlot_uvB(calibration5,fm104_room,name_104_room,di_room_104,do_room_104,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration6,fm199_room,name_199_room,di_room_199,do_room_199,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration4,fm303_room,name_303_room,di_room_303,do_room_303,*leg_uvB,u_val,u_err);
@@ -274,7 +277,7 @@ int uvsB(){
   TH1 *f = c_2->DrawFrame(0, .8, 2, 3.5);
 
    
-  TGraphErrors *gr = new TGraphErrors(17,&Fm2[0],&u_val[0],0,&u_err[0]);
+  TGraphErrors *gr = new TGraphErrors(npoints,&Fm1[0],&u_val[0],0,&u_err[0]);
   gr->Draw("AP");
   
   for (int i=0;i<17;i++){
@@ -298,7 +301,7 @@ int uvsB(){
   
   //gr->SetTitle("Fit Using Sinh Function");
   gr->GetXaxis()->SetTitle("Fm");
-  gr->GetYaxis()->SetTitle("#mu_{cryo}");
+  gr->GetYaxis()->SetTitle( h_uvB->GetYaxis()->GetTitle() );
 
   cout <<gr->GetFunction("fit")->GetChisquare() << endl;
   cout << gr->GetFunction("fit")->GetNDF() << endl;
