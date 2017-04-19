@@ -85,6 +85,7 @@ TF1* calibrate(
   TTree *TCalib = new TTree();
   TCalib->ReadFile(f_calib, "t/D:I:B");
   int n = TCalib->Draw("I:TMath::Abs(B)", "", "goff");
+
   TGraph *g_calib = new TGraph(n, TCalib->GetV1(), TCalib->GetV2() );
   g_calib->SetTitle("");
   // g_calib->Draw("AP");
@@ -115,12 +116,13 @@ TGraphErrors* plot_uvB(const TString scan_file,TF1* calib_fit,double R,double R_
   /*Use TTree Draw command to write branches to usable vector*/
   int n = TData->Draw("I:TMath::Abs(B):0.0:.005", "", "goff");
 
-  double u_B;
-  double u_r;
-  double Bratio_err;
+  
+  double B_in_err=0.005, I_err=0.2, Bratio_err;
   int m=0;
   double ext_test, int_test;
-  vector<double> B_ext, B_in, Bratio, u, u_err;
+  vector<double> B_ext, B_in, Bratio, u, u_err, B_ext_err;
+  double num, den, radical;
+  double u_B, u_r;
   for(int i = 0; i < n; i++)
     {
 
@@ -130,24 +132,34 @@ TGraphErrors* plot_uvB(const TString scan_file,TF1* calib_fit,double R,double R_
       if(int_test<ext_test){     
 	  B_ext.push_back( ext_test );
 	  B_in.push_back( int_test );
+	  B_ext_err.push_back(sqrt(pow(calib_fit->GetParError(0),2)+pow(TData->GetV1()[m]*calib_fit->GetParError(1),2)+pow(I_err*calib_fit->GetParameter(1),2)));
 	  
 	  Bratio.push_back( B_in[m] / B_ext[m]);
 	  
-	  //Bratio_err = sqrt(pow((TData->GetV4()[m]),2)/pow(ext_test,2)+pow((TData->GetV4()[m]),2)*pow((B_in[m]/pow(B_ext[m],2)),2));
+	  Bratio_err = Bratio[m]*sqrt(pow(B_in_err/B_in[m],2)+pow(B_ext_err[m]/B_ext[m],2));
+
+	  /// Variables to reduce clutter ///
+	  num = Bratio[m]*(TMath::Power(R, 2.0)) + Bratio[m] - 2 - 2*sqrt((TMath::Power(Bratio[m],2))*(TMath::Power(R, 2.0)) - Bratio[m]*(TMath::Power(R, 2.0)) - Bratio[m] + 1 );
+	  den = Bratio[m]*(TMath::Power(R,2.0)) - Bratio[m];
+	  radical = sqrt(pow(Bratio[m]*R,2)-Bratio[m]*pow(R,2)-Bratio[m]+1);
+
+	  u.push_back(num/den);
 	  
-	  u.push_back( (Bratio[m]*(TMath::Power(R, 2.0)) + Bratio[m] - 2 - 2*sqrt((TMath::Power(Bratio[m],2))*(TMath::Power(R, 2.0)) - Bratio[m]*(TMath::Power(R, 2.0)) - Bratio[m] + 1 ) ) / (Bratio[m]*(TMath::Power(R,2.0)) - Bratio[m]) );
-	  
-	  u_err.push_back( u[m]*sqrt(5.5*(pow(TData->GetV4()[m]/Bratio[m],2)) + 10*(pow(R_sig/R,2))) );
-	  /*
-	  u_B = ((pow(R,2)+1-(2*Bratio[m]*pow(R,2)-pow(R,2)-1)/sqrt(pow(Bratio[m]*R,2)-Bratio[m]*pow(R,2)-Bratio[m]+1))*(Bratio[m]*pow(R,2)-Bratio[m])-(Bratio[m]*pow(R,2)+Bratio[m]-2-2*sqrt(pow(Bratio[m]*R,2)-Bratio[m]*pow(R,2)-Bratio[m]+1))*pow(R,2))/pow((Bratio[m]*pow(R,2)-Bratio[m]),2);
-	  u_r = (2*Bratio[m]*R-(2*pow(Bratio[m],2)*R-2*Bratio[m]*R)/sqrt(pow(Bratio[m]*R,2)-Bratio[m]*pow(R,2)-Bratio[m]+1)*(Bratio[m]*pow(R,2)-Bratio[m])-(Bratio[m]*pow(R,2)+Bratio[m]-2-2*sqrt(pow(Bratio[m]*R,2)-Bratio[m]*pow(R,2)-Bratio[m]+1))*(2*Bratio[m]*R))/pow((Bratio[m]*pow(R,2)-Bratio[m]),2);
+	  u_B = ((pow(R,2)+1-(2*Bratio[m]*pow(R,2)-pow(R,2)-1)/radical)*(Bratio[m]*pow(R,2)-Bratio[m])-(Bratio[m]*pow(R,2)+Bratio[m]-2-2*radical)*(pow(R,2)-1))/pow(Bratio[m]*pow(R,2)-Bratio[m],2);
+	  u_r = ((2*Bratio[m]*R-(2*pow(Bratio[m],2)*R-2*Bratio[m]*R)/radical)*(Bratio[m]*pow(R,2)-Bratio[m])-(Bratio[m]*pow(R,2)+Bratio[m]-2-2*radical)*(2*Bratio[m]*R))/pow((Bratio[m]*pow(R,2)-Bratio[m]),2);
+	  ////If plotting permeabilities for multiple ferromagnets/////
 	  u_err.push_back(sqrt(pow(Bratio_err*u_B,2)+pow(R_sig*u_r,2)));
-	  */
+	  
+	  
+	  ///If plotting permeability for a single ferromagnet scan (doesn't factor in error in R)////
+	  //u_err.push_back(TMath::Abs(Bratio_err*u_B));
+	 
+	  
 	  m++;
       }
     }
 
-  TGraphErrors *g_uvB = new TGraphErrors(m, &B_ext[0], &u[0], TData->GetV3(), &u_err[0]);
+  TGraphErrors *g_uvB = new TGraphErrors(m, &B_ext[0], &u[0], &B_ext_err[0], &u_err[0]);
 
   err_val=u_err[m-1];
   return g_uvB;
@@ -242,7 +254,7 @@ void makePlot_uvB(TString calibration,TString fmscan,TString name,TString di_fil
       /*Calculate Radius Ratio and Uncertainty*/
       double R_fm104;
       double Rsig_fm104;
-      // Check if ferromagnet scan uses thickness instead of inner diameter //
+      
       
       R_fm104 = convert_R(dia_file_path+di_file,dia_file_path+do_file);
       Rsig_fm104 = convert_sig(dia_file_path+di_file,dia_file_path+do_file);
@@ -260,8 +272,7 @@ void makePlot_uvB(TString calibration,TString fmscan,TString name,TString di_fil
       g_fm104->SetMarkerColor(color_uvsB);
       g_fm104->SetLineColor(color_uvsB);
       color_uvsB++;
-      // g_fm104->SetLineColor(kGreen+2);
-      // g_fm104->SetMarkerColor(kBlue);
+      
       leg_uvB.AddEntry( g_fm104 , name , "lp");
 
       u_val.push_back( g_fm104->Eval(40., 0, "") );

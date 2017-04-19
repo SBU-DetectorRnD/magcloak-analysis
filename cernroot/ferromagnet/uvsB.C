@@ -120,8 +120,6 @@ int uvsB(){
   TString fm745_cryo1 = "DataFile_170308_174950.txt";
   TString fm745_cryo2 = "DataFile_170324_192856.txt";
   TString fm745_cryo3 = "DataFile_170324_193413.txt";
-  TString name_745_1_cryo = "Trial 1";
-  TString name_745_2_cryo = "Trial 2";
   TString name_745_3_cryo = "745";
   
   
@@ -211,8 +209,8 @@ int uvsB(){
   //////Make Graph//////////
   
   TCanvas *c_uvB = new TCanvas();
-  TH1 *h_uvB = c_uvB->DrawFrame(0, 2, 60, 6);
-  h_uvB->SetTitle("Permeability of Ferromagnet 745");
+  TH1 *h_uvB = c_uvB->DrawFrame(0, 0, 60, 6);
+  h_uvB->SetTitle("Permeability of Ferromagnets");
   h_uvB->GetXaxis()->SetTitle("B_{0} (mT)");
   h_uvB->GetXaxis()->SetTitleOffset(1.5);
   h_uvB->GetYaxis()->SetTitleOffset(1.0);
@@ -223,11 +221,11 @@ int uvsB(){
   
   /////////////Plot Permeabilities///////////
   vector<double> u_val,u_err;
-  /*
+  
   ////cryo temp best fitting plots////////
   h_uvB->GetYaxis()->SetTitle("#mu_{cryo}");
   const unsigned npoints=10;
-  double Fm1[npoints]= {0.104,0.199,0.303,0.409,0.554,0.590,0.618,0.651,0.699,0.745};
+  double Fm[npoints]= {0.104,0.199,0.303,0.409,0.554,0.590,0.618,0.651,0.699,0.745};
   makePlot_uvB(calibration2,fm104_cryo,name_104_cryo,th_cryo_104,do_cryo_104,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration2,fm199_cryo,name_199_cryo,th_cryo_199,do_cryo_199,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration3,fm303_cryo,name_303_cryo,th_cryo_303,do_cryo_303,*leg_uvB,u_val,u_err);
@@ -237,15 +235,13 @@ int uvsB(){
   makePlot_uvB(calibration2,fm618_cryo,name_618_cryo,th_cryo_618,do_cryo_618,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration2,fm651_cryo,name_651_cryo,di_cryo_651,do_cryo_651,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration1,fm699_cryo,name_699_cryo,di_cryo_699,do_cryo_699,*leg_uvB,u_val,u_err);
-  //makePlot_uvB(calibration3,fm745_cryo1,name_745_1_cryo,th_cryo_745,do_cryo_745,*leg_uvB,u_val,u_err);
-  //makePlot_uvB(calibration3,fm745_cryo2,name_745_2_cryo,th_cryo_745,do_cryo_745,*leg_uvB,u_val,u_err); 
   makePlot_uvB(calibration3,fm745_cryo3,name_745_3_cryo,th_cryo_745,do_cryo_745,*leg_uvB,u_val,u_err);
-  */
   
+  /*
    ////////Room Temp best fitting plots//////
   h_uvB->GetYaxis()->SetTitle("#mu_{room}");
   const unsigned npoints=17;
-  double Fm1[npoints]= {0.104,0.199,0.303,0.409,0.503,0.548,0.554,0.574,0.590,0.602,0.612,0.618,0.625,0.651,0.673,0.699,0.745};
+  double Fm[npoints]= {0.104,0.199,0.303,0.409,0.503,0.548,0.554,0.574,0.590,0.602,0.612,0.618,0.625,0.651,0.673,0.699,0.745};
   makePlot_uvB(calibration5,fm104_room,name_104_room,di_room_104,do_room_104,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration6,fm199_room,name_199_room,di_room_199,do_room_199,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration4,fm303_room,name_303_room,di_room_303,do_room_303,*leg_uvB,u_val,u_err);
@@ -263,7 +259,7 @@ int uvsB(){
   makePlot_uvB(calibration11,fm673_room,name_673_room,di_room_673,do_room_673,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration12,fm699_room,name_699_room,di_room_699,do_room_699,*leg_uvB,u_val,u_err);
   makePlot_uvB(calibration13,fm745_room,name_745_room,th_room_745,do_room_745,*leg_uvB,u_val,u_err);
-  
+  */
   
  
 
@@ -277,15 +273,11 @@ int uvsB(){
   TH1 *f = c_2->DrawFrame(0, .8, 2, 3.5);
 
    
-  TGraphErrors *gr = new TGraphErrors(npoints,&Fm1[0],&u_val[0],0,&u_err[0]);
+  TGraphErrors *gr = new TGraphErrors(npoints,&Fm[0],&u_val[0],0,&u_err[0]);
   gr->Draw("AP");
   
-  for (int i=0;i<17;i++){
-    cout<<u_val[i]<<"  "<<u_err[i]<<endl;
-  }
   
   TF1 *fit = new TF1("fit", "[0]/TMath::Tan([1]*x + [2]) + [3]", 0, 1.0);
-  //TF1 *fit = new TF1("fit", "[0]*sinh([1]*x+[2])+[3]", 0, 1.0);
   fit->SetParameter(0, 2.0);
   fit->SetParameter(1, 1.0);
   fit->SetParameter(2, 1.0);
@@ -302,14 +294,15 @@ int uvsB(){
   //gr->SetTitle("Fit Using Sinh Function");
   gr->GetXaxis()->SetTitle("Fm");
   gr->GetYaxis()->SetTitle( h_uvB->GetYaxis()->GetTitle() );
+  gr->SetTitle("p0*cot(p1*x+p2)+p3");
 
-  cout <<gr->GetFunction("fit")->GetChisquare() << endl;
-  cout << gr->GetFunction("fit")->GetNDF() << endl;
-
+  
   double chi2 = gr->GetFunction("fit")->GetChisquare();
   double ndf = gr->GetFunction("fit")->GetNDF();
-  
-  cout<<chi2/ndf<<endl;
+
+  cout<<"Chi2 = "<<chi2<<endl;
+  cout<<"NDF = "<<ndf<<endl;
+  cout<<"Chi2/NDF = "<<chi2/ndf<<endl;
   
   return 0;
  
