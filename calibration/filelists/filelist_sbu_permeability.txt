@@ -80,6 +80,10 @@ DataFile_170222_173644.txt      helmholtz       DataFile_170222_182044.txt
 # Ferromagnet: 0.745
 DataFile_170210_223922.txt      helmholtz       DataFile_170210_161426.txt
 DataFile_170210_224330.txt      helmholtz       DataFile_170210_161426.txt
+DataFile_170330_132332.txt	helmholtz	DataFile_170330_131038.txt
+DataFile_170308_174950.txt	helmholtz	DataFile_170308_161602.txt
+DataFile_170324_192856.txt	helmholtz	DataFile_170308_161602.txt
+DataFile_170324_193413.txt	helmholtz	DataFile_170308_161602.txt
 
 # Ferromagnet: 0.104:
 DataFile_170214_164514.txt      helmholtz       DataFile_170210_161426.txt
