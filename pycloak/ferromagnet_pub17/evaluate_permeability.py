@@ -94,12 +94,17 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
     # get data
     data = pd.read_csv(fname_data)
 
-    # set uncertainty for fiel reading manually to 0 if it does not exist
-    if Bin + '_sdev' not in data:
-        data[Bin + '_sdev'] = 0.0005
+    print(data.head(10))
 
+    # set uncertainty for field reading manually to 0 if it does not exist
+    if Bin + '_sdev' not in data:
+        print ("Use uncertainty of 0.005 for " , Bin+'_sdev')
+        data[Bin + '_sdev'] = 0.005 #Gaussmeter precision 0.01 mT above 30 mT)
+
+    # set uncertainty for field reading manually to 0 if it does not exist
     if Bout + '_sdev' not in data:
-        data[Bout + '_sdev'] = 0.0005
+        print ("Use uncertainty of 0.005 for " , Bout+'_sdev')
+        data[Bout + '_sdev'] = 0.005
 
     # copy Bin and Bout to results
     result['Bout_c'] = unumpy.uarray( abs( data[Bout].values ), data[Bout + '_sdev'].values)
@@ -113,8 +118,6 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
     # check ideal permeability
     calc_mu_cloak(diam_in, diam_out)
 
-    print(result.head(10))
-
     # calculate permeability and store values and uncertainties in arrays
     (mu_c, mu_err, mu_err_pp, mu_err_geom) = calc_mu(Bin=result['Bin_c'], Bout=result['Bout_c'], radius_inner=diam_in, radius_outer=diam_out)
 
@@ -126,6 +129,8 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
     # same for Bout
     result["Bout"] = unumpy.nominal_values(result["Bout_c"])
     result["Bout_sdev"] = unumpy.std_devs(result["Bout_c"])
+
+    print(result.head(10))
 
     # drop 'mu_c' and 'Bout_c'
     result.drop('Bin_c', axis=1, inplace=True)

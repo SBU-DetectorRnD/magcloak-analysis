@@ -35,12 +35,12 @@ fig, axs = plt.subplots(1,1,figsize=(6,5))
 plt.xlabel("$f_M$")
 plt.ylabel("$\mu_{r}$")
 
-a_mu = [1]
-a_mu_sdev = [0]
-a_fm = [0]
+a_mu = []
+a_mu_sdev = []
+a_fm = []
 
 
-for id_i in ["fm104", "fm199", "fm503", "fm548", "fm554", "fm574", "fm602", "fm612", "fm625", "fm651", "fm673"]:
+for id_i in [ "fm104", "fm199", "fm303", "fm409", "fm503", "fm548", "fm554", "fm574", "fm590", "fm602", "fm612", "fm618", "fm625", "fm651", "fm673", "fm699", "fm745"]:
 
     # get data subset for this id_i
     data_sub = data[data['ID']==id_i].copy()
@@ -56,6 +56,7 @@ for id_i in ["fm104", "fm199", "fm503", "fm548", "fm554", "fm574", "fm602", "fm6
     a_mu_interpol = interpol(Bref)
 
     if not ( np.isnan(a_mu_interpol) ):
+        print( "Add point at fm = " ,data.loc[data['ID']==id_i,'frac'].values[0] , " and mu = ", a_mu_interpol) 
         a_mu.append( a_mu_interpol )
         a_mu_sdev.append( data.loc[data['ID']==id_i,'mu_err'].values[-1] )
         a_fm.append( data.loc[data['ID']==id_i,'frac'].values[0] )
@@ -69,7 +70,7 @@ a_fm = np.array(a_fm)
 print(a_fm)
 axs.errorbar( a_fm, a_mu, yerr=a_mu_sdev, linestyle='', marker='.', color=mcol[0])
 axs.set_xlim((0,0.8))
-axs.set_ylim((0.8,4))
+axs.set_ylim((0.8,7))
 
 
 # Do fitting
