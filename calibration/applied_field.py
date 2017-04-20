@@ -41,7 +41,7 @@ def calc_applied_field_lin(i, calibration_file=""):
     sigma_p1 = np.sqrt( cov[1,1] );
 
     # set uncertainty of current reading from multimeter
-    sigma_current = 0.01
+    sigma_current = 0.2
 
     b0 = np.polyval(p,i)
 
