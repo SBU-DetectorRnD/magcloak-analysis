@@ -1,7 +1,6 @@
 #include "makePlot_uvB.h"
 
 
-
 int uvsB(){
 
   //// Cryo Diameters and Thickness ////
@@ -223,6 +222,7 @@ int uvsB(){
   vector<double> u_val,u_err;
   
   ////cryo temp best fitting plots////////
+  TString u_title = "#mu_{cryo}";
   h_uvB->GetYaxis()->SetTitle("#mu_{cryo}");
   const unsigned npoints=10;
   double Fm[npoints]= {0.104,0.199,0.303,0.409,0.554,0.590,0.618,0.651,0.699,0.745};
@@ -239,6 +239,7 @@ int uvsB(){
   
   /*
    ////////Room Temp best fitting plots//////
+   TString u_title = "#mu_{room}";
   h_uvB->GetYaxis()->SetTitle("#mu_{room}");
   const unsigned npoints=17;
   double Fm[npoints]= {0.104,0.199,0.303,0.409,0.503,0.548,0.554,0.574,0.590,0.602,0.612,0.618,0.625,0.651,0.673,0.699,0.745};
@@ -271,13 +272,13 @@ int uvsB(){
   /////////Plot permeability versus fractional mass///////////  
   TCanvas *c_2 = new TCanvas();
   TH1 *f = c_2->DrawFrame(0, .8, 2, 3.5);
-
+  
    
   TGraphErrors *gr = new TGraphErrors(npoints,&Fm[0],&u_val[0],0,&u_err[0]);
   gr->Draw("AP");
   
   
-  TF1 *fit = new TF1("fit", "[0]/TMath::Tan([1]*x + [2]) + [3]", 0, 1.0);
+  TF1 *fit = new TF1("fit", "[0]/tan([1]*x + [2]) + [3]", 0, 1.0);
   fit->SetParameter(0, 2.0);
   fit->SetParameter(1, 1.0);
   fit->SetParameter(2, 1.0);
@@ -289,12 +290,14 @@ int uvsB(){
   double p1 = func->Value(1);
   double p2 = func->Value(2);
   double p3 = func->Value(3);
+  double p0_err = func->Error(0);
+  double p1_err = func->Error(1);
+  double p2_err = func->Error(2);
+  double p3_err = func->Error(3);
   
-  
-  //gr->SetTitle("Fit Using Sinh Function");
   gr->GetXaxis()->SetTitle("Fm");
   gr->GetYaxis()->SetTitle( h_uvB->GetYaxis()->GetTitle() );
-  gr->SetTitle("p0*cot(p1*x+p2)+p3");
+  gr->SetTitle("");
 
   
   double chi2 = gr->GetFunction("fit")->GetChisquare();
@@ -303,6 +306,27 @@ int uvsB(){
   cout<<"Chi2 = "<<chi2<<endl;
   cout<<"NDF = "<<ndf<<endl;
   cout<<"Chi2/NDF = "<<chi2/ndf<<endl;
+  
+  double res[npoints], res_err[npoints];
+  double fit_err;
+
+  TCanvas *c_3 = new TCanvas();  
+  
+  for(int i=0;i<npoints;i++){
+    res[i] = (u_val[i]-(p0/tan(p1*Fm[i] + p2)+p3))/(p0/tan(p1*Fm[i] + p2)+p3);
+    fit_err = pow(p0_err/tan(p1*Fm[i]+p2),2)+pow(p1_err*p0*Fm[i]/pow(sin(p1*Fm[i]+p2),2),2)+pow(p2_err*p0/pow(sin(p1*Fm[i]+p2),2),2)+pow(p3_err,2);
+    res_err[i] = sqrt(pow(u_err[i]/(p0/tan(p1*Fm[i] + p2)+p3),2)+pow(u_val[i]/pow((p0/tan(p1*Fm[i] + p2)+p3),2),2)*fit_err);
+  }
+
+  c_3->cd();
+  TGraphErrors *fr = new TGraphErrors(npoints,&Fm[0],&res[0],0,&u_err[0]);
+  fr->Draw("AP");
+  TString Title = "(fit-"+u_title+")/fit";
+  fr->GetYaxis()->SetTitle(Title);
+  fr->GetXaxis()->SetTitle("Fm");
+  fr->GetYaxis()->SetTitleOffset(1.6);
+  fr->SetTitle("Residuals");
+
   
   return 0;
  
