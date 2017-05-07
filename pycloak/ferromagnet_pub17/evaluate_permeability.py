@@ -22,6 +22,7 @@ def calc_mu_cloak( radius_fm_inner, radius_fm_outer):
 
     #calculate the perfect cloak permeability based on the dimensions of your ferromagnet
     u_cloak = (1/c.n**2+1)/(1/c.n**2-1)
+
     print("Ratio inner/outer radius: ", c, " --> Perfect cloak permeability (theory): ", u_cloak)
 
 
@@ -31,7 +32,7 @@ def calc_mu(Bin, Bout, radius_inner, radius_outer):
 
     # ratio of inner and outer radius
     radius_ratio = radius_inner / radius_outer
-
+    print radius_ratio
     # ratio of internal to external field
     B_ratio = Bin / Bout
     # convert from Series object to Numpy Array object
@@ -90,7 +91,7 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
 
     # prepare result dataframe
     result = pd.DataFrame(columns = ["Bout","Bout_sdev","mu","mu_err_pp","mu_err_geom"])
-
+    
     # get data
     data = pd.read_csv(fname_data)
 
@@ -109,11 +110,11 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
     # copy Bin and Bout to results
     result['Bout_c'] = unumpy.uarray( abs( data[Bout].values ), data[Bout + '_sdev'].values)
     result['Bin_c'] = unumpy.uarray( abs( data[Bin].values ), data[Bin + '_sdev'].values)
-
+    
     # get inner and outer diameter
     diam_out = mean_from_file('diameter_files/'+fname_do)
     thickness = mean_from_file('diameter_files/'+fname_th)
-    diam_in = diam_out - thickness
+    diam_in = diam_out - 2*thickness
 
     # check ideal permeability
     calc_mu_cloak(diam_in, diam_out)
@@ -130,7 +131,7 @@ def evaluate_permeability( fname_data="samplemeasurement.csv", Bin="B1", Bout="B
     result["Bout"] = unumpy.nominal_values(result["Bout_c"])
     result["Bout_sdev"] = unumpy.std_devs(result["Bout_c"])
 
-    print(result.head(10))
+    #print(result.head(10))
 
     # drop 'mu_c' and 'Bout_c'
     result.drop('Bin_c', axis=1, inplace=True)
@@ -162,7 +163,7 @@ def evaluate_permeability_for_set(setlist="foo.txt", results_file="foo2.txt"):
 
             # only process lines with correct number of parameters
             if len(pars) == 7:
-
+                
                 # calculate permeability for entries in single measurement file, return dataframe with results
                 sresult = evaluate_permeability( fname_data=pars[2], Bin=pars[3], Bout=pars[4], fname_do=pars[5], fname_th=pars[6] )
 

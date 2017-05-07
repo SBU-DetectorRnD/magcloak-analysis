@@ -41,7 +41,16 @@ a_mu_sdev = []
 a_fm = []
 
 
-for id_i in ["fm104_cryo", "fm199_cryo", "fm303_cryo", "fm409_cryo", "fm554_cryo", "fm574_cryo", "fm590_cryo", "fm618_cryo", "fm625_cryo", "fm651_cryo", "fm699_cryo", "fm745_cryo1", "fm745_cryo2", "fm745_cryo3"]:
+for id_i in ["fm104_cryo",
+             "fm199_cryo",
+             "fm303_cryo",
+             "fm409_cryo",
+             "fm554_cryo",
+             "fm590_cryo",
+             "fm618_cryo",
+             "fm651_cryo",
+             "fm699_cryo",
+             "fm745_cryo3"]:
 
     # get data subset for this id_i
     data_sub = data[data['ID']==id_i].copy()
@@ -68,10 +77,11 @@ a_mu_sdev = np.array(a_mu_sdev)
 a_fm = np.array(a_fm)
 
 # do plot
+
 print(a_fm)
 axs.errorbar( a_fm, a_mu, yerr=a_mu_sdev, linestyle='', marker='.', color=mcol[0])
 axs.set_xlim((0,0.8))
-axs.set_ylim((0.8,7))
+axs.set_ylim((0.8,5))
 
 
 # Do fitting

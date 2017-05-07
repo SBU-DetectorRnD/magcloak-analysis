@@ -123,6 +123,7 @@ TGraphErrors* plot_uvB(const TString scan_file,TF1* calib_fit,double R,double R_
   vector<double> B_ext, B_in, Bratio, u, u_err, B_ext_err;
   double num, den, radical;
   double u_B, u_r;
+  
   for(int i = 0; i < n; i++)
     {
 
@@ -132,6 +133,7 @@ TGraphErrors* plot_uvB(const TString scan_file,TF1* calib_fit,double R,double R_
       if(int_test<ext_test){     
 	  B_ext.push_back( ext_test );
 	  B_in.push_back( int_test );
+
 	  B_ext_err.push_back(sqrt(pow(calib_fit->GetParError(0),2)+pow(TData->GetV1()[m]*calib_fit->GetParError(1),2)+pow(I_err*calib_fit->GetParameter(1),2)));
 	  
 	  Bratio.push_back( B_in[m] / B_ext[m]);
@@ -277,7 +279,8 @@ void makePlot_uvB(TString calibration,TString fmscan,TString name,TString di_fil
 
       u_val.push_back( g_fm104->Eval(40., 0, "") );
       u_err.push_back(err_val );
-      
+
+ 
    
 
   return;

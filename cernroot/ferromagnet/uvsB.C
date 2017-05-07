@@ -276,7 +276,10 @@ int uvsB(){
    
   TGraphErrors *gr = new TGraphErrors(npoints,&Fm[0],&u_val[0],0,&u_err[0]);
   gr->Draw("AP");
-  
+
+  for (int i=0;i<npoints;i++){
+    cout<<u_val[i]<<"  "<<u_err[i]<<endl;
+  }
   
   TF1 *fit = new TF1("fit", "[0]/tan([1]*x + [2]) + [3]", 0, 1.0);
   fit->SetParameter(0, 2.0);
