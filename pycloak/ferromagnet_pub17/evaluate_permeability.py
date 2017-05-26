@@ -32,7 +32,7 @@ def calc_mu(Bin, Bout, radius_inner, radius_outer):
 
     # ratio of inner and outer radius
     radius_ratio = radius_inner / radius_outer
-    print radius_ratio
+    print( radius_ratio )
     # ratio of internal to external field
     B_ratio = Bin / Bout
     # convert from Series object to Numpy Array object
