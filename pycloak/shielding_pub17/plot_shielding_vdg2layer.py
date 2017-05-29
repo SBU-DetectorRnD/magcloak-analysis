@@ -16,7 +16,7 @@ plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 #plt.style.use('ggplot')
 
 # get data measured with Hall sensor
-data = pd.read_csv("results/shielding_vdg2layer.csv")
+data = pd.read_csv("results/shielding_vdg2layer_2.csv")
 
 # sort values
 data = data.sort_values('Bout',ascending=True)

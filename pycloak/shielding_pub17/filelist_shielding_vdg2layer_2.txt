@@ -1,0 +1,12 @@
+data-calib/DATA_Gaussmeter/DataFile_170131_134323.csv	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170131_135134.csv 	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170131_135653.csv 	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170131_140138.csv 	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170131_141818.csv 	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170131_143117.csv 	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170131_144357.csv 	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170221_165247.csv	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170221_170726.csv	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170221_172156.csv	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170221_173504.csv	0	B1
+data-calib/DATA_Gaussmeter/DataFile_170221_174804.csv	0	B1
