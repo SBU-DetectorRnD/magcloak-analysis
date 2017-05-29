@@ -33,12 +33,19 @@ def calc_applied_field_lin(i, calibration_file=""):
     df_calibration = pd.DataFrame(data_calibration)
 
     # linear fit to calibration measurement
+    # polynomial p(x) = p[0] * x**deg + ... + p[deg] of degree deg
     p, cov = np.polyfit(df_calibration['multi'], df_calibration['B1'], 1,  cov=True)
 
-    # set uncertainty of current reading from multimeter to hard-coded 0
-    sig_i = 0
+    # get uncertainties for fit parameters p0 and p1
+    sigma_p0 = np.sqrt( cov[0,0] );
+    sigma_p1 = np.sqrt( cov[1,1] );
+
+    # set uncertainty of current reading from multimeter
+    sigma_current = 0.2
 
     b0 = np.polyval(p,i)
-    sig_b0 = abs((np.polyval(p,i+sig_i) - np.polyval(p,i-sig_i))/2)
 
-    return unumpy.uarray(b0, sig_b0)
+    #sig_b0 = abs((np.polyval(p,i+sigma_current) - np.polyval(p,i-sigma_current))/2)
+    sigma_b0 = np.sqrt( ( p[0]**2 * sigma_current**2 ) + ( i**2 * sigma_p0**2 ) + ( 1 * sigma_p1**2 ) );
+
+    return unumpy.uarray(b0, sigma_b0)

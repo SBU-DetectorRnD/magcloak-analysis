@@ -1,0 +1,27 @@
+#SBU Room Temp Ferromagnet Permeability Measurements
+#fmID, Fm, filename, B_int, B_ext, outer-diameter-file, thickness-file
+#====================================================
+
+fm303	0.303	data-calib/DATA_Gaussmeter/DataFile_170228_171013.csv	B1	Bnom		fm303_do_room.txt	fm303_th_room.txt
+fm409	0.409	data-calib/DATA_Gaussmeter/DataFile_170228_173752.csv	B1	Bnom		fm409_do_room.txt	fm409_th_room.txt
+fm104	0.104	data-calib/DATA_Gaussmeter/DataFile_161102_181415.csv	B1	Bnom		fm104_do_room.txt	fm104_th_room.txt
+fm199	0.199	data-calib/DATA_Gaussmeter/DataFile_161007_205423.csv	B1	Bnom		fm199_do_room.txt	fm199_th_room.txt
+fm503	0.503	data-calib/DATA_Gaussmeter/DataFile_161006_151934.csv	B1	Bnom		fm554_do_room.txt	fm554_th_room.txt
+fm548	0.548	data-calib/DATA_Gaussmeter/DataFile_161007_201544.csv	B1	Bnom		fm548_do_room.txt	fm548_th_room.txt
+fm554	0.554	data-calib/DATA_Gaussmeter/DataFile_161102_183814.csv	B1	Bnom		fm554_do_room.txt	fm554_th_room.txt
+fm574	0.574	data-calib/DATA_Gaussmeter/DataFile_161102_182323.csv	B1	Bnom		fm574_do_room.txt	fm574_th_room.txt
+fm602	0.602	data-calib/DATA_Gaussmeter/DataFile_160727_162618.csv	B1	Bnom		fm590_do_room.txt	fm590_th_room.txt
+fm612	0.612	data-calib/DATA_Gaussmeter/DataFile_160805_143508.csv	B1	Bnom		fm618_do_room.txt	fm618_th_room.txt
+fm625	0.625	data-calib/DATA_Gaussmeter/DataFile_161006_150305.csv	B1	Bnom		fm625_do_room.txt	fm625_th_room.txt
+fm651	0.651	data-calib/DATA_Gaussmeter/DataFile_160916_212729.csv	B1	Bnom		fm651_do_room.txt	fm651_th_room.txt
+fm673	0.673	data-calib/DATA_Gaussmeter/DataFile_160928_200210.csv	B1	Bnom		fm673_do_room.txt	fm673_th_room.txt
+fm590	0.590	data-calib/DATA_Gaussmeter/DataFile_170303_145218.csv	B1	Bnom		fm590_do_room.txt	fm590_th_room.txt
+fm618	0.618	data-calib/DATA_Gaussmeter/DataFile_170303_141544.csv	B1	Bnom		fm618_do_room.txt	fm618_th_room.txt
+fm699	0.699	data-calib/DATA_Gaussmeter/DataFile_170303_152553.csv	B1	Bnom		fm699_do_room.txt	fm699_th_room.txt
+fm745	0.745	data-calib/DATA_Gaussmeter/DataFile_170330_132332.csv	B1	Bnom		fm745_do_room.txt	fm745_th_room.txt
+
+#fm104	0.104	data-calib/DATA_Gaussmeter/DataFile_161102_183041.csv	B1	Bnom	fm104_do_room.txt	fm104_th_room.txt
+#fm554	0.554	data-calib/DATA_Gaussmeter/DateFile_170303_132828.csv	B1	Bnom	fm554_do_room.txt	fm554_th_room.txt
+#fm602	0.602	data-calib/DATA_Gaussmeter/DataFile_160727_163533.csv	B1	Bnom	fm602_do_room.txt	fm602_th_room.txt
+#fm618	0.618	data-calib/DATA_Gaussmeter/DataFile_170303_141544.csv	B1	Bnom	fm618_do_room.txt	fm618_th_room.txt
+#fm651	0.651	data-calib/DATA_Gaussmeter/DataFile_170303_150240.csv	B1	Bnom	fm651_do_room.txt	fm651_th_room.txt
