@@ -21,7 +21,9 @@ plt.xlabel("t (minutes)")
 plt.ylabel("$B_{in}$ (mT)")
 
 # read data
-df1 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170131_135134.csv") #10 mT
+#df1 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170131_135134.csv") #10 mT
+#df1 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170221_170726.csv") #10 mT
+df1 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170221_172156.csv") #15 mT
 df2 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170208_215133.csv") #30 mT
 df3 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170131_143117.csv") #45 mT
 
@@ -46,9 +48,10 @@ lab3 = str("$B_{out}$ = ") + str(int(round(Bnom3))) + str(" mT")
 
 # plot data
 
-#axs.errorbar( df2['time'], -1*df2['B1'], yerr=0, marker='.', label=lab2 )
 axs.errorbar( df3['time']/60, -1*df3['B1'], yerr=0, marker='.', label=lab3, color=mcol[1] )
+#axs.errorbar( df2['time']/60, -1*df2['B1'], yerr=0, marker='.', label=lab2, color=mcol[2] )
 axs.errorbar( df1['time']/60, -1*df1['B1'], yerr=0, marker='.', label=lab1, color=mcol[0] )
+
 
 #axs.set_yscale("log", nonposy='clip')
 
