@@ -57,8 +57,8 @@ plt1=ax.plot( data_shield['pos']/10, data_shield['B1']+0.1, marker='o', color=mc
 # ax.set_ylim(0,500)
 
 # add legend
-ax.text(10, 0.03, 'with SC shield',color=plt1[0].get_color())
-ax.text(10, 25, 'no SC shield',color=plt2[0].get_color())
+ax.text(5, 0.03, 'with SC shielding',color=plt1[0].get_color())
+ax.text(10, 25, 'no SC shielding',color=plt2[0].get_color())
 
 # save & display
 plt.savefig("plots/eps/shield_BvsZ_vdg2layer.eps")
