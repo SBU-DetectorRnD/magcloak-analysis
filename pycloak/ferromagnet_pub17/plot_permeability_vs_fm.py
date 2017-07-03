@@ -106,7 +106,7 @@ a_fm = np.array(a_fm)
 # do plot
 
 print(a_fm)
-axs.errorbar( a_fm, a_mu, yerr=a_mu_sdev, linestyle='', marker='.', color=mcol[0])
+axs.errorbar( a_fm, a_mu, yerr=a_mu_sdev, linestyle='', marker='o', color=mcol[0])
 axs.set_xlim((0,0.8))
 axs.set_ylim((0.8,5))
 
@@ -154,9 +154,11 @@ print("perr = ", perr_curvefit)
 
 
 # plot data and curve
-
 time = np.linspace(0, 1, 100)
-plt.plot(time, fitfunc(time, *p1), "r-") # Plot of the data and the fit
+axs.plot(time, fitfunc(time, *p1), color=mcol[1]) # Plot of the data and the fit
+
+# add label to fit
+#axs.text(0.4, 4.5, '$\mu_r (f_M) \, = \, \frac{ p0 }{ \tan(p1 \, \cdot \, f_M \, + \, p2)} \, + \, p3$', color=mcol[1])
 
 # save & show plot
 plt.savefig("plots/eps/permeability_vs_fm_sbu.eps")
