@@ -36,7 +36,8 @@ plt.ylabel("$\mu_{r}$")
 #for id_i in ["fm590a", "fm590b", "fm554a", "fm554b", "fm574a", "fm574b", "fm574c", "fm574d", "fm581a", "fm581b", "fm618a", "fm618b", "fm673a", "fm673b"]:
 #for id_i in ["fm574o", "fm574a", "fm574b", "fm574c", "fm574d", "fm574e"]:
 #for id_i in ["fm590a", "fm554a", "fm602"]:
-for id_i in ["fm554a", "fm554b"]:
+#for id_i in ["fm554a", "fm554b"]:
+for id_i in ["fm409_cryo", "fm554_cryo"]:
     axs.errorbar( data_sbu.loc[data_sbu['ID']==id_i,'Bout'], data_sbu.loc[data_sbu['ID']==id_i,'mu'], yerr=data_sbu.loc[data_sbu['ID']==id_i,'mu_err_pp'], marker='.', label=id_i)
 
 # add legend
@@ -90,7 +91,7 @@ plt.ylabel("$\mu_{r}$")
 # do plot
 Bout_min = 1
 # do plot
-for id_i in ["fm554a", "fm554b"]:
+for id_i in ["fm409_cryo", "fm554_cryo"]:
     axs.errorbar( data_sbu.loc[data_sbu['ID']==id_i,'Bout'], data_sbu.loc[data_sbu['ID']==id_i,'mu'], yerr=data_sbu.loc[data_sbu['ID']==id_i,'mu_err_pp'], marker='o', label=id_i)
 
 for id_i in [ "fm554" ]:
