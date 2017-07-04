@@ -1,5 +1,20 @@
 # 2 layer Van de Graaff shield
 
+# B vs Z scans- room - magnet on
+DataFile_170416_212259.txt	steeringdipole	DataFile_160411_120720.txt
+
+# B vs Z scans- room - magnet off
+DataFile_170416_214358.txt	steeringdipole	DataFile_160411_120720.txt
+
+# B vs Z scans- cryo - magnet off
+DataFile_170416_231507.txt	steeringdipole	DataFile_160411_120720.txt
+DataFile_170416_235331.txt	steeringdipole	DataFile_160411_120720.txt
+
+# B vs Z scans- cryo - magnet on
+DataFile_170417_001337.txt 	steeringdipole	DataFile_160411_120720.txt
+DataFile_170417_004340.txt	steeringdipole	DataFile_160411_120720.txt
+
+
 # B vs Z scan at 30 mT - room temperature
 DataFile_170208_203721.txt	steeringdipole	DataFile_160411_120720.txt
 
