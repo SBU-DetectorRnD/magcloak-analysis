@@ -8,7 +8,7 @@ import pandas as pd
 import sys
 import os
 
-def mean_radius(radfile):
+def mean_from_file(radfile):
     # turn files of tube dimensions into array
     r = np.genfromtxt(radfile)
     a = ufloat(np.mean(r), np.std(r)) #radius value,err
@@ -26,7 +26,6 @@ def calc_mu_cloak( radius_fm_inner, radius_fm_outer):
     u_cloak = (1/c**2+1)/(1/c**2-1)
 
     return u_cloak
-
 
 
 if __name__ == '__main__':
@@ -55,15 +54,16 @@ if __name__ == '__main__':
 
                 ID = pars[0]
                 frac = pars[1]
-                fname_di=pars[5]
-                fname_do=pars[6]
+                fname_do=pars[5]
+                fname_th=pars[6]
 
                 if (dresults['ID']==ID).any():
                     continue
 
                 # get inner and outer diameter
-                diam_in = mean_radius('diameter_files/'+fname_di)
-                diam_out = mean_radius('diameter_files/'+fname_do)
+                diam_out = mean_from_file('diameter_files/'+fname_do)
+                thickness = mean_from_file('diameter_files/'+fname_th)
+                diam_in = diam_out - 2*thickness
 
                 # get ideal permeability
                 mu_ideal = calc_mu_cloak( diam_in , diam_out )
