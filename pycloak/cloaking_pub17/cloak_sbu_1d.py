@@ -10,6 +10,8 @@ from matplotlib import cm
 # set plotting style
 import mycolors
 mcol = mycolors.pub17
+mmark = mycolors.m_styles
+fcol = mycolors.f_colors
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 
 def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
@@ -48,7 +50,8 @@ def comparescans( figname, figtitle, datafiles, datanames, legend=True ):
     for i, (dfile, dname) in enumerate( zip( datafiles, datanames ) ):
         print( dfile, dname )
         data = pd.read_csv(dfile, comment='#')
-        ax.plot( (data['pos']-xcenter)/10, abs(data['B1']), marker='.', color=mcol[2-i], label=dname) #color='b'
+
+        ax.plot( (data['pos']-xcenter)/10, abs(data['B1']), marker=mmark[2-i], markerfacecolor=fcol[2-i], color=mcol[2-i], label=dname) #color='b'
 
         # fill areas between curves and reference value
         #Bnominal = abs(data['B2']).mean()

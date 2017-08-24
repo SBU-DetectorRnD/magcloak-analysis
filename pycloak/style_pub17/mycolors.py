@@ -23,3 +23,15 @@ cb_colors.append(cb_light_orange)
 cb_colors.append(cb_gray_4)
 
 pub17 = cb_colors
+
+#Define marker styles
+m_styles=[]
+m_styles.append('o')
+m_styles.append('s')
+m_styles.append('o')
+
+##Define facecolor styles
+f_colors=[]
+f_colors.append(cb_colors[0])
+f_colors.append(cb_colors[1])
+f_colors.append('white')

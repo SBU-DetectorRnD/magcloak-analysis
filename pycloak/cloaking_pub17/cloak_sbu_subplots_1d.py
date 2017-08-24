@@ -10,6 +10,8 @@ from matplotlib import cm
 # set plotting style
 import mycolors
 mcol = mycolors.pub17
+mmark = mycolors.m_styles
+fcol = mycolors.f_colors
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 
 xcenter=141
@@ -50,34 +52,34 @@ df_bvx_ref_2 = pd.read_csv('data-calib/DATA_Gaussmeter/DataFile_170213_204446.cs
 df_bvx_ref_3 = pd.read_csv('data-calib/DATA_Gaussmeter/DataFile_170213_205815.csv')
 
 #axs[1].set_title("B vs X scans, 4 layer SC, fM = 0.618")
-axs[1].plot( (df_bvx_ref_1['pos']-xcenter)/10, -1*df_bvx_ref_1['B1'], marker='o', color=mcol[2], label='across center') 
+axs[1].plot( (df_bvx_ref_1['pos']-xcenter)/10, -1*df_bvx_ref_1['B1'], marker=mmark[2], color=mcol[2], markerfacecolor=fcol[2], label='across center') 
 
 select_bvx_left = (df_bvx_sc4l_1['pos']-xcenter) < -10
 select_bvx_right = (df_bvx_sc4l_1['pos']-xcenter) > 10
 axs[1].plot( (df_bvx_sc4l_1.loc[select_bvx_left,'pos']-xcenter)/10,
              -1*df_bvx_sc4l_1.loc[select_bvx_left,'B1'],
-             marker='o', color=mcol[1], label='across center') 
+             marker=mmark[1],  color=mcol[1], markerfacecolor=fcol[1], label='across center') 
 axs[1].plot( (df_bvx_sc4l_1.loc[select_bvx_right,'pos']-xcenter)/10,
              -1*df_bvx_sc4l_1.loc[select_bvx_right,'B1'],
-             marker='o', color=mcol[1], label='across center') 
+             marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='across center') 
 
 select_bvx_left = (df_bvx_cloak_1['pos']-xcenter) < -10
 select_bvx_right = (df_bvx_cloak_1['pos']-xcenter) > 10
 axs[1].plot( (df_bvx_cloak_1.loc[select_bvx_left,'pos']-xcenter)/10,
              -1*df_bvx_cloak_1.loc[select_bvx_left,'B1'],
-             marker='o', color=mcol[0], label='across center') 
+             marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='across center') 
 axs[1].plot( (df_bvx_cloak_1.loc[select_bvx_right,'pos']-xcenter)/10,
              -1*df_bvx_cloak_1.loc[select_bvx_right,'B1'],
-             marker='o', color=mcol[0], label='across center') 
+             marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='across center') 
 
 axs[1].set_ylabel("$B_T$ (mT)")
 axs[1].set_ylim((36,49))
 #axs[1].text(175,38.2,'across',fontsize=12)
 axs[1].set_xlabel("position (cm)")
 
-axs[0].plot( (df_bvx_ref_2['pos']-xcenter)/10, -1*df_bvx_ref_2['B1'], marker='o', color=mcol[2], label='reference') 
-axs[0].plot( (df_bvx_sc4l_2['pos']-xcenter)/10, -1*df_bvx_sc4l_2['B1'], marker='o', color=mcol[1], label='4-layer SC') 
-axs[0].plot( (df_bvx_cloak_2['pos']-xcenter)/10, -1*df_bvx_cloak_2['B1'], marker='o', color=mcol[0], label='cloak') 
+axs[0].plot( (df_bvx_ref_2['pos']-xcenter)/10, -1*df_bvx_ref_2['B1'], marker=mmark[2], color=mcol[2], markerfacecolor=fcol[2], label='reference') 
+axs[0].plot( (df_bvx_sc4l_2['pos']-xcenter)/10, -1*df_bvx_sc4l_2['B1'], marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='4-layer SC') 
+axs[0].plot( (df_bvx_cloak_2['pos']-xcenter)/10, -1*df_bvx_cloak_2['B1'], marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='cloak') 
 axs[0].set_ylabel("$B_T$ (mT)")
 axs[0].set_ylim((29,41.5))
 #axs[0].text(175,38.2,'1 mm away',fontsize=12)
@@ -136,17 +138,17 @@ df_bvz_ref_3 = pd.read_csv('data-calib/DATA_Gaussmeter/DataFile_170214_203513.cs
 ##axs[0].set_ylim((38,40.5))
 #axs[0].text(-50,20,'x,y center')
 
-axs[0].plot( (df_bvz_ref_2['pos']-zcenter)/10, -1*df_bvz_ref_2['B1'], marker='o', color=mcol[2], label='reference') 
-axs[0].plot( (df_bvz_sc4l_2['pos']-zcenter)/10, -1*df_bvz_sc4l_2['B1'], marker='o', color=mcol[1], label='4-layer SC') 
-axs[0].plot( (df_bvz_cloak_2['pos']-zcenter)/10, -1*df_bvz_cloak_2['B1'], marker='o', color=mcol[0], label='cloak') 
+axs[0].plot( (df_bvz_ref_2['pos']-zcenter)/10, -1*df_bvz_ref_2['B1'], marker=mmark[2], color=mcol[2], markerfacecolor=fcol[2], label='reference') 
+axs[0].plot( (df_bvz_sc4l_2['pos']-zcenter)/10, -1*df_bvz_sc4l_2['B1'], marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='4-layer SC') 
+axs[0].plot( (df_bvz_cloak_2['pos']-zcenter)/10, -1*df_bvz_cloak_2['B1'], marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='cloak') 
 axs[0].set_ylabel("$B_T$ (mT)")
 axs[0].set_ylim((29,41.5))
 #axs[0].text(-50,42,'y center',fontsize=12)
 axs[0].legend(loc = 'lower left')
 
-axs[1].plot( (df_bvz_ref_3['pos']-zcenter)/10, -1*df_bvz_ref_3['B1'], marker='o', color=mcol[2], label='across') 
-axs[1].plot( (df_bvz_sc4l_3['pos']-zcenter)/10, -1*df_bvz_sc4l_3['B1'], marker='o', color=mcol[1], label='1 cm away') 
-axs[1].plot( (df_bvz_cloak_3['pos']-zcenter)/10, -1*df_bvz_cloak_3['B1'], marker='o', color=mcol[0], label='across') 
+axs[1].plot( (df_bvz_ref_3['pos']-zcenter)/10, -1*df_bvz_ref_3['B1'], marker=mmark[2], color=mcol[2], markerfacecolor=fcol[2], label='across') 
+axs[1].plot( (df_bvz_sc4l_3['pos']-zcenter)/10, -1*df_bvz_sc4l_3['B1'], marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='1 cm away') 
+axs[1].plot( (df_bvz_cloak_3['pos']-zcenter)/10, -1*df_bvz_cloak_3['B1'], marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='across') 
 axs[1].set_ylabel("$B_T$ (mT)")
 axs[1].set_xlabel("position (cm)")
 axs[1].set_ylim((36,49))
