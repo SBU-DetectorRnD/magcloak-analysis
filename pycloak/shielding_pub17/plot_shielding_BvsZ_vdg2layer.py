@@ -12,6 +12,8 @@ from scipy.integrate import trapz, simps
 # set plotting style
 import mycolors
 mcol = mycolors.pub17
+mmark = mycolors.m_styles
+fcol = mycolors.f_colors
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 
 # set figure parameters
@@ -49,8 +51,8 @@ data_shield['pos'] = data_shield['pos'] - zcenter
 # ...
 
 # plot curves
-plt2=ax.plot( data_noshield['pos']/10, data_noshield['B1']+0.1, marker='o', color=mcol[1], label='no shield')
-plt1=ax.plot( data_shield['pos']/10, data_shield['B1']+0.1, marker='o', color=mcol[0], label='shield')
+plt2=ax.plot( data_noshield['pos']/10, data_noshield['B1']+0.1, marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='no shield')
+plt1=ax.plot( data_shield['pos']/10, data_shield['B1']+0.1, marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='shield')
 
 # plot cosmetics: set axis parameters
 # ax.set_xlim(-12000, 12000)
