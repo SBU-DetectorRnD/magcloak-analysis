@@ -10,6 +10,8 @@ from matplotlib import cm
 # set plotting style
 import mycolors
 mcol = mycolors.pub17
+mmark = mycolors.m_styles
+fcol = mycolors.f_colors
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 
 # make plot 1
@@ -32,8 +34,8 @@ df_bvx_sc_2 = pd.read_csv('data-calib/DATA_MegaVIEW/DataFile_2016-12-09_15-09-34
 
 
 #axs[0].set_title("B vs X scans, 45 layer SC, fM = 0.618")
-axs[0].plot( df_bvx_sc_1['x']/10, -1*df_bvx_sc_1['B3']/1000, marker='o', color=mcol[1], label='45-layer SC') 
-axs[0].plot( df_bvx_cloak_1['x']/10, -1*df_bvx_cloak_1['B3']/1000, marker='o', color=mcol[0], label='cloak') 
+axs[0].plot( df_bvx_sc_1['x']/10, -1*df_bvx_sc_1['B3']/1000, marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='45-layer SC') 
+axs[0].plot( df_bvx_cloak_1['x']/10, -1*df_bvx_cloak_1['B3']/1000, marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='cloak') 
 axs[0].set_ylabel("$B_T$ (T)")
 #axs[0].set_ylim((0.375,0.455))
 #axs[0].text(-120,420,'1 cm away')
@@ -44,12 +46,12 @@ select_bvx_right = df_bvx_sc_2['x'] > 10
 
 axs[1].plot( df_bvx_sc_2.loc[select_bvx_left,'x']/10,
              -1*df_bvx_sc_2.loc[select_bvx_left,'B3']/1000,
-             marker='o', color=mcol[1], label='45-layer SC') 
+              marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='45-layer SC') 
 axs[1].plot( df_bvx_sc_2.loc[select_bvx_right,'x']/10,
              -1*df_bvx_sc_2.loc[select_bvx_right,'B3']/1000,
-             marker='o', color=mcol[1], label='45-layer SC') 
+              marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='45-layer SC') 
 
-axs[1].plot( df_bvx_cloak_2['x']/10, -1*df_bvx_cloak_2['B3']/1000, marker='o', color=mcol[0], label='cloak') 
+axs[1].plot( df_bvx_cloak_2['x']/10, -1*df_bvx_cloak_2['B3']/1000, marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='cloak') 
 axs[1].set_ylabel("$B_T$ (T)")
 axs[1].set_xlabel("position (cm)")
 #axs[1].set_ylim((0.440,0.485))
