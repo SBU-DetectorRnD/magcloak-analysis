@@ -10,6 +10,8 @@ from matplotlib import cm
 # set plotting style
 import mycolors
 mcol = mycolors.pub17
+mmark = mycolors.m_styles
+fcol = mycolors.f_colors
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 
 def comparescans( datafiles, datanames, legend=True ):
@@ -33,7 +35,7 @@ def comparescans( datafiles, datanames, legend=True ):
     for i, (dfile, dname) in enumerate( zip( datafiles, datanames ) ):
         print( dfile, dname )
         data = pd.read_csv(dfile, comment='#')
-        ax.plot( (data['pos'] - 71)/10, abs(data['B1'])+0.1, marker='o', label=dname, color=mcol[2-i])
+        ax.plot( (data['pos'] - 71)/10, abs(data['B1'])+0.1, marker=mmark[2-i], color=mcol[2-i], markerfacecolor=fcol[2-i], label=dname )
 
     # plot cosmetics: set axis parameters
     # ax.set_title(figtitle)
