@@ -62,7 +62,7 @@ ax1.axvline(0.5, color=mcol[2], linestyle='-', alpha=0.3)
 ax1.axvline(1.0, color=mcol[2], linestyle='-', alpha=0.3)
 
 # reference line
-ax1.plot(ref_x,ref_y, color=mcol[1], linestyle='-')
+ax1.plot(ref_x,ref_y, color=mcol[1], linestyle='--')
 
 # data
 plt1 = ax1.errorbar( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], yerr=data.loc[data['tdep']==False,'Bins_sdev'].values, color=mcol[0], marker='o', label="Not time dependent")
@@ -83,7 +83,7 @@ ax2.axvline(0.5, color=mcol[2], linestyle='-', alpha=0.3)
 ax2.axvline(1.0, color=mcol[2], linestyle='-', alpha=0.3)
 
 # ref line
-ax2.plot(ref_x,ref_y, color=mcol[1], linestyle='-')
+ax2.plot(ref_x,ref_y, color=mcol[1], linestyle='--')
 ax2.text(0.65,0.001,"$B_{in} = B_{out} \cdot 0.01$",color=mcol[1])
 
 # actual data
