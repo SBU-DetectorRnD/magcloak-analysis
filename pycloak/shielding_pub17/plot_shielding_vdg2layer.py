@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 # set plotting style
 import mycolors
 mcol = mycolors.pub17
+mmark = mycolors.m_styles
+fcol = mycolors.f_colors
 plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 #plt.style.use('ggplot')
 
@@ -61,8 +63,8 @@ data_beam_subset2 = data_beam.loc[ (data_beam['run'] == 1) &
 fig, axs = plt.subplots(2,1,figsize=(6,5))
 
 #axs[0].set_title("2-layer Van de Graaff prototpye in beam steering dipole shielding")
-axs[0].errorbar( data_beam_subset2['Bnom'], data_beam_subset2['x_mean'], yerr=data_beam_subset2['x_sdev'].values, marker='o', color=mcol[1], label="No SC shield")
-axs[0].errorbar( data_beam_subset['Bnom'], data_beam_subset['x_mean'], yerr=data_beam_subset['x_sdev'].values, marker='o', color=mcol[0], label="With SC shield")
+axs[0].errorbar( data_beam_subset2['Bnom'], data_beam_subset2['x_mean'], yerr=data_beam_subset2['x_sdev'].values, marker=mmark[2], color=mcol[2], markerfacecolor=fcol[2], label="No SC shield")
+axs[0].errorbar( data_beam_subset['Bnom'], data_beam_subset['x_mean'], yerr=data_beam_subset['x_sdev'].values, marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label="With SC shield")
 #axs[1].set_xlabel("$B_{out} (mT)$")
 axs[0].set_ylabel("$\Delta x_{Li7}$ (mm)")
 axs[0].set_xlim((0,50))
