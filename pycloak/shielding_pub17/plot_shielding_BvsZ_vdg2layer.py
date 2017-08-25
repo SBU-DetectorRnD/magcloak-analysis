@@ -51,7 +51,7 @@ data_shield['pos'] = data_shield['pos'] - zcenter
 # ...
 
 # plot curves
-plt2=ax.plot( data_noshield['pos']/10, data_noshield['B1']+0.1, marker=mmark[1], color=mcol[1], markerfacecolor=fcol[1], label='no shield')
+plt2=ax.plot( data_noshield['pos']/10, data_noshield['B1']+0.1, marker=mmark[2], color=mcol[2], markerfacecolor=fcol[2], label='no shield')
 plt1=ax.plot( data_shield['pos']/10, data_shield['B1']+0.1, marker=mmark[0], color=mcol[0], markerfacecolor=fcol[0], label='shield')
 
 # plot cosmetics: set axis parameters
