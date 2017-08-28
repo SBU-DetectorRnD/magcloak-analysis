@@ -48,9 +48,12 @@ lab3 = str("$B_{out}$ = ") + str(int(round(Bnom3))) + str(" mT")
 
 # plot data
 
-axs.errorbar( df3['time']/60, -1*df3['B1'], yerr=0, marker='.', label=lab3, color=mcol[1] )
+axs.plot( df3['time']/60, -1*df3['B1'], linewidth=3, linestyle='-', label=lab3, color=mcol[1] )
+axs.plot( df1['time']/60, -1*df1['B1'], linewidth=3, linestyle='--', label=lab1, color=mcol[0] )
+
+#axs.errorbar( df3['time']/60, -1*df3['B1'], yerr=0, marker='.', label=lab3, color=mcol[1] )
 #axs.errorbar( df2['time']/60, -1*df2['B1'], yerr=0, marker='.', label=lab2, color=mcol[2] )
-axs.errorbar( df1['time']/60, -1*df1['B1'], yerr=0, marker='.', label=lab1, color=mcol[0] )
+#axs.errorbar( df1['time']/60, -1*df1['B1'], yerr=0, marker='.', label=lab1, color=mcol[0] )
 
 
 #axs.set_yscale("log", nonposy='clip')
