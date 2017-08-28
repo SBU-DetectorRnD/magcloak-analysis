@@ -57,6 +57,14 @@ plt.axvline(2.032, color=mcol[2], linestyle='-',alpha=0.5)
 #plt.axhline( Bref, color='grey' , linestyle='-', alpha=0.5)
 #plt.axvline( 0, color='grey' , linestyle='-', alpha=0.5)
 
+#define linestyles
+linestl=[]
+linestl.append('-')
+linestl.append('--')
+linestl.append('-.')
+linestl.append(':')
+linestl.append('-')
+
 # loop over data files
 for parline in parlines:
 
@@ -75,7 +83,8 @@ for parline in parlines:
 #print( "Breference (mT) = ", Bref)
 
             if ( idx < 5 ):
-                plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx])
+                  plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx])
+                  #plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx],linestyle=linestl[idx])
             else:
                 plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx],linestyle='--')
 
