@@ -58,6 +58,9 @@ fig, axs = plt.subplots(1,1,figsize=(6,5))
 plt.xlabel("$B_{out}$ (mT)")
 plt.ylabel("$\mu_{r}$")
 
+# array of line styles
+linestl=[ '--', '-' ]
+
 # do plot
 Bout_min = 5
 #for id_i in [ "fm618" , "fm554" , "fm699" , "fm673" ]:
@@ -65,7 +68,8 @@ for i,id_i in enumerate([ "fm699" , "fm618" ]):
     label_i = "$f_M$ = 0."
     label_i += id_i.replace('fm','')
     select_rows = (data_anl['ID']==id_i) & (data_anl['Bout'] > Bout_min)
-    axs.errorbar( data_anl.loc[ select_rows,'Bout' ], data_anl.loc[ select_rows, 'mu' ], yerr=data_anl.loc[ select_rows, 'mu_err_pp' ], marker='.', color=mcol[i], label=label_i)
+    #axs.errorbar( data_anl.loc[ select_rows,'Bout' ], data_anl.loc[ select_rows, 'mu' ], yerr=data_anl.loc[ select_rows, 'mu_err_pp' ], marker='.', color=mcol[i], label=label_i)
+    axs.plot( data_anl.loc[ select_rows,'Bout' ], data_anl.loc[ select_rows, 'mu' ], linewidth=3, linestyle=linestl[i], color=mcol[i], label=label_i)
 
 # add legend
 axs.legend(loc = 'upper right')
