@@ -57,13 +57,18 @@ plt.axvline(2.032, color=mcol[2], linestyle='-',alpha=0.5)
 #plt.axhline( Bref, color='grey' , linestyle='-', alpha=0.5)
 #plt.axvline( 0, color='grey' , linestyle='-', alpha=0.5)
 
-#define linestyles
-linestl=[]
-linestl.append('-')
-linestl.append('--')
-linestl.append('-.')
-linestl.append(':')
-linestl.append('-')
+# define linestyles
+# list of Dash styles, each as integers in the format: (first line length, first space length, second line length, second space length...)
+dashList = [(1,1),
+            (1,1,1,3),
+            (1,1,1,1,1,3),
+            (5,2),
+            (5,1),
+            (3,1),
+            (3,1,1,1),
+            (3,1,1,1,1,1),
+            (3,1,1,1,1,1,1,1),
+            (3,1,1,1,1,1,1,1,1,1)] 
 
 # loop over data files
 for parline in parlines:
@@ -80,13 +85,10 @@ for parline in parlines:
             Bref += (-1*df_i['Bnom'].mean())
             nfiles += 1
 
-#print( "Breference (mT) = ", Bref)
-
-            if ( idx < 5 ):
-                  plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx])
-                  #plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx],linestyle=linestl[idx])
+            if ( idx == 4 ):
+                plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx],linestyle='-')
             else:
-                plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx],linestyle='--')
+                plt.plot((df_i['pos']-center_offset)/10,-1*df_i['B1'],label=angle,color=mcol[idx],linestyle='--', dashes=dashList[idx])
 
             idx +=1 
 
