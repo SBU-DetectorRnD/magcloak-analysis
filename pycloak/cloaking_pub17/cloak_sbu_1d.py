@@ -122,5 +122,5 @@ if __name__ == '__main__':
                    "data-calib/DATA_Gaussmeter/DataFile_170213_201438.csv",
                    "data-calib/DATA_Gaussmeter/DataFile_170214_210939.csv"],
                   ["reference",
-                   " 4-layer SC + $\mu_r$ = 2.4",
-                   "45-layer SC + $\mu_r$ = 2.4"])
+                   " 4-layer SC + $\mu_r$ = 2.43",
+                   "45-layer SC + $\mu_r$ = 2.43"])
