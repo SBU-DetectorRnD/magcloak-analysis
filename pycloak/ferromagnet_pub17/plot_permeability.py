@@ -29,7 +29,7 @@ data_anl.sort_values( 'Bout', inplace=True )
 fig, axs = plt.subplots(1,1,figsize=(6,5))
 
 axs.set_title("Ferromagnet Permeability")
-plt.xlabel("$B_{out}$ (mT)")
+plt.xlabel("$B_{a}$ (mT)")
 plt.ylabel("$\mu_{r}$")
 
 # do plot
@@ -55,7 +55,7 @@ plt.savefig("plots/png/permeability_sbu.png")
 # set figure parameters
 fig, axs = plt.subplots(1,1,figsize=(6,5))
 
-plt.xlabel("$B_{out}$ (mT)")
+plt.xlabel("$B_{a}$ (mT)")
 plt.ylabel("$\mu_{r}$")
 
 # array of line styles
@@ -89,7 +89,7 @@ plt.show()
 fig, axs = plt.subplots(1,1,figsize=(6,5))
 
 axs.set_title("Ferromagnet Permeability")
-plt.xlabel("$B_{out}$ (mT)")
+plt.xlabel("$B_{a}$ (mT)")
 plt.ylabel("$\mu_{r}$")
 
 # do plot

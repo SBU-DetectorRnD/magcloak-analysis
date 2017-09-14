@@ -18,7 +18,7 @@ plt.style.use("../style_pub17/cloak17_paper.mplstyle")
 fig, axs = plt.subplots(1,1,figsize=(6,5))
 #axs.set_title("2-layer Van de Graaff shielding")
 plt.xlabel("t (minutes)")
-plt.ylabel("$B_{in}$ (mT)")
+plt.ylabel("$B_{T}$ (mT)")
 
 # read data
 #df1 = pd.read_csv("data-calib/DATA_Gaussmeter/DataFile_170131_135134.csv") #10 mT
@@ -38,9 +38,9 @@ Bnom2 = abs(df2['Bnom']).mean()
 Bnom3 = abs(df3['Bnom']).mean()
 
 # convert mean reference field to label
-lab1 = str("$B_{out}$ = ") + str(int(round(Bnom1))) + str(" mT")
-lab2 = str("$B_{out}$ = ") + str(int(round(Bnom2))) + str(" mT")
-lab3 = str("$B_{out}$ = ") + str(int(round(Bnom3))) + str(" mT")
+lab1 = str("$B_{a}$ = ") + str(int(round(Bnom1))) + str(" mT")
+lab2 = str("$B_{a}$ = ") + str(int(round(Bnom2))) + str(" mT")
+lab3 = str("$B_{a}$ = ") + str(int(round(Bnom3))) + str(" mT")
 
 #Bstart_1 = -1*df1.loc[ df1['time'] < 60]['B1'].mean()
 #Bstart_3 = -1*df3.loc[ df3['time'] < 60]['B1'].mean()

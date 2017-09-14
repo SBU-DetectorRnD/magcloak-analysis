@@ -71,7 +71,7 @@ ax1.errorbar( data.loc[data['tdep'],'Bout'], data.loc[data['tdep'],'Bins'], yerr
 #ax1.set_yticks(np.arange(0,1.2,0.2))
 ax1.set_yticks([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0])
 ax1.set_yticklabels([0.0,'','','','',0.5,'','','','',1.0])
-ax1.set_ylabel("$B_{in}$ (T)",labelpad=15)
+ax1.set_ylabel("$B_{T}$ (T)",labelpad=15)
 
 plt.legend(loc="upper left")
 
@@ -84,7 +84,7 @@ ax2.axvline(1.0, color=mcol[2], linestyle='-', alpha=0.3)
 
 # ref line
 ax2.plot(ref_x,ref_y, color=mcol[1], linestyle='--')
-ax2.text(0.65,0.001,"$B_{in} = B_{out} \cdot 0.01$",color=mcol[1])
+ax2.text(0.65,0.001,"$B_{T} = B_{a} \cdot 0.01$",color=mcol[1])
 
 # actual data
 plt2 = ax2.errorbar( data.loc[data['tdep']==False,'Bout'], data.loc[data['tdep']==False,'Bins'], data.loc[data['tdep']==False,'Bins'], color=mcol[0],  marker='o')
@@ -94,8 +94,8 @@ ax2.set_yscale("log", nonposy='clip')
 ax2.set_yticks((1e-6,1e-3,1))
 ax2.set_xticks([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.1])
 ax2.set_xticklabels([0.0,'','','','',0.5,'','','','',1.0,''])
-ax2.set_xlabel("$B_{out}$ (T)")
-ax2.set_ylabel("$B_{in}$ (T)")
+ax2.set_xlabel("$B_{a}$ (T)")
+ax2.set_ylabel("$B_{T}$ (T)")
 
 # reduce whitespace
 plt.tight_layout()
@@ -109,8 +109,8 @@ plt.show()
 fig, axs = plt.subplots(1,1,figsize=(6,5))
 
 axs.set_title("45-layer MRI shielding")
-plt.xlabel("$B_{out}$ (T)")
-plt.ylabel("$B_{in}$ (T)")
+plt.xlabel("$B_{a}$ (T)")
+plt.ylabel("$B_{T}$ (T)")
 
 # mark 0.5 and 1 T
 plt.axvline(0.5, color=mcol[2], linestyle='-')
